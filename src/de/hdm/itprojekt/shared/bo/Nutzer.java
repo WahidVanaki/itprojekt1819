@@ -43,8 +43,7 @@ public class Nutzer extends BusinessObject {
 	}
 	
 	public String toString(){
-		return "<table><tr><td>"+" Id: "+ this.getId() +", E-Mail: " +this.getEmail()+ ", Nickname: " + this.getNickname()+ ", Vorname: " + this.getVorname()+ ", Nachname: " + this.getNachname()+"</td></tr></table>";
-	
+		return "<table><tr><td>"+this.getEmail()+"</td></tr></table>";
 	}
 	
 }
