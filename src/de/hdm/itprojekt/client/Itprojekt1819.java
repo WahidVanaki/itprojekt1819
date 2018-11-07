@@ -166,7 +166,7 @@ public class Itprojekt1819 implements EntryPoint {
 		@Override
 		public void onFailure(Throwable caught) {
 			// TODO Auto-generated method stub
-			Window.alert("Fehler beim Anmelden");
+			Window.alert("Fehler beim Anmelden " + caught.getMessage());
 		}
 
 		@Override

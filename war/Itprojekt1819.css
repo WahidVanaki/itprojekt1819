@@ -1,7 +1,6 @@
 /** Set ids using widget.getElement().setId("idOfElement") */
 /*SEITENAUFBAU*/
 html {
-	background-image: url("/images/backgroundimg.jpg");
 	background-repeat: repeat;
 	background-size: cover;
 	font-family: 'Encode Sans Condensed', cursive;
@@ -13,21 +12,6 @@ body {
 
 .tbody, tfoot, thead, tr, th, td {
 	vertical-align: middle !important;
-}
-#contentReport {
-	overflow: scroll;
-    width: 89%;
-    height: 650px;
-	display: inline-block;
-	border: 2px solid black;
-	box-shadow: 3px 2px 2px grey;
-    position: absolute;
-    left: 5.4%;
-    background-color: aliceblue;
-}
-
-#contentReport table {
-	width: 100%;	
 }
 
 #header {
@@ -130,7 +114,7 @@ body {
 	overflow: auto;
 }
 
-.kontaktDecoratorPanel {
+.nutzerDecoratorPanel {
 	position: absolute;
 	top: 205px;
 	left: 640px;
@@ -178,13 +162,13 @@ body {
 	font-weight: bold;
 	color: #535353;
 	text-align: center;
-	font-family: 'Encode Sans Condensed', bold;
+	font-family: 'Arial', bold;
 	letter-spacing: 0.5px;
 }
 
 .landingPageLoginMessage {
 	margin-top: 40px;
-	font-family: 'Encode Sans Condensed', cursive;
+	font-family: 'Arial', cursive;
 	text-align: center;
 	font-size: 1.8em;
 	color: #777777;
@@ -194,7 +178,7 @@ body {
 	font-size: 1.3em;
 	margin: 10px 0px 5px 10px;
 	color: #3d3d3d;
-	font-family: 'Encode Sans Condensed', cursive !important;
+	font-family: 'Arial', cursive !important;
 	font-weight: 500;
 	font-size: 1.5em;
 }
@@ -203,7 +187,7 @@ body {
 	font-size: 1.3em;
 	margin: 10px 0px 5px 0px;
 	color: #3d3d3d;
-	font-family: 'Encode Sans Condensed', cursive !important;
+	font-family: 'Arial', cursive !important;
 	font-weight: 500;
 	font-size: 1.5em;
 }
@@ -213,7 +197,7 @@ body {
 	margin-right: 5px;
 }
 
-.kontaktFormText {
+.nutzerFormText {
 	margin-right: 10px;
 	font-size: 1.2em;
 }
@@ -233,11 +217,6 @@ body {
 	font-family: 'Encode Sans Condensed', cursive;
 }
 
-.teilhaberschaftLabel {
-	font-size: 1.2em;
-	font-family: 'Encode Sans Condensed', cursive !important;
-	font-weight: 400;
-}
 
 /** WIDGET & PANEL FORMATIERUNGEN*/
 .loginPanel {
@@ -271,12 +250,12 @@ body {
 	width: 100%;
 }
 
-.kontaktCellTableView {
+.nutzerCellTableView {
 	margin-left: 20px;
 	margin-top: 20px;
 }
 
-.kontaktFormView {
+.nutzerFormView {
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
@@ -304,25 +283,14 @@ body {
 	margin: 2px auto;
 }
 
-.teilhaberschaftVerwaltungPanel {
-	width: 70%;
-	height: auto;
-	margin-left: 2em;
-	margin-top: 2em;
-}
-
-.teilhaberschaftVerwaltungPanel table {
-	width: 100%;
-}
-
-.kontaktFormPanel {
+.nutzerFormPanel {
 	width: 40%;
 	height: auto;
 	margin-left: 2em;
 	margin-top: 2em;
 }
 
-.kontaktFormPanel table {
+.nutzerFormPanel table {
 	width: 100%;
 }
 
@@ -348,20 +316,6 @@ body {
 	width: 60%;
 }
 
-
-/* REPORT GENERATOR FORMATIERUNG */
-.listbox-report {
-	position: relative;
-	width: 200px;
-	padding: 10px;
-	margin: 0 auto;
-	color: #fff;
-	outline: none;
-	font-weight: bold;
-	cursor: pointer;
-	background: darkgrey;
-	border: double;
-}
 
 /* BUTTON FORMATIERUNGEN */
 .impressumButton {
@@ -405,7 +359,7 @@ body {
 	box-shadow: 0px 0px 8px #96A1BD !important;
 }
 
-.kontaktFormTextBox {
+.nutzerFormTextBox {
 	background-color white;
 	height: 25px;
 	width: 200px;
@@ -416,7 +370,7 @@ body {
 	box-shadow: 0px 0px 3px #96A1BD !important;
 }
 
-.kontaktFormTextBox:hover {
+.nutzerFormTextBox:hover {
 	box-shadow: 0px 0px 8px #96A1BD !important;
 }
 
@@ -551,29 +505,6 @@ body {
 	background-color: white !important;
 }
 
-.reportButton {
-	font-size: 0.8em !important;
-	font-weight: normal !important;
-	width: auto;
-	border-radius: 6px;
-	border: 1px solid #d9d9d9 !important;
-	cursor: pointer;
-	color: #2c2c2c !important;
-	background-color: whitesmoke !important;
-	padding: 6px 5px 6px 5px !important;
-	text-shadow: 0px 1px 1px #ffffff !important;
-	text-align: center;
-	background-image: none !important;
-	margin-right: 5px !important;
-	box-shadow: 1px 1px #999;
-}
-
-.reportButton:hover {
-	transform: scale(1.02);
-	box-shadow: inset 1px 1px 1px 1px #f2f2f2 !important;
-	background-color: white !important;
-}
-
 .gwt-SuggestBox {
 	margin-left: 20px;
 	display: inline-block;
@@ -591,37 +522,6 @@ body {
     border-radius: 8px;
 
 }
-
-.reportButton {
-	width: auto;
-	border-radius: 6px;
-	border: 1px solid #d9d9d9;
-	display: inline-block;
-	cursor: pointer;
-	color: #000000;
-	background-color: #e9e9e9;
-	font-size: 11px;
-	font-weight: bold;
-	padding: 8px 12px 8px 12px;
-	text-shadow: 0px 1px 0px #ffffff;
-	text-align: center;
-	margin-left: 5px;
-	margin-top: 4.5px;
-	vertical-align: super;
-}
-
-.reportButton:hover {
-	transform: scale(1.02);
-	box-shadow: inset 0 0 0 1px #f2f2f2;
-	border: 1px solid #f2f2f2;
-	background-color: #f3f3f3;
-}
-
-.reportButtonFloat {
-	float: right;
-	margin-right: 10px;
-}
-
 
 .menuBarImage {
 	background-image: url("/images/arrow_down.svg") !important;

@@ -13,7 +13,7 @@
   
     <servlet-mapping>
     <servlet-name>socialMediaServlet</servlet-name>
-    <url-pattern>/itprojekt/socialmediapinnwand</url-pattern>
+    <url-pattern>/itprojekt1819/pinnwand</url-pattern>
   </servlet-mapping>
   
   <servlet>

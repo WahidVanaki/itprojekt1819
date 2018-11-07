@@ -5,7 +5,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 import de.hdm.itprojekt.shared.bo.Nutzer;
 
-@RemoteServiceRelativePath("socialmediapinnwand")
+@RemoteServiceRelativePath("pinnwand")
 public interface SocialMediaAdmin extends RemoteService {
 
 	void init() throws IllegalArgumentException;

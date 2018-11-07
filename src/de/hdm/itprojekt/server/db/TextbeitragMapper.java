@@ -37,17 +37,16 @@ public class TextbeitragMapper {
 			if (rs.next()) {
 
 				PreparedStatement stmt1 = con.prepareStatement(
-						"INSERT INTO textbeitrag (id, pinnwandid, nutzerid, likeid, kommentarid, inhalt, erzeugungsdatum, modifikationsdatum) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ",
+						"INSERT INTO textbeitrag (id, pinnwandid, nutzerid, kommentarid, inhalt, erzeugungsdatum, modifikationsdatum) VALUES (?, ?, ?, ?, ?, ?, ?) ",
 
 						Statement.RETURN_GENERATED_KEYS);
 				stmt1.setInt(1, textbeitrag.getId());
 				stmt1.setInt(2, textbeitrag.getPinnwandID());
 				stmt1.setInt(3, textbeitrag.getNutzerID());
-				stmt1.setInt(4, textbeitrag.getLikesID());
-				stmt1.setInt(5, textbeitrag.getKommentarID());
-				stmt1.setString(6, textbeitrag.getInhalt());
-				stmt1.setTimestamp(7, sqlDate);
-				stmt1.setTimestamp(8, sqlDate1);
+				stmt1.setInt(4, textbeitrag.getKommentarID());
+				stmt1.setString(5, textbeitrag.getInhalt());
+				stmt1.setTimestamp(6, sqlDate);
+				stmt1.setTimestamp(7, sqlDate1);
 
 				System.out.println(stmt);
 				stmt1.executeUpdate();
@@ -136,7 +135,6 @@ public class TextbeitragMapper {
 				t.setId(rs.getInt("id"));
 				t.setPinnwandID(rs.getInt("pinnwandid"));
 				t.setNutzerID(rs.getInt("nutzerID"));
-				t.setLikesID(rs.getInt("likesid"));
 				t.setKommentarID(rs.getInt("kommentarid"));
 				t.setInhalt(rs.getString("inhalt"));
 				t.setErzeugungsdatum(rs.getTimestamp("erzeugungsdatum"));
@@ -178,7 +176,6 @@ public class TextbeitragMapper {
 				beitrag.setId(rs.getInt("id"));
 				beitrag.setPinnwandID(rs.getInt("pinnwandid"));
 				beitrag.setNutzerID(rs.getInt("nutzerID"));
-				beitrag.setLikesID(rs.getInt("likesid"));
 				beitrag.setKommentarID(rs.getInt("kommentarid"));
 				beitrag.setInhalt(rs.getString("inhalt"));
 				beitrag.setErzeugungsdatum(rs.getTimestamp("erzeugungsdatum"));
@@ -222,7 +219,6 @@ public class TextbeitragMapper {
 				beitrag.setId(rs.getInt("id"));
 				beitrag.setPinnwandID(rs.getInt("pinnwandid"));
 				beitrag.setNutzerID(rs.getInt("nutzerID"));
-				beitrag.setLikesID(rs.getInt("likesid"));
 				beitrag.setKommentarID(rs.getInt("kommentarid"));
 				beitrag.setInhalt(rs.getString("inhalt"));
 				beitrag.setErzeugungsdatum(rs.getTimestamp("erzeugungsdatum"));
@@ -263,7 +259,6 @@ public class TextbeitragMapper {
 				beitrag.setId(rs.getInt("id"));
 				beitrag.setPinnwandID(rs.getInt("pinnwandid"));
 				beitrag.setNutzerID(rs.getInt("nutzerID"));
-				beitrag.setLikesID(rs.getInt("likesid"));
 				beitrag.setKommentarID(rs.getInt("kommentarid"));
 				beitrag.setInhalt(rs.getString("inhalt"));
 				beitrag.setErzeugungsdatum(rs.getTimestamp("erzeugungsdatum"));
