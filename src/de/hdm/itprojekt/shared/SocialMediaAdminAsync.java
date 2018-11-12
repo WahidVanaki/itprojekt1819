@@ -1,8 +1,14 @@
 package de.hdm.itprojekt.shared;
 
+import java.util.Vector;
+
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
+import de.hdm.itprojekt.shared.bo.Abonnement;
+import de.hdm.itprojekt.shared.bo.Kommentar;
 import de.hdm.itprojekt.shared.bo.Nutzer;
+import de.hdm.itprojekt.shared.bo.Pinnwand;
+import de.hdm.itprojekt.shared.bo.Textbeitrag;
 
 public interface SocialMediaAdminAsync {
 	
@@ -14,4 +20,40 @@ public interface SocialMediaAdminAsync {
 
 	void saveNutzer(Nutzer nutzer, AsyncCallback<Void> callback);
 
+	void createAbonnement(int nutzerid, int pinnwandid, AsyncCallback<Abonnement> callback);
+
+	void createKommentar(int nutzerid, int textbeitragid, String inhalt, AsyncCallback<Kommentar> callback);
+
+	void createTextbeitrag(int pinnwandid, int nutzerid, int kommentarid, String inhalt,
+			AsyncCallback<Textbeitrag> callback);
+
+	void createPinnwand(int nutzerid, AsyncCallback<Pinnwand> callback);
+
+	void savePinnwand(Pinnwand pinnwand, AsyncCallback<Void> callback);
+
+	void saveTextbeitrag(Textbeitrag textbeitrag, AsyncCallback<Void> callback);
+
+	void saveKommentar(Kommentar kommentar, AsyncCallback<Void> callback);
+
+	void saveAbonnement(Abonnement abonnement, AsyncCallback<Void> callback);
+
+	void deleteNutzer(Nutzer nutzer, AsyncCallback<Void> callback);
+
+	void findAllAbonnement(AsyncCallback<Vector<Abonnement>> callback);
+
+	void findAbonnementByNutzerID(int nutzerid, AsyncCallback<Vector<Abonnement>> callback);
+
+	void findAbonnementByPinnwandID(int pinnwandid, AsyncCallback<Vector<Abonnement>> callback);
+
+	void findAllNutzer(AsyncCallback<Vector<Nutzer>> callback);
+
+	void findNutzerByEmail(String email, AsyncCallback<Nutzer> callback);
+
+	void findNutzerByID(int nutzerid, AsyncCallback<Nutzer> callback);
+
+	void findAllPinnwand(AsyncCallback<Vector<Pinnwand>> callback);
+
+	void findPinnwandByNutzerID(int nutzerid, AsyncCallback<Pinnwand> callback);
+
+	
 }

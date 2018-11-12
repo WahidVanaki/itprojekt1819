@@ -47,7 +47,7 @@ public class AbonnementMapper {
 	 * @return
 	 * @see abonnementMapper
 	 */
-	public Abonnement abonnementMapper(Abonnement abonnement) {
+	public Abonnement createAbonnement(Abonnement abonnement) {
 
 		/**
 		 * Verbindung zur Datenbank wird aufgebaut
@@ -214,20 +214,20 @@ public class AbonnementMapper {
 		return result;
 	}
 
-	public Abonnement findAbonnementByNutzerID(int nutzerid) {
+	public Vector <Abonnement> findAbonnementByNutzerID(int nutzerID) {
 
 		/**
 		 * Verbindung zur DB Connection
 		 */
 		Connection con = DBConnection.connection();
 
-		Abonnement abo = new Abonnement();
+		Vector <Abonnement> result = new Vector<Abonnement>();
 
 		try {
 
 			PreparedStatement stmt = con.prepareStatement("SELECT * FROM abonnement WHERE `id` = ?");
 
-			stmt.setInt(1, nutzerid);
+			stmt.setInt(1, nutzerID);
 			ResultSet rs = stmt.executeQuery();
 
 			/**
@@ -241,8 +241,7 @@ public class AbonnementMapper {
 				abonnement.setNutzerID(rs.getInt("nutzerid"));
 				abonnement.setPinnwandID(rs.getInt("pinnwandid"));
 				
-				abo = abonnement;
-			}
+				result.addElement(abonnement);			}
 
 		} catch (SQLException e2) {
 			e2.printStackTrace();
@@ -260,17 +259,17 @@ public class AbonnementMapper {
 				}
 		}
 
-		return abo;
+		return result;
 	}
 
-	public Abonnement findAbonnementByPinnwandID(int pinnwandID) {
+	public Vector <Abonnement> findAbonnementByPinnwandID(int pinnwandID) {
 
 		/**
 		 * Verbindung zur DB Connection
 		 */
 		Connection con = DBConnection.connection();
 
-		Abonnement abo = new Abonnement();
+		Vector <Abonnement> result = new Vector<Abonnement>();
 
 		try {
 
@@ -289,7 +288,7 @@ public class AbonnementMapper {
 				abonnement.setId(rs.getInt("id"));
 				abonnement.setPinnwandID(rs.getInt("pinndwandid"));
 
-				abo = abonnement;
+				result.addElement(abonnement);
 			}
 		} catch (SQLException e2) {
 			e2.printStackTrace();
@@ -306,6 +305,6 @@ public class AbonnementMapper {
 					e.printStackTrace();
 				}
 		}
-		return abo;
+		return result;
 	}
 }
