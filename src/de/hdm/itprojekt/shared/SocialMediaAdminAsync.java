@@ -69,5 +69,12 @@ public interface SocialMediaAdminAsync {
 
 	void findTextbeitragByPinnwandID(int pinnwandid, AsyncCallback<Vector<Textbeitrag>> callback);
 
-	
+	void deleteAbonnement(Abonnement abonnement, AsyncCallback<Void> callback);
+
+	void deleteTextbeitrag(Textbeitrag textbeitrag, AsyncCallback<Void> callback);
+
+	void deleteKommentar(Kommentar kommentar, AsyncCallback<Void> callback);
+
+	void deletePinnwand(Pinnwand pinnwand, AsyncCallback<Void> callback);
+
 }

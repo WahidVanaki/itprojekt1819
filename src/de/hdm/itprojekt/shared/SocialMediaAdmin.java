@@ -72,4 +72,13 @@ public interface SocialMediaAdmin extends RemoteService {
 
 	Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException;
 
+	void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException;
+
+	void deleteAbonnement(Abonnement abonnement) throws IllegalArgumentException;
+
+	void deleteTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException;
+
+	void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException;
+
+
 }
