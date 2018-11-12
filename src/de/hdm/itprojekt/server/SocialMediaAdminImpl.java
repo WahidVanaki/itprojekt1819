@@ -180,6 +180,38 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		return this.pinnwandMapper.findPinnwandByNutzerID(nutzerid);
 	}
 	
+	@Override
+	public Vector<Kommentar> findAllKommentare() throws IllegalArgumentException {
+		return this.kommentarMapper.findAllKommentare();
+	}
 	
-
+	@Override
+	public Vector<Kommentar> findKommentarByNutzerID(int nutzerid) throws IllegalArgumentException {
+		return this.kommentarMapper.findKommentarByNutzerID(nutzerid);
+	}
+	
+	@Override
+	public Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) throws IllegalArgumentException {
+		return this.kommentarMapper.findKommentarByTextbeitragID(textbeitragid);
+	}
+	
+	@Override
+	public Vector<Textbeitrag> findAllTextbeitrag() throws IllegalArgumentException{
+		return this.textbeitragMapper.findAllTextbeitrag();
+	}
+	
+	@Override
+	public Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException {
+		return this.textbeitragMapper.findTextbeitragByNutzerID(nutzerid);
+	}
+	
+	@Override
+	public Vector<Textbeitrag> findTextbeitragByKommentarID(int kommentarid) throws IllegalArgumentException {
+		return this.textbeitragMapper.findTextbeitragByKommentarID(kommentarid);
+	}
+	
+	@Override
+	public Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException {
+		return this.textbeitragMapper.findTextbeitragByPinnwandID(pinnwandid);
+	}
 }

@@ -239,7 +239,7 @@ public class TextbeitragMapper {
 		return result;
 	}
 
-	public Vector<Textbeitrag> findTextbeitragByPinnwandid(int pinnwandid) {
+	public Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) {
 
 		Connection con = DBConnection.connection();
 

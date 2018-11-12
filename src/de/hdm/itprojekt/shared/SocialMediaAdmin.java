@@ -58,4 +58,18 @@ public interface SocialMediaAdmin extends RemoteService {
 
 	Pinnwand findPinnwandByNutzerID(int nutzerid) throws IllegalArgumentException;
 
+	Vector<Kommentar> findAllKommentare() throws IllegalArgumentException;
+
+	Vector<Kommentar> findKommentarByNutzerID(int nutzerid) throws IllegalArgumentException;
+
+	Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) throws IllegalArgumentException;
+
+	Vector<Textbeitrag> findAllTextbeitrag() throws IllegalArgumentException;
+
+	Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException;
+
+	Vector<Textbeitrag> findTextbeitragByKommentarID(int kommentarid) throws IllegalArgumentException;
+
+	Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException;
+
 }

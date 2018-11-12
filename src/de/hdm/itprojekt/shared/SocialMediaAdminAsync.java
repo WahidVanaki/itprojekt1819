@@ -55,5 +55,19 @@ public interface SocialMediaAdminAsync {
 
 	void findPinnwandByNutzerID(int nutzerid, AsyncCallback<Pinnwand> callback);
 
+	void findAllKommentare(AsyncCallback<Vector<Kommentar>> callback);
+
+	void findKommentarByNutzerID(int nutzerid, AsyncCallback<Vector<Kommentar>> callback);
+
+	void findKommentarByTextbeitragID(int textbeitragid, AsyncCallback<Vector<Kommentar>> callback);
+
+	void findAllTextbeitrag(AsyncCallback<Vector<Textbeitrag>> callback);
+
+	void findTextbeitragByNutzerID(int nutzerid, AsyncCallback<Vector<Textbeitrag>> callback);
+
+	void findTextbeitragByKommentarID(int kommentarid, AsyncCallback<Vector<Textbeitrag>> callback);
+
+	void findTextbeitragByPinnwandID(int pinnwandid, AsyncCallback<Vector<Textbeitrag>> callback);
+
 	
 }
