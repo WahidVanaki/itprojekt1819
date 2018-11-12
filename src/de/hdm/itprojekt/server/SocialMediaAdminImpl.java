@@ -180,5 +180,6 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		return this.pinnwandMapper.findPinnwandByNutzerID(nutzerid);
 	}
 	
+	
 
 }
