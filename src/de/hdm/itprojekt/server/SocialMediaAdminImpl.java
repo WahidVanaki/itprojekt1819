@@ -20,9 +20,12 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	}
 	
 	@Override
-	public Nutzer createNutzer(String email) throws IllegalArgumentException {
+	public Nutzer createNutzer(String email, String vorname, String nachname, String nickname) throws IllegalArgumentException {
 		Nutzer nutzer = new Nutzer();
 		nutzer.setEmail(email);
+		nutzer.setVorname(vorname);
+		nutzer.setNachname(nachname);
+		nutzer.setNickname(nickname);
 		return this.nutzerMapper.createNutzer(nutzer);
 	}
 
@@ -39,6 +42,9 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		}
 	}
 	
+	public void saveNutzer(Nutzer nutzer) throws IllegalArgumentException {
+		nutzerMapper.updateNutzer(nutzer);
+	}
 	
 
 }

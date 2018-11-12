@@ -34,6 +34,10 @@ public class LoginInfo implements Serializable{
 	 */
 	private String emailAddress = "";
 	
+	private String vorname = "";
+	
+	private String nachname = "";
+	
 	/**
 	 * Abspeichern des Nicknamen
 	 */
@@ -117,5 +121,21 @@ public class LoginInfo implements Serializable{
 	 */
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	public String getVorname() {
+		return vorname;
+	}
+
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
+	}
+
+	public String getNachname() {
+		return nachname;
+	}
+
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
 	}
 }

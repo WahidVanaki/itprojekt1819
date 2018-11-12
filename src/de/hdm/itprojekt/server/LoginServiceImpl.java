@@ -25,6 +25,7 @@ public class LoginServiceImpl extends RemoteServiceServlet implements LoginServi
 			logInInfo.setLoggedIn(true);
 			logInInfo.setEmailAddress(user.getEmail());
 			logInInfo.setNickname(user.getNickname());
+			
 			logInInfo.setLogoutUrl(userService.createLogoutURL(requestUri));
 		} else {
 			logInInfo.setLoggedIn(false);
