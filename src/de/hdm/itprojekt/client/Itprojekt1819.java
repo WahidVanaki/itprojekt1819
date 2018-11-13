@@ -1,10 +1,16 @@
 package de.hdm.itprojekt.client;
 
+import de.hdm.itprojekt.client.gui.AllAbonnementView;
+import de.hdm.itprojekt.client.gui.Footer;
+import de.hdm.itprojekt.client.gui.Menubar;
+import de.hdm.itprojekt.client.gui.StartSeiteForm;
 import de.hdm.itprojekt.shared.FieldVerifier;
 import de.hdm.itprojekt.shared.LoginService;
 import de.hdm.itprojekt.shared.LoginServiceAsync;
 import de.hdm.itprojekt.shared.SocialMediaAdminAsync;
 import de.hdm.itprojekt.shared.bo.Nutzer;
+import de.hdm.itprojekt.shared.bo.Pinnwand;
+import de.hdm.itprojekt.client.gui.MeinProfil;
 
 import java.util.ArrayList;
 
@@ -16,6 +22,7 @@ import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.user.cellview.client.DataGrid;
+import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -87,13 +94,14 @@ public class Itprojekt1819 implements EntryPoint {
 	 * existiert. Der User wird weitergeleitet auf den Social Media Pinnwand
 	 */
 	private void loadPinnwand() {
-
-		// AUFRUF DES BAUMS
-		// CustomTreeModel ctm = new CustomTreeModel();
+		Footer ft = new Footer();
+		StartSeiteForm st = new StartSeiteForm();
+		AllAbonnementView ab = new AllAbonnementView();
 		RootPanel.get("leftmenutree").clear();
-		// RootPanel.get("leftmenutree").add(child);
-
+		RootPanel.get("leftmenutree").add(ab);
 		signOutAnchor.setHref(loginInfo.getLogoutUrl());
+
+		Menubar mb = new Menubar();
 
 	}
 
@@ -256,11 +264,12 @@ public class Itprojekt1819 implements EntryPoint {
 
 			@Override
 			public void onSuccess(Nutzer result) {
-				result = nutzer;
+				
 				Window.alert("Ihr Nutzer wurde erfolgreich angelegt");
 				Cookies.setCookie("signout", loginInfo.getLogoutUrl());
 				Cookies.setCookie("email", result.getEmail());
 				Cookies.setCookie("id", result.getId() + "");
+				socialMediaVerwaltung.createPinnwand(result.getId(), new PinnwandCallback());
 				loadPinnwand();
 			}
 
@@ -300,6 +309,32 @@ public class Itprojekt1819 implements EntryPoint {
 
 			}
 
+		}
+		
+		class PinnwandCallback implements AsyncCallback<Pinnwand>{
+
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+				Window.alert("Fehler " + caught.getMessage());
+			}
+
+			@Override
+			public void onSuccess(Pinnwand result) {
+				// TODO Auto-generated method stub
+				Window.alert("Eine Pinnwand wurde für Sie gleichzeitig erstellt.");
+			}
+			
+		}
+		
+		public class MeinProfilBearbeiten implements Command {
+
+			@Override
+			public void execute() {
+				MeinProfil meinprofilseite = new MeinProfil();
+				RootPanel.get("content").clear();
+//				RootPanel.get("content").add(meinprofilseite);
+			}
 		}
 
 	}

@@ -105,6 +105,28 @@ public class PinnwandMapper {
 		}
 	}
 
+	public void deletePinnwandNutzerID(Pinnwand pinnwand) {
+
+		Connection con = DBConnection.connection();
+
+		try {
+			PreparedStatement stmt = con.prepareStatement("DELETE FROM pinnwand WHERE nutzerid= ?");
+
+			stmt.setInt(1, pinnwand.getNutzerID());
+
+			stmt.executeUpdate();
+		} catch (SQLException e2) {
+			e2.printStackTrace();
+		} finally {
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+	}
+	
 	public Vector<Pinnwand> findAllPinnwand() {
 
 		Connection con = DBConnection.connection();

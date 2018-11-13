@@ -63,8 +63,9 @@ public class NutzerMapper {
 			 * Zunächst schauen wir nach, welches der momentan höchste
 			 */
 			ResultSet rs = stmt.executeQuery("SELECT MAX(id) AS maxid " + "FROM nutzer");
+			
 			if (rs.next()) {
-
+				nutzer.setId(rs.getInt("maxid")+1);
 				/**
 				 * Druchführen der Einfüge Operation via Prepared Statement
 				 */
@@ -72,6 +73,8 @@ public class NutzerMapper {
 						"INSERT INTO nutzer (id, vorname, nachname, nickname, email) VALUES (?, ?, ?, ?, ?) ",
 
 						Statement.RETURN_GENERATED_KEYS);
+				
+				System.out.println();
 				stmt1.setInt(1, nutzer.getId());
 				stmt1.setString(2, nutzer.getVorname());
 				stmt1.setString(3, nutzer.getNachname());
@@ -153,6 +156,7 @@ public class NutzerMapper {
 			PreparedStatement stmt = con.prepareStatement("DELETE FROM nutzer WHERE id= ?");
 
 			stmt.setInt(1, nutzer.getId());
+			
 			stmt.executeUpdate();
 
 		} catch (SQLException e2) {
@@ -171,7 +175,6 @@ public class NutzerMapper {
 	 * Methode "findAllNutzer" um alle Nutzer aus dem Vector<Nutzer>
 	 * zurückzugeben
 	 * 
-	 * @param nutzerid
 	 * @return result - gibt als Result alle Nutzer zurück
 	 */
 	public Vector<Nutzer> findAllNutzer() {
