@@ -2,6 +2,7 @@ package de.hdm.itprojekt.client.gui;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
@@ -23,14 +24,20 @@ private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.
 	private TextBox nB = new TextBox();
 	private TextBox vB = new TextBox();
 	private TextBox nickB = new TextBox();
+	private TextBox emailB = new TextBox();
+
 	private Label nT = new Label("Nachname: ");
 	private Label vT = new Label("Vorname: ");
 	private Label nickT = new Label("Nickname: ");
+	private Label emailT = new Label("Email: ");
+
 	
 	private Label updateLabel = new Label("Hier können Sie ihre Daten ändern: ");
 	private Button speichern = new Button("Speichern");
 	private Button abbrechen = new Button("Abbrechen");
 	private FlexTable ft = new FlexTable();
+	
+	private Nutzer nutzer = null;
 	
 	public DialogBoxNutzerUpdate(){
 		
@@ -43,9 +50,10 @@ private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.
 		ft.setWidget(7, 0, nB);
 		ft.setWidget(9, 0, nickT);
 		ft.setWidget(11, 0, nickB);
-		
-		ft.setWidget(14, 0, speichern);
-		ft.setWidget(14, 4, abbrechen);
+		ft.setWidget(13, 0, emailT);
+		ft.setWidget(15, 0, emailB);
+		ft.setWidget(17, 0, speichern);
+		ft.setWidget(17, 4, abbrechen);
 		
 		vp.add(ft);
 		
@@ -75,7 +83,7 @@ private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.
 			MeinProfil meinprofil = new MeinProfil();
 			RootPanel.get("content").clear();
 			RootPanel.get("content").add(meinprofil);
-		hide();
+			hide();
 		}
 		
 	}

@@ -67,7 +67,6 @@ public class AllAbonnementView extends LeftSideFrame{
 		public void onClick(ClickEvent event) {
 			// TODO Auto-generated method stub
 			DialogBoxAbonnieren abonnierenSuchen = new DialogBoxAbonnieren();
-			Window.alert("Funktioniert");
 			RootPanel.get("content").clear();
 			RootPanel.get("content").add(abonnierenSuchen);
 		}

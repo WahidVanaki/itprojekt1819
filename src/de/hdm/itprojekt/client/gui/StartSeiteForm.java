@@ -7,6 +7,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
@@ -22,8 +23,9 @@ public class StartSeiteForm extends MainFrame {
 
 	private VerticalPanel vp = new VerticalPanel();
 	private HTML headline = new HTML("<h2>Willkommen auf deiner Pinnwand</h2>");
+	private Label textLabel = new Label("Bitte erstellen Sie einen Beitrag");
 	private TextArea textbeitragVerfassen = new TextArea();
-	private Button textbeitragPosten = new Button("Beitrag teilen");
+	private Button textbeitragPosten = new Button("Erstellen");
 
 	public StartSeiteForm() {
 		super.onLoad();
@@ -35,10 +37,12 @@ public class StartSeiteForm extends MainFrame {
 
 		AllAbonnementView allAbonnementview = new AllAbonnementView();
 		Menubar menubar = new Menubar();
+		textbeitragPosten.setStylePrimaryName("gwt-Button");
 		textbeitragVerfassen.setHeight("1000");
 		textbeitragVerfassen.setWidth("1000");
 		textbeitragPosten.addClickHandler(new PostenHandler());
 		vp.add(headline);
+		vp.add(textLabel);
 		vp.add(textbeitragVerfassen);
 		vp.add(textbeitragPosten);
 		RootPanel.get("content").add(vp);
@@ -53,7 +57,6 @@ public class StartSeiteForm extends MainFrame {
 			textbeitrag.setId(Integer.parseInt(Cookies.getCookie("id")));
 			socialMediaVerwaltung.createTextbeitrag(textbeitrag.getPinnwandID(), textbeitrag.getNutzerID(),
 					textbeitrag.getKommentarID(), textbeitragVerfassen.getValue(), new CreateTextbeitragCallback());
-			Window.alert("funktioniert");
 		}
 
 	}

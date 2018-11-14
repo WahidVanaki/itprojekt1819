@@ -327,7 +327,7 @@ public class Itprojekt1819 implements EntryPoint {
 			
 		}
 		
-		public class MeinProfilBearbeiten implements Command {
+		class MeinProfilBearbeiten implements Command {
 
 			@Override
 			public void execute() {

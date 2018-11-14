@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 import de.hdm.itprojekt.client.LoginInfo;
 import de.hdm.itprojekt.shared.LoginService;
 import de.hdm.itprojekt.shared.LoginServiceAsync;
+import de.hdm.itprojekt.shared.bo.Nutzer;
 
 
 public class Menubar extends MenuBar {
@@ -24,9 +25,11 @@ public class Menubar extends MenuBar {
 	private HorizontalPanel hp = new HorizontalPanel();
 	private MenuBar menubar = new MenuBar();
 	private MenuBar menubarLeftSight = new MenuBar();
-	private Button buttonSeite = new Button("Mein Profil");
-	
+	private Button buttonSeite = new Button("Profil");
+	private Button meinePinnwand = new Button("Pinnwand");
 
+	
+	private Nutzer nutzer = null;
 
 	
 	public Menubar() {
@@ -47,6 +50,7 @@ public class Menubar extends MenuBar {
 		LoginServiceAsync loginService = GWT.create(LoginService.class);
 		loginService.login(GWT.getHostPageBaseURL() + "Itprojekt1819.html", new LoginCallback());
 
+		meinePinnwand.addClickHandler(new StartSeiteClickHandler());
 		buttonSeite.addClickHandler(new ProfilClickHandler());
 		menubar.setAutoOpen(true);
 		menubar.setAnimationEnabled(true);
@@ -62,6 +66,7 @@ public class Menubar extends MenuBar {
 				Window.open(signOutLink.getHref(), "_self", "");
 			}
 		});
+		hp.add(meinePinnwand);
 		hp.add(buttonSeite);
 		hp.add(menubar);
 		hp.add(menubarLeftSight);
@@ -102,6 +107,20 @@ public class Menubar extends MenuBar {
 			RootPanel.get("content").clear();
 			RootPanel.get("content").add(mp);
 			
+		}
+		
+	}
+	
+	class StartSeiteClickHandler implements ClickHandler {
+
+		@Override
+		public void onClick(ClickEvent event) {
+			// TODO Auto-generated method stub
+			StartSeiteForm fr = new StartSeiteForm();
+			RootPanel.get("content").clear();
+			RootPanel.get("content").add(fr);
+			
+		
 		}
 		
 	}
