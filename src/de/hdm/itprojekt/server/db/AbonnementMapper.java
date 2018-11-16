@@ -111,7 +111,7 @@ public class AbonnementMapper {
 		
 		
 
-			stmt.executeQuery();
+			stmt.executeUpdate();
 
 			System.out.println("Updated");
 

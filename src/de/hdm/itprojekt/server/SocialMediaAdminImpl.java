@@ -112,10 +112,6 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	
 	@Override
 	public void saveNutzer(Nutzer nutzer) throws IllegalArgumentException {
-		nutzer.setNachname(nutzer.getNachname());
-		nutzer.setVorname(nutzer.getVorname());
-		nutzer.setNickname(nutzer.getNickname());
-		
 		nutzerMapper.updateNutzer(nutzer);
 	}
 	

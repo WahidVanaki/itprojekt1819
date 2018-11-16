@@ -63,9 +63,9 @@ public class NutzerMapper {
 			 * Zunächst schauen wir nach, welches der momentan höchste
 			 */
 			ResultSet rs = stmt.executeQuery("SELECT MAX(id) AS maxid " + "FROM nutzer");
-			
+
 			if (rs.next()) {
-				nutzer.setId(rs.getInt("maxid")+1);
+				nutzer.setId(rs.getInt("maxid") + 1);
 				/**
 				 * Druchführen der Einfüge Operation via Prepared Statement
 				 */
@@ -73,7 +73,7 @@ public class NutzerMapper {
 						"INSERT INTO nutzer (id, vorname, nachname, nickname, email) VALUES (?, ?, ?, ?, ?) ",
 
 						Statement.RETURN_GENERATED_KEYS);
-				
+
 				System.out.println();
 				stmt1.setInt(1, nutzer.getId());
 				stmt1.setString(2, nutzer.getVorname());
@@ -109,15 +109,16 @@ public class NutzerMapper {
 			/**
 			 * Durchführung der Update-Operation via Prepared Statement
 			 */
-			PreparedStatement stmt = con.prepareStatement(
-					"UPDATE `nutzer` SET `vorname`= ? `nachname`= ? `nickname`= ? `email`= ? WHERE id= ?");
+			PreparedStatement stmt = con
+					.prepareStatement("UPDATE nutzer SET vorname= ?, nachname= ?, nickname= ?, email= ? WHERE id = ?");
 
 			stmt.setString(1, nutzer.getVorname());
 			stmt.setString(2, nutzer.getNachname());
 			stmt.setString(3, nutzer.getNickname());
 			stmt.setString(4, nutzer.getEmail());
+			stmt.setInt(5, nutzer.getId());
 
-			stmt.executeQuery();
+			stmt.executeUpdate();
 
 			System.out.println("Updated");
 
@@ -156,7 +157,7 @@ public class NutzerMapper {
 			PreparedStatement stmt = con.prepareStatement("DELETE FROM nutzer WHERE id= ?");
 
 			stmt.setInt(1, nutzer.getId());
-			
+
 			stmt.executeUpdate();
 
 		} catch (SQLException e2) {
@@ -246,6 +247,7 @@ public class NutzerMapper {
 
 				nutzer.setId(rs.getInt("id"));
 				nutzer.setEmail(rs.getString("email"));
+				nutzer.setNickname(rs.getString("nickname"));
 
 				n = nutzer;
 			}
@@ -293,6 +295,9 @@ public class NutzerMapper {
 				Nutzer nutzer = new Nutzer();
 
 				nutzer.setId(rs.getInt("id"));
+				nutzer.setVorname(rs.getString("vorname"));
+				nutzer.setNachname(rs.getString("nachname"));
+				nutzer.setNickname(rs.getString("nickname"));
 				nutzer.setEmail(rs.getString("email"));
 
 				n = nutzer;

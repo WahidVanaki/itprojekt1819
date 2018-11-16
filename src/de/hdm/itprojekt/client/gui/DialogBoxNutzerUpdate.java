@@ -2,6 +2,7 @@ package de.hdm.itprojekt.client.gui;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -16,10 +17,10 @@ import de.hdm.itprojekt.client.ClientsideSettings;
 import de.hdm.itprojekt.shared.SocialMediaAdminAsync;
 import de.hdm.itprojekt.shared.bo.Nutzer;
 
-public class DialogBoxNutzerUpdate extends DialogBox{
+public class DialogBoxNutzerUpdate extends DialogBox {
 
-private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.getSocialMediaVerwaltung();
-	
+	private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.getSocialMediaVerwaltung();
+
 	private VerticalPanel vp = new VerticalPanel();
 	private TextBox nB = new TextBox();
 	private TextBox vB = new TextBox();
@@ -31,16 +32,19 @@ private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.
 	private Label nickT = new Label("Nickname: ");
 	private Label emailT = new Label("Email: ");
 
-	
 	private Label updateLabel = new Label("Hier können Sie ihre Daten ändern: ");
 	private Button speichern = new Button("Speichern");
 	private Button abbrechen = new Button("Abbrechen");
 	private FlexTable ft = new FlexTable();
-	
-	private Nutzer nutzer = null;
-	
-	public DialogBoxNutzerUpdate(){
-		
+
+	public DialogBoxNutzerUpdate() {
+
+		Nutzer n = new Nutzer();
+		n.setId(Integer.parseInt(Cookies.getCookie("id")));
+		n.setEmail(Cookies.getCookie("email"));
+
+		socialMediaVerwaltung.findNutzerByID(n.getId(), new BearbeitenCallback());
+
 		speichern.addClickHandler(new UpdateClickHandler());
 		abbrechen.addClickHandler(new AbbrechenClickHandler());
 		ft.setWidget(0, 0, updateLabel);
@@ -54,53 +58,94 @@ private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.
 		ft.setWidget(15, 0, emailB);
 		ft.setWidget(17, 0, speichern);
 		ft.setWidget(17, 4, abbrechen);
-		
+
 		vp.add(ft);
-		
+
 		this.add(vp);
-		
-		
+
 	}
-	
+
+	public DialogBoxNutzerUpdate(Nutzer nutzer) {
+
+		Nutzer n = new Nutzer();
+		n.setId(Integer.parseInt(Cookies.getCookie("id")));
+
+		socialMediaVerwaltung.saveNutzer(n, new CreateNutzerCallback());
+		socialMediaVerwaltung.findNutzerByID(n.getId(), new BearbeitenCallback());
+
+		speichern.addClickHandler(new UpdateClickHandler());
+		abbrechen.addClickHandler(new AbbrechenClickHandler());
+
+	}
+
 	class UpdateClickHandler implements ClickHandler {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			// TODO Auto-generated method stub
 			Nutzer n = new Nutzer();
-//			socialMediaVerwaltung.saveNutzer(n, new SpeichernCallback<Nutzer>);
-		
-//			socialMediaVerwaltung.createAbonnement(abo.setNutzerID(), abo.setPinnwandID(), new AbonnierenAsyncCallback<Abonnement>);
+			n.setId(Integer.parseInt(Cookies.getCookie("id")));
+			n.setVorname(vB.getValue());
+			n.setNachname(nB.getValue());
+			n.setNickname(nickB.getValue());
+			n.setEmail(emailB.getValue());
+
+			socialMediaVerwaltung.saveNutzer(n, new CreateNutzerCallback());
+
 		}
-		
+
 	}
-	
-	class AbbrechenClickHandler implements ClickHandler{
+
+	class AbbrechenClickHandler implements ClickHandler {
 
 		@Override
 		public void onClick(ClickEvent event) {
 			// TODO Auto-generated method stub
-			MeinProfil meinprofil = new MeinProfil();
+			StartSeiteForm meinprofil = new StartSeiteForm();
 			RootPanel.get("content").clear();
 			RootPanel.get("content").add(meinprofil);
 			hide();
 		}
-		
+
 	}
-	
-	class SpeichernCallback implements AsyncCallback<Nutzer>{
+
+	// Zum Anzeigen der Profildaten
+	class BearbeitenCallback implements AsyncCallback<Nutzer> {
 
 		@Override
 		public void onFailure(Throwable caught) {
-			// TODO Auto-generated method stub
-			
+			Window.alert("Fehler beim Laden des Profils" + caught.getMessage());
+
 		}
 
 		@Override
 		public void onSuccess(Nutzer result) {
-			// TODO Auto-generated method stub
-			
+			vB.setValue(result.getVorname());
+			nB.setValue(result.getNachname());
+			nickB.setValue(result.getNickname());
+			emailB.setValue(result.getEmail());
 		}
-		
+
 	}
+
+	public class CreateNutzerCallback implements AsyncCallback<Void> {
+
+		@Override
+		public void onFailure(Throwable caught) {
+			Window.alert("Fehler " + caught.getMessage());
+
+		}
+
+		@Override
+		public void onSuccess(Void result) {
+			// TODO Auto-generated method stub
+			Window.alert("Nutzer erfolgreich geändert");
+			StartSeiteForm st = new StartSeiteForm();
+
+			RootPanel.get("content").clear();
+			RootPanel.get("content").add(st);
+
+		}
+
+	}
+
 }

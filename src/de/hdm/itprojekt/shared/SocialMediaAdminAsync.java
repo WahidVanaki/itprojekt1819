@@ -18,7 +18,6 @@ public interface SocialMediaAdminAsync {
 
 	void checkEmail(String email, AsyncCallback<Nutzer> callback);
 
-	void saveNutzer(Nutzer nutzer, AsyncCallback<Void> callback);
 
 	void createAbonnement(int nutzerid, int pinnwandid, AsyncCallback<Abonnement> callback);
 
@@ -76,5 +75,7 @@ public interface SocialMediaAdminAsync {
 	void deleteKommentar(Kommentar kommentar, AsyncCallback<Void> callback);
 
 	void deletePinnwand(Pinnwand pinnwand, AsyncCallback<Void> callback);
+
+	void saveNutzer(Nutzer nutzer, AsyncCallback<Void> callback);
 
 }

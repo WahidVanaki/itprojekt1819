@@ -67,7 +67,7 @@ public class PinnwandMapper {
 			stmt.setInt(1, pinnwand.getId());
 			stmt.setInt(2, pinnwand.getNutzerID());
 
-			stmt.executeQuery();
+			stmt.executeUpdate();
 
 			System.out.println("Updated");
 		} catch (SQLException e2) {

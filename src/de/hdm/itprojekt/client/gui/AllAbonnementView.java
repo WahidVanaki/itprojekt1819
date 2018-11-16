@@ -36,7 +36,7 @@ public class AllAbonnementView extends LeftSideFrame{
 		abonnieren.addClickHandler(new meinePinnwandClickHandler());
 		Nutzer nutzer = new Nutzer();
 		Nutzer nutzer2 = new Nutzer();
-		nutzer.setNickname("MaschineTest");
+		nutzer.setNickname("Test");
 		nutzer2.setNickname("RichtigeGruppe");
 		
 

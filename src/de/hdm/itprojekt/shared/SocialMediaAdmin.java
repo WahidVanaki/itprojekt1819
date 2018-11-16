@@ -21,8 +21,6 @@ public interface SocialMediaAdmin extends RemoteService {
 	public Nutzer checkEmail(String email) throws IllegalArgumentException;
 
 	Nutzer createNutzer(String email, String vorname, String nachname, String nickname) throws IllegalArgumentException;
-
-	public void saveNutzer(Nutzer nutzer) throws IllegalArgumentException;
 	
 	Abonnement createAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException;
 
@@ -79,6 +77,9 @@ public interface SocialMediaAdmin extends RemoteService {
 	void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException;
 
 	void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException;
+
+	void saveNutzer(Nutzer nutzer) throws IllegalArgumentException;
+
 
 
 }

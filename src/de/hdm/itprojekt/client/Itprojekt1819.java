@@ -1,6 +1,7 @@
 package de.hdm.itprojekt.client;
 
 import de.hdm.itprojekt.client.gui.AllAbonnementView;
+import de.hdm.itprojekt.client.gui.DialogBoxNutzerUpdate;
 import de.hdm.itprojekt.client.gui.Footer;
 import de.hdm.itprojekt.client.gui.Menubar;
 import de.hdm.itprojekt.client.gui.StartSeiteForm;
@@ -10,7 +11,6 @@ import de.hdm.itprojekt.shared.LoginServiceAsync;
 import de.hdm.itprojekt.shared.SocialMediaAdminAsync;
 import de.hdm.itprojekt.shared.bo.Nutzer;
 import de.hdm.itprojekt.shared.bo.Pinnwand;
-import de.hdm.itprojekt.client.gui.MeinProfil;
 
 import java.util.ArrayList;
 
@@ -100,7 +100,7 @@ public class Itprojekt1819 implements EntryPoint {
 		RootPanel.get("leftmenutree").clear();
 		RootPanel.get("leftmenutree").add(ab);
 		signOutAnchor.setHref(loginInfo.getLogoutUrl());
-
+//		DialogBoxNutzerUpdate np = new DialogBoxNutzerUpdate();
 		Menubar mb = new Menubar();
 
 	}
@@ -289,7 +289,6 @@ public class Itprojekt1819 implements EntryPoint {
 						nickT.getValue(), new CreateNutzerCallback());
 				hide();
 				// neue nested class und neue dialogbox
-
 			}
 		}
 
@@ -327,15 +326,7 @@ public class Itprojekt1819 implements EntryPoint {
 			
 		}
 		
-		class MeinProfilBearbeiten implements Command {
-
-			@Override
-			public void execute() {
-				MeinProfil meinprofilseite = new MeinProfil();
-				RootPanel.get("content").clear();
-//				RootPanel.get("content").add(meinprofilseite);
-			}
-		}
-
 	}
+	
+	
 }

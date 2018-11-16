@@ -12,13 +12,17 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.MenuBar;
 import com.google.gwt.user.client.ui.RootPanel;
 
+import de.hdm.itprojekt.client.ClientsideSettings;
 import de.hdm.itprojekt.client.LoginInfo;
 import de.hdm.itprojekt.shared.LoginService;
 import de.hdm.itprojekt.shared.LoginServiceAsync;
+import de.hdm.itprojekt.shared.SocialMediaAdminAsync;
 import de.hdm.itprojekt.shared.bo.Nutzer;
 
 
 public class Menubar extends MenuBar {
+	
+	private static SocialMediaAdminAsync socialMediaVerwaltung = ClientsideSettings.getSocialMediaVerwaltung();
 
 	private LoginInfo loginInfo = null;
 	private Anchor signOutLink = new Anchor("Sign Out");
@@ -103,9 +107,9 @@ public class Menubar extends MenuBar {
 		@Override
 		public void onClick(ClickEvent event) {
 			// TODO Auto-generated method stub
-			MeinProfil mp = new MeinProfil();
+			DialogBoxNutzerUpdate du = new DialogBoxNutzerUpdate();
 			RootPanel.get("content").clear();
-			RootPanel.get("content").add(mp);
+			RootPanel.get("content").add(du);
 			
 		}
 		
@@ -124,6 +128,5 @@ public class Menubar extends MenuBar {
 		}
 		
 	}
-	
 	
 }
