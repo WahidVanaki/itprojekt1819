@@ -24,7 +24,7 @@ public abstract class LeftSideFrame extends HorizontalPanel {
 
 		RootPanel.get("leftmenutree").clear();
 
-		run();
+		this.run();
 	}
 
 	protected abstract void run();

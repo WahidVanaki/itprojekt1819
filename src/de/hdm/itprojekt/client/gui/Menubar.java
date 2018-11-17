@@ -31,6 +31,7 @@ public class Menubar extends MenuBar {
 	private MenuBar menubarLeftSight = new MenuBar();
 	private Button buttonSeite = new Button("Profil");
 	private Button meinePinnwand = new Button("Pinnwand");
+	private Button ausloggen = new Button("Ausloggen");
 
 	
 	private Nutzer nutzer = null;
@@ -56,6 +57,7 @@ public class Menubar extends MenuBar {
 
 		meinePinnwand.addClickHandler(new StartSeiteClickHandler());
 		buttonSeite.addClickHandler(new ProfilClickHandler());
+		ausloggen.addClickHandler(new AusloggenClickHandler());
 		menubar.setAutoOpen(true);
 		menubar.setAnimationEnabled(true);
 		menubar.setWidth("auto");
@@ -63,15 +65,17 @@ public class Menubar extends MenuBar {
 		
 		menubar.addSeparator();
 		menubar.addSeparator();
+		menubar.addSeparator();
 		menubar.setStylePrimaryName("menuBarImage");
-		menubarLeftSight.addItem("Ausloggen", new Command() {
-			public void execute() {
-				signOutLink.setHref(loginInfo.getLogoutUrl());
-				Window.open(signOutLink.getHref(), "_self", "");
-			}
-		});
+//		menubarLeftSight.addItem("Ausloggen", new Command() {
+//			public void execute() {
+//				signOutLink.setHref(loginInfo.getLogoutUrl());
+//				Window.open(signOutLink.getHref(), "_self", "");
+//			}
+//		});
 		hp.add(meinePinnwand);
 		hp.add(buttonSeite);
+		hp.add(ausloggen);
 		hp.add(menubar);
 		hp.add(menubarLeftSight);
 
@@ -125,6 +129,18 @@ public class Menubar extends MenuBar {
 			RootPanel.get("content").add(fr);
 			
 		
+		}
+		
+	}
+	
+	class AusloggenClickHandler implements ClickHandler {
+
+		@Override
+		public void onClick(ClickEvent event) {
+			// TODO Auto-generated method stub
+			signOutLink.setHref(loginInfo.getLogoutUrl());
+			Window.open(signOutLink.getHref(), "_self", "");
+			
 		}
 		
 	}

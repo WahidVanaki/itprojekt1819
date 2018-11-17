@@ -8,6 +8,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
@@ -26,6 +27,8 @@ public class StartSeiteForm extends MainFrame {
 	private Label textLabel = new Label("Bitte erstellen Sie einen Beitrag");
 	private TextArea textbeitragVerfassen = new TextArea();
 	private Button textbeitragPosten = new Button("Erstellen");
+	
+	private RichTextArea r = new RichTextArea();
 
 	public StartSeiteForm() {
 		super.onLoad();

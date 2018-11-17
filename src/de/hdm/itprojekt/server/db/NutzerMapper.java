@@ -242,11 +242,13 @@ public class NutzerMapper {
 			 * Für jeden Eintrag im Suchergebnis wird nun ein Nutzer-Objekt
 			 * erstellt.
 			 */
-			if (rs.next()) {
+			while (rs.next()) {
 				Nutzer nutzer = new Nutzer();
 
 				nutzer.setId(rs.getInt("id"));
 				nutzer.setEmail(rs.getString("email"));
+				nutzer.setVorname(rs.getString("vorname"));
+				nutzer.setNachname(rs.getString("nachname"));
 				nutzer.setNickname(rs.getString("nickname"));
 
 				n = nutzer;
@@ -291,7 +293,7 @@ public class NutzerMapper {
 			 * Für jeden Eintrag im Suchergebnis wird nun ein Nutzer-Objekt
 			 * erstellt.
 			 */
-			if (rs.next()) {
+			while (rs.next()) {
 				Nutzer nutzer = new Nutzer();
 
 				nutzer.setId(rs.getInt("id"));

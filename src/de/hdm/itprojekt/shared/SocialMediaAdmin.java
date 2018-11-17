@@ -41,10 +41,10 @@ public interface SocialMediaAdmin extends RemoteService {
 	void deleteNutzer(Nutzer nutzer) throws IllegalArgumentException;
 
 	Vector<Abonnement> findAllAbonnement() throws IllegalArgumentException;
-
+//
 	Vector<Abonnement> findAbonnementByNutzerID(int nutzerid) throws IllegalArgumentException;
-
-	Vector<Abonnement> findAbonnementByPinnwandID(int pinnwandid) throws IllegalArgumentException;
+//
+//	Vector<Abonnement> findAbonnementByPinnwandID(int pinnwandid) throws IllegalArgumentException;
 
 	Vector<Nutzer> findAllNutzer() throws IllegalArgumentException;
 
@@ -79,6 +79,8 @@ public interface SocialMediaAdmin extends RemoteService {
 	void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException;
 
 	void saveNutzer(Nutzer nutzer) throws IllegalArgumentException;
+
+	Vector<Nutzer> findNutzerByAbo(int nutzerID) throws IllegalArgumentException;
 
 
 

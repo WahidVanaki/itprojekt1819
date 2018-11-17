@@ -179,11 +179,11 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	public Vector<Abonnement> findAbonnementByNutzerID(int nutzerid) throws IllegalArgumentException {
 		return this.abonnementMapper.findAbonnementByNutzerID(nutzerid);
 	}
-	
-	@Override
-	public Vector<Abonnement> findAbonnementByPinnwandID(int pinnwandid) throws IllegalArgumentException {
-		return this.abonnementMapper.findAbonnementByPinnwandID(pinnwandid);
-	}
+//	
+//	@Override
+//	public Vector<Abonnement> findAbonnementByPinnwandID(int pinnwandid) throws IllegalArgumentException {
+//		return this.abonnementMapper.findAbonnementByPinnwandID(pinnwandid);
+//	}
 	
 	@Override
 	public Vector<Nutzer> findAllNutzer() throws IllegalArgumentException {
@@ -243,5 +243,25 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	@Override
 	public Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException {
 		return this.textbeitragMapper.findTextbeitragByPinnwandID(pinnwandid);
+	}
+	
+	@Override
+	public Vector<Nutzer> findNutzerByAbo(int nutzerID) throws IllegalArgumentException{
+		
+		Vector<Abonnement> aboV = findAbonnementByNutzerID(nutzerID);
+		
+		Vector<Pinnwand> pV = findAllPinnwand();
+		
+		Vector<Nutzer> nV = new Vector<Nutzer>();
+		
+		for(int i = 0; i<aboV.size(); i++){
+			for(int a = 0; a<pV.size(); a++){
+				if(aboV.elementAt(i).getNutzerID() == pV.elementAt(a).getNutzerID()){
+					nV.add(findNutzerByID(aboV.elementAt(i).getPinnwandID()));
+				}
+			}
+		}
+		return nV;
+		
 	}
 }

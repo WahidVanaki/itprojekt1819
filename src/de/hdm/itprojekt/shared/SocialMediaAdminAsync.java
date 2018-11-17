@@ -41,8 +41,8 @@ public interface SocialMediaAdminAsync {
 	void findAllAbonnement(AsyncCallback<Vector<Abonnement>> callback);
 
 	void findAbonnementByNutzerID(int nutzerid, AsyncCallback<Vector<Abonnement>> callback);
-
-	void findAbonnementByPinnwandID(int pinnwandid, AsyncCallback<Vector<Abonnement>> callback);
+//
+//	void findAbonnementByPinnwandID(int pinnwandid, AsyncCallback<Vector<Abonnement>> callback);
 
 	void findAllNutzer(AsyncCallback<Vector<Nutzer>> callback);
 
@@ -77,5 +77,7 @@ public interface SocialMediaAdminAsync {
 	void deletePinnwand(Pinnwand pinnwand, AsyncCallback<Void> callback);
 
 	void saveNutzer(Nutzer nutzer, AsyncCallback<Void> callback);
+
+	void findNutzerByAbo(int nutzerID, AsyncCallback<Vector<Nutzer>> callback);
 
 }

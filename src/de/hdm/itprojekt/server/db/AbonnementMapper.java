@@ -225,7 +225,7 @@ public class AbonnementMapper {
 
 		try {
 
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM abonnement WHERE `id` = ?");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM abonnement WHERE `nutzerid` = ?");
 
 			stmt.setInt(1, nutzerID);
 			ResultSet rs = stmt.executeQuery();
@@ -234,7 +234,7 @@ public class AbonnementMapper {
 			 * Für jeden Eintrag im Suchergebnis wird nun ein Nutzer-Objekt
 			 * erstellt.
 			 */
-			if (rs.next()) {
+			while (rs.next()) {
 				Abonnement abonnement = new Abonnement();
 
 				abonnement.setId(rs.getInt("id"));

@@ -159,7 +159,7 @@ public class PinnwandMapper {
 		Pinnwand pinnwand = new Pinnwand();
 
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM pinnwand WHERE id= ?");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM pinnwand WHERE nutzerid= ?");
 
 			stmt.setInt(1, nutzerID);
 
