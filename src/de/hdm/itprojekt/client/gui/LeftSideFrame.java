@@ -22,7 +22,7 @@ public abstract class LeftSideFrame extends HorizontalPanel {
 		 */
 		super.onLoad();
 
-		RootPanel.get("leftmenutree").clear();
+//		RootPanel.get("leftmenutree").clear();
 
 		this.run();
 	}

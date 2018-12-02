@@ -1,73 +1,10 @@
 /** Set ids using widget.getElement().setId("idOfElement") */
 /*SEITENAUFBAU*/
 html {
+	background-image: url("/images/backgroundimg.jpg");
 	background-repeat: repeat;
 	background-size: cover;
-	font-family: 'Encode Sans Condensed', cursive;
-}
-.gwt-RichTextArea {
-}
-.hasRichTextToolbar {
-  border: 0px;
-}
-.gwt-RichTextToolbar {
-  background: #e3e8f3 url(images/hborder.png) repeat-x 0px -2003px;
-  border-bottom: 1px solid #BBBBBB;
-  padding: 3px;
-  margin: 0px;
-}
-.gwt-RichTextToolbar .gwt-PushButton-up {
-  padding: 0px 1px 0px 0px;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  border-width: 1px;
-}
-.gwt-RichTextToolbar .gwt-PushButton-up-hovering {
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 0px 1px 0px 0px;
-  border-width: 1px;
-}
-.gwt-RichTextToolbar .gwt-PushButton-down {
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 0px 0px 0px 1px;
-  border-width: 1px;
-}
-.gwt-RichTextToolbar .gwt-PushButton-down-hovering {
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 0px 0px 0px 1px;
-  border-width: 1px;
-}
-.gwt-RichTextToolbar .gwt-ToggleButton-up {
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 0px 1px 0px 0px;
-  border:1px solid #bbb;
-  border-bottom: 1px solid #a0a0a0;
-}
-.gwt-RichTextToolbar .gwt-ToggleButton-up-hovering {
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 0px 1px 0px 0px;
-  border-width: 1px;
-}
-.gwt-RichTextToolbar .gwt-ToggleButton-down {
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 0px 0px 0px 1px;
-  border-width: 1px;
-}
-.gwt-RichTextToolbar .gwt-ToggleButton-down-hovering {
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 0px 0px 0px 1px;
-  border-width: 1px;
-}
-.cw-RichText {
-  border: 1px solid #BBBBBB;
-  border-spacing: 0px;
+	font-family: 'Arial', cursive;
 }
 
 body {
@@ -76,6 +13,21 @@ body {
 
 .tbody, tfoot, thead, tr, th, td {
 	vertical-align: middle !important;
+}
+#contentReport {
+	overflow: scroll;
+    width: 89%;
+    height: 650px;
+	display: inline-block;
+	border: 2px solid black;
+	box-shadow: 3px 2px 2px grey;
+    position: absolute;
+    left: 5.4%;
+    background-color: #00fcff;
+}
+
+#contentReport table {
+	width: 100%;	
 }
 
 #header {
@@ -96,23 +48,13 @@ body {
 #headline {
 	font-size: 4em;
 	color: white;
-	font-family: 'Encode Sans Condensed', Arial;
+	font-family: 'Arial';
 	font-weight: 100;
 	padding: 15px;
 	text-shadow: 1px 1px cornflowerblue;
 	letter-spacing: 0.08em;
 }
-
-#logo {
-	background-image: url("/images/logo.png");
-	background-repeat: no-repeat;
-	background-position: right;
-	height: 100px;
-	width: 100px;
-	background-size: 80%;
-	margin-right: 15px;
-}
-
+/**
 #menubar {
 	height: 40px;
 	width: 89.5%;
@@ -123,17 +65,14 @@ body {
 	background-color: rgba(255, 255, 255, 0.8);
 	box-shadow: 5px 5px 2.5px grey;
 }
-
 #menubar table tbody tr td:nth-child(2) {
     width: 100%;
 }
-
 #menubar .menuBarLabelContainer {
 	height: inherit;
 	display: inline-block;
 	margin-left: 5px;
 }
-
 #menubar .menuBarLabel {
 	padding-top: 6px;
 	padding-left: 10px;
@@ -142,7 +81,7 @@ body {
 	color: #606060;
 	display: inline-block;
 }
-
+*/
 #leftmenutree {
 	height: 650px;
 	width: 15%;
@@ -152,6 +91,66 @@ body {
 	margin-right: 1%;
 	background-color: rgba(255, 255, 255, 0.8);
 	box-shadow: 3px 2px 2px grey;
+}
+.gwt-PushButton-up,
+.gwt-PushButton-up-hovering,
+.gwt-PushButton-up-disabled,
+.gwt-PushButton-down,
+.gwt-PushButton-down-hovering,
+.gwt-PushButton-down-disabled {
+  margin: 0;
+  text-decoration: none;
+  background: url("images/hborder.png") repeat-x 0px -27px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+.gwt-PushButton-up,
+.gwt-PushButton-up-hovering,
+.gwt-PushButton-up-disabled {
+  padding: 3px 5px 3px 5px;
+}
+.gwt-PushButton-up {
+  border:1px solid #bbb;
+  border-bottom: 1px solid #a0a0a0;
+  cursor: pointer;
+  cursor: hand;
+}
+.gwt-PushButton-up-hovering {
+  border: 1px solid;
+  border-color: #939393;
+  cursor: pointer;
+  cursor: hand;
+}
+.gwt-PushButton-up-disabled {
+  border: 1px solid #bbb;
+  cursor: default;
+  opacity: .5;
+  filter: alpha(opacity=45);
+  zoom: 1;
+}
+.gwt-PushButton-down,
+.gwt-PushButton-down-hovering,
+.gwt-PushButton-down-disabled {
+  padding: 4px 4px 2px 6px;
+  outline:none;
+}
+.gwt-PushButton-down {
+  border: 1px inset #666;
+  cursor: pointer;
+  cursor: hand;
+}
+.gwt-PushButton-down-hovering {
+  border: 1px solid #939393;
+  border-top: 1px solid #333333;
+  cursor: pointer;
+  cursor: hand;
+}
+.gwt-PushButton-down-disabled {
+  border: 1px outset #ccc;
+  cursor: default;
+  opacity: 0.5;
+  filter: alpha(opacity=45);
+  zoom: 1;
 }
 
 .logoutBarContainer {
@@ -178,17 +177,6 @@ body {
 	overflow: auto;
 }
 
-.nutzerDecoratorPanel {
-	position: absolute;
-	top: 205px;
-	left: 640px;
-	border-radius: 12px;
-	width: 1px;
-	line-height: 1px;
-	border: 2px solid #bbb;
-	font-size: 1px;
-}
-
 #content .headline {
 	font-size: 2.5em;
 	width: 100%;
@@ -210,7 +198,7 @@ body {
 #footer .footerPanel {
 	height: inherit;
 	float: right;
-	color: aliceblue;
+	color: #ffffff;
 	opacity: 0.75;
 }
 
@@ -261,11 +249,6 @@ body {
 	margin-right: 5px;
 }
 
-.nutzerFormText {
-	margin-right: 10px;
-	font-size: 1.2em;
-}
-
 .landingpageText {
 	text-align: center;
 	font-size: 1.2em;
@@ -278,9 +261,8 @@ body {
 	margin-top: 20px;
 	margin-bottom: 10px;
 	text-align: center;
-	font-family: 'Encode Sans Condensed', cursive;
+	font-family: 'Arial', cursive;
 }
-
 
 /** WIDGET & PANEL FORMATIERUNGEN*/
 .loginPanel {
@@ -291,17 +273,11 @@ body {
 .loginPanel td {
 	text-align: center !important;
 }
-
+/**
 .menuBarContainerFlowPanel {
 	width: 90%;
 }
-
-.kontaktlistenViewPanel {
-	width: 250px;
-	height: 500px;
-	margin-left: 1em;
-	margin-top: 2em;
-}
+*/
 
 .cellListWidgetContainerPanel {
 	width: 80%;
@@ -312,16 +288,6 @@ body {
 
 .cellListWidgetContainerPanel table {
 	width: 100%;
-}
-
-.nutzerCellTableView {
-	margin-left: 20px;
-	margin-top: 20px;
-}
-
-.nutzerFormView {
-	margin-top: 40px;
-	margin-bottom: 40px;
 }
 
 .headlinePanel {
@@ -347,17 +313,6 @@ body {
 	margin: 2px auto;
 }
 
-.nutzerFormPanel {
-	width: 40%;
-	height: auto;
-	margin-left: 2em;
-	margin-top: 2em;
-}
-
-.nutzerFormPanel table {
-	width: 100%;
-}
-
 .buttonPanelBox {
 	margin: auto auto;
 }
@@ -381,10 +336,25 @@ body {
 }
 
 
+
 /* BUTTON FORMATIERUNGEN */
+.toolbarButton{
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+	
+}
+
+.toolbarPanel{
+		margin-left: 5px;
+		
+	
+}
+
 .impressumButton {
 	background: none;
-	color: aliceblue;
+	color: #00fcff;
 	border: none;
 	cursor: pointer;
 	text-decoration: underline;
@@ -415,26 +385,11 @@ body {
 	float: right;
 	border: none !important;
 	box-shadow: 0px 0px 3px #96A1BD !important;
-	font-family: 'Ubuntu', sans-serif !important;
+	font-family: 'Arial',  !important;
 }
 
 .searchTextBox:hover {
 	background-size: 12.5%;
-	box-shadow: 0px 0px 8px #96A1BD !important;
-}
-
-.nutzerFormTextBox {
-	background-color white;
-	height: 25px;
-	width: 200px;
-	font-size: 1.1em;
-	margin-right: 25px;
-	float: left;
-	border: none !important;
-	box-shadow: 0px 0px 3px #96A1BD !important;
-}
-
-.nutzerFormTextBox:hover {
 	box-shadow: 0px 0px 8px #96A1BD !important;
 }
 
@@ -458,7 +413,7 @@ body {
 	cursor: pointer;
 	color: white;
 	font-size: 21px;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Arial';
 	padding: 8px 0px 8px 0px;
 	text-align: center;
 	margin-top: 4.5%;
@@ -569,6 +524,8 @@ body {
 	background-color: white !important;
 }
 
+
+
 .gwt-SuggestBox {
 	margin-left: 20px;
 	display: inline-block;
@@ -586,7 +543,7 @@ body {
     border-radius: 8px;
 
 }
-
+/
 .menuBarImage {
 	background-image: url("/images/arrow_down.svg") !important;
 	background-repeat: no-repeat;
@@ -611,7 +568,7 @@ body {
 
 .gwt-MenuBar .gwt-MenuItem {
    cursor: pointer !important;
-   font-family: 'Ubuntu', sans-serif !important;
+   font-family: 'Arial', !important;
    font-size: 14px;
    font-weight: 500 !important;
 }
@@ -660,7 +617,7 @@ body {
 
 .gwt-MenuBar-vertical .gwt-MenuItem {
    padding: 5px 40px 5px 5px !important;
-   font-family: 'Ubuntu', sans-serif !important;
+   font-family: 'Arial', !important;
    font-weight: 300 !important;
    font-size: calc !important;
 }
@@ -687,7 +644,7 @@ body {
 
 .disabledMenuBar {
    padding: 5px 40px 5px 5px !important;
-   font-family: 'Ubuntu', sans-serif !important;
+   font-family: 'Arial', !important;
    font-weight: 300 !important;
    font-size: 14px;
    color: #d9d9d9!important;

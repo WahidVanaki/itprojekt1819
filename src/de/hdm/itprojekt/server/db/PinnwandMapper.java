@@ -134,7 +134,7 @@ public class PinnwandMapper {
 		Vector<Pinnwand> result = new Vector<Pinnwand>();
 
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `pinnwand` ORDER BY `nutzerID` DESC");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `pinnwand` ORDER BY `nutzerid` ASC");
 
 			ResultSet rs = stmt.executeQuery();
 
@@ -142,7 +142,7 @@ public class PinnwandMapper {
 				Pinnwand pinnwand = new Pinnwand();
 
 				pinnwand.setId(rs.getInt("id"));
-				pinnwand.setId(rs.getInt("nutzerID"));
+				pinnwand.setId(rs.getInt("nutzerid"));
 
 				result.addElement(pinnwand);
 			}
@@ -152,26 +152,25 @@ public class PinnwandMapper {
 		return result;
 	}
 
-	public Pinnwand findPinnwandByNutzerID(int nutzerID) {
+	public Pinnwand findPinnwandByNutzerId(int nutzerID) {
 
 		Connection con = DBConnection.connection();
 
-		Pinnwand pinnwand = new Pinnwand();
+		Pinnwand p = new Pinnwand();
 
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM pinnwand WHERE nutzerid= ?");
-
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `pinnwand` WHERE `nutzerid`= ?");
 			stmt.setInt(1, nutzerID);
-
 			ResultSet rs = stmt.executeQuery();
 
-			if (rs.next()) {
-				Pinnwand p = new Pinnwand();
+			while (rs.next()) {
 
-				p.setId(rs.getInt("id"));
-				p.setNutzerID(rs.getInt("nutzerID"));
+				Pinnwand pinnwand = new Pinnwand();
+				pinnwand.setId(rs.getInt("id"));
+				pinnwand.setNutzerID(rs.getInt("nutzerid"));
 
-				pinnwand = p;
+				p = pinnwand;
+
 			}
 		} catch (SQLException e2) {
 			e2.printStackTrace();
@@ -183,7 +182,8 @@ public class PinnwandMapper {
 					e.printStackTrace();
 				}
 		}
-		return pinnwand;
+		return p;
+
 	}
 
 }

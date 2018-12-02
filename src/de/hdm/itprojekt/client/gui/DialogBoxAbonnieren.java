@@ -30,7 +30,6 @@ public class DialogBoxAbonnieren extends DialogBox {
 	private FlexTable ft = new FlexTable();
 	
 	public DialogBoxAbonnieren(){
-		
 		abonnieren.addClickHandler(new AbonnierenClickHandler());
 		abbrechen.addClickHandler(new AbbrechenClickHandler());
 		ft.setWidget(1, 0, suchLabel);
@@ -50,9 +49,7 @@ public class DialogBoxAbonnieren extends DialogBox {
 		@Override
 		public void onClick(ClickEvent event) {
 			// TODO Auto-generated method stub
-			Abonnement abo = new Abonnement();
-		
-//			socialMediaVerwaltung.createAbonnement(abo.setNutzerID(), abo.setPinnwandID(), new AbonnierenAsyncCallback<Abonnement>);
+			
 		}
 		
 	}
@@ -63,10 +60,7 @@ public class DialogBoxAbonnieren extends DialogBox {
 		public void onClick(ClickEvent event) {
 			// TODO Auto-generated method stub
 			StartSeiteForm it = new StartSeiteForm();
-			AllAbonnementView vw = new AllAbonnementView();
-			RootPanel.get("leftmenutree").clear();
-			RootPanel.get("leftmenutree").add(vw);
-		hide();
+			RootPanel.get("leftmenutree").add(it);
 		}
 		
 	}

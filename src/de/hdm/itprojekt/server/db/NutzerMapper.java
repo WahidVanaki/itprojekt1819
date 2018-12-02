@@ -191,7 +191,7 @@ public class NutzerMapper {
 		Vector<Nutzer> result = new Vector<Nutzer>();
 
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `nutzer` ORDER BY `email` DESC");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `nutzer` ORDER BY `email` ASC");
 
 			ResultSet rs = stmt.executeQuery();
 
@@ -202,10 +202,11 @@ public class NutzerMapper {
 				Nutzer nutzer = new Nutzer();
 
 				nutzer.setId(rs.getInt("id"));
-				nutzer.setEmail(rs.getString("email"));
-				nutzer.setNickname(rs.getString("nickname"));
 				nutzer.setVorname(rs.getString("vorname"));
 				nutzer.setNachname(rs.getString("nachname"));
+				nutzer.setNickname(rs.getString("nickname"));
+				nutzer.setEmail(rs.getString("email"));
+
 
 				/**
 				 * Hinzufügen des neuen Objekts zum Ergebnisvektor
@@ -233,7 +234,7 @@ public class NutzerMapper {
 
 		try {
 
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM nutzer WHERE `email` = ?");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `nutzer` WHERE `email` = ?");
 
 			stmt.setString(1, email);
 			ResultSet rs = stmt.executeQuery();
@@ -246,10 +247,10 @@ public class NutzerMapper {
 				Nutzer nutzer = new Nutzer();
 
 				nutzer.setId(rs.getInt("id"));
-				nutzer.setEmail(rs.getString("email"));
 				nutzer.setVorname(rs.getString("vorname"));
 				nutzer.setNachname(rs.getString("nachname"));
 				nutzer.setNickname(rs.getString("nickname"));
+				nutzer.setEmail(rs.getString("email"));
 
 				n = nutzer;
 			}
@@ -273,19 +274,17 @@ public class NutzerMapper {
 		return n;
 	}
 
-	public Nutzer findNutzerByID(int nutzerID) {
+	public Nutzer findNutzerById(int nutzerID) {
 
 		/**
-		 * Verbindung zur DB Connection
+		 * Verbindung zur Datenbank wird aufgebaut
 		 */
 		Connection con = DBConnection.connection();
 
 		Nutzer n = new Nutzer();
 
 		try {
-
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM nutzer WHERE `id` = ?");
-
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `nutzer` WHERE `id` = ?");
 			stmt.setInt(1, nutzerID);
 			ResultSet rs = stmt.executeQuery();
 
@@ -303,6 +302,7 @@ public class NutzerMapper {
 				nutzer.setEmail(rs.getString("email"));
 
 				n = nutzer;
+
 			}
 		} catch (SQLException e2) {
 			e2.printStackTrace();
@@ -320,5 +320,6 @@ public class NutzerMapper {
 				}
 		}
 		return n;
+
 	}
 }

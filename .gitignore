@@ -55,5 +55,6 @@ war/WEB-INF/classes/
 /test-classes/
 *.gwt.rpc
 TestKlasse.java
+.DS_Store
 *.js
 *.txt
