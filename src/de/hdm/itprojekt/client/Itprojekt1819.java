@@ -180,15 +180,15 @@ public class Itprojekt1819 implements EntryPoint {
 		 * Instanziierung der GUI-Elemente
 		 */
 		private Label frage = new Label(
-				"Sie haben noch keinen Nutzer angelegt. Bitte legen Sie nun einen neuen Nutzer an.");
+				"Sie haben noch keinen Nutzer angelegt.");
 		private Label vornameLabel = new Label("Vorname:");
 		private Label nachnameLabel = new Label("Nachname:");
 		private Label nicknameLabel = new Label("Nickname:");
 		private TextBox vornameTextbox = new TextBox();
 		private TextBox nachnameTextbox = new TextBox();
 		private TextBox nicknameTextbox = new TextBox();
-		private Button ja = new Button("anlegen");
-		private Button nein = new Button("abbrechen");
+		private Button ja = new Button("Speichern");
+		private Button nein = new Button("Abbrechen");
 		private VerticalPanel vpanel = new VerticalPanel();
 		private HorizontalPanel buttonPanel = new HorizontalPanel();
 
@@ -280,7 +280,7 @@ public class Itprojekt1819 implements EntryPoint {
 
 				@Override
 				public void onSuccess(Pinnwand result) {
-				
+					Window.alert("Für Sie wurde gleichzeitig eine Pinnwand angelegt.");
 				}
 
 			}

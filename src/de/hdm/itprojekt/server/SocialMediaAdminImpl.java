@@ -176,18 +176,19 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 
 	@Override
 	public void deleteNutzer(Nutzer nutzer) throws IllegalArgumentException {
-		Pinnwand pw = new Pinnwand();
-		pw.setNutzerID(nutzer.getId());
-
-		this.pinnwandMapper.deletePinnwandNutzerID(pw);
+		Pinnwand pn = new Pinnwand();
+		pn.setNutzerID(nutzer.getId());
+		
+		this.pinnwandMapper.deletePinnwandNutzerID(pn);
+		
 		this.nutzerMapper.deleteNutzer(nutzer);
 	}
 
 	@Override
 	public void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException {
-		pinnwand.setId(pinnwand.getId());
-
-		this.pinnwandMapper.deletePinnwand(pinnwand);
+	pinnwand.setId(pinnwand.getId());
+	
+	this.pinnwandMapper.deletePinnwand(pinnwand);
 	}
 
 	@Override
