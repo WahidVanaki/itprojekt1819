@@ -63,7 +63,8 @@ public class Toolbar extends LeftSideFrame {
 
 		meinProfilBt.addClickHandler(new meinProfilHandler());
 		logoutBt.addClickHandler(new LogoutHandler());
-
+		abonnierenBt.addClickHandler(new SuchenClickHandler());
+		
 		LoginServiceAsync loginService = GWT.create(LoginService.class);
 		loginService.login(GWT.getHostPageBaseURL() + "Itprojekt1819.html", new LoginCallback());
 
@@ -103,6 +104,16 @@ public class Toolbar extends LeftSideFrame {
 			Window.open(signOutLink.getHref(), "_self", "");
 		}
 
+	}
+	
+	class SuchenClickHandler implements ClickHandler {
+
+		@Override
+		public void onClick(ClickEvent event) {
+			// TODO Auto-generated method stub
+			KontaktSuche ks = new KontaktSuche();
+		}
+		
 	}
 
 }

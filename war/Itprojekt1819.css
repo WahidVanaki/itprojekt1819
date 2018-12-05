@@ -161,6 +161,7 @@ body {
 
 #leftmenutree table {
 	width: 100%;
+	cellpadding: 5;
 }
 
 #leftmenu .headline {

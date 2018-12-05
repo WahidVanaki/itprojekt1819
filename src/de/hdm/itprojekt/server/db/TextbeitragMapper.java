@@ -172,8 +172,8 @@ public class TextbeitragMapper {
 				beitrag.setId(rs.getInt("id"));
 				beitrag.setNutzerID(rs.getInt("nutzerID"));
 				beitrag.setInhalt(rs.getString("inhalt"));
-				beitrag.setErzeugungsdatum(rs.getTimestamp("erzeugungsdatum"));
-				beitrag.setModifikationsdatum(rs.getTimestamp("modifikationsdatum"));
+				beitrag.setErzeugungsdatum(rs.getDate("erzeugungsdatum"));
+				beitrag.setModifikationsdatum(rs.getDate("modifikationsdatum"));
 
 				/**
 				 * Hinzufügen des neuen Objektes zum Ergebnisvektor

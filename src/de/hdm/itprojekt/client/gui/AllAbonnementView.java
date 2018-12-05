@@ -44,7 +44,7 @@ public class AllAbonnementView extends LeftSideFrame {
 			public void onSelectionChange(SelectionChangeEvent event) {
 
 				if (ssm.getSelectedObject().getNickname() != null){
-//				AbonniertePinnwand abonniertePinnwand = new AbonniertePinnwand(ssm.getSelectedObject().getId());
+				AbonniertePinnwand abonniertePinnwand = new AbonniertePinnwand(ssm.getSelectedObject().getId());
 				}
 				else{
 //				StartseiteForm startseiteForm = new StartseiteForm(ssm.getSelectedObject());
