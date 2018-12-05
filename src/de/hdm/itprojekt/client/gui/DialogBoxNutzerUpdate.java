@@ -100,8 +100,8 @@ public class DialogBoxNutzerUpdate extends DialogBox {
 		public void onClick(ClickEvent event) {
 			// TODO Auto-generated method stub
 			StartSeiteForm meinprofil = new StartSeiteForm();
-			RootPanel.get("content").clear();
-			RootPanel.get("content").add(meinprofil);
+//			RootPanel.get("content").clear();
+//			RootPanel.get("content").add(meinprofil);
 		}
 
 	}
@@ -137,10 +137,11 @@ public class DialogBoxNutzerUpdate extends DialogBox {
 		public void onSuccess(Void result) {
 			// TODO Auto-generated method stub
 			Window.alert("Nutzer erfolgreich geändert");
+			hide();
 			StartSeiteForm st = new StartSeiteForm();
-
-			RootPanel.get("content").clear();
-			RootPanel.get("content").add(st);
+//
+//			RootPanel.get("content").clear();
+//			RootPanel.get("content").add(st);
 
 		}
 

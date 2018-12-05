@@ -162,12 +162,10 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 
 
 	@Override
-	public Textbeitrag createTextbeitrag(int pinnwandID, int nutzerID, int kommentarID, String inhalt)
-			throws IllegalArgumentException {
+	public Textbeitrag createTextbeitrag(int nutzerid, String inhalt) throws IllegalArgumentException {
 		Textbeitrag textbeitrag = new Textbeitrag();
-		textbeitrag.setPinnwandID(pinnwandID);
-		textbeitrag.setNutzerID(nutzerID);
-		textbeitrag.setKommentarID(kommentarID);
+		textbeitrag.setPinnwandID(nutzerid);
+		textbeitrag.setNutzerID(nutzerid);
 		textbeitrag.setInhalt(inhalt);
 		textbeitrag.setErzeugungsdatum(new Date());
 		textbeitrag.setModifikationsdatum(new Date());
@@ -196,40 +194,34 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		this.nutzerMapper.updateNutzer(nutzer);
 	}
 
-//	@Override
-//	public Abonnement createAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException {
-//		
-//	}
+	@Override
+	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException {
+	Kommentar kommentar = new Kommentar();
+	kommentar.setTextbeitragID(textbeitragid);
+	kommentar.setNutzerID(nutzerid);
+	kommentar.setInhaltKommentar(inhalt);
+	kommentar.setErzeugungsdatum(new Date());
+	kommentar.setModifikationsdatum(new Date());
+	return this.kommentarMapper.createKommentar(kommentar);
+	}
 
-//	@Override
-//	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-//	@Override
-//	public void savePinnwand(Pinnwand pinnwand) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		
-//	}
 //
-//	@Override
-//	public void saveTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException {
-//		textbeitrag.setModifikationsdatum(new Date());
-//		textbeitragMapper.updateTextbeitrag(textbeitrag);
-//	}
+	@Override
+	public void saveTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException {
+		textbeitrag.setModifikationsdatum(new Date());
+		textbeitragMapper.updateTextbeitrag(textbeitrag);
+	}
 //
-//	@Override
-//	public void saveKommentar(Kommentar kommentar) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	@Override
+	public void saveKommentar(Kommentar kommentar) throws IllegalArgumentException {
+		kommentar.setModifikationsdatum(new Date());
+		kommentarMapper.updateKommentar(kommentar);
+	}
 //
-//	@Override
-//	public void saveAbonnement(Abonnement abonnement) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	@Override
+	public void saveAbonnement(Abonnement abonnement) throws IllegalArgumentException {
+		 this.abonnementMapper.updateAbonnement(abonnement);
+	}
 //
 //	@Override
 //	public Vector<Nutzer> findAllNutzer() throws IllegalArgumentException {
@@ -259,35 +251,20 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 //		return null;
 //	}
 //
-//	@Override
-//	public Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Vector<Textbeitrag> findAllTextbeitrag() throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Vector<Textbeitrag> findTextbeitragByKommentarID(int kommentarid) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	@Override
+	public Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) throws IllegalArgumentException {
+		return this.kommentarMapper.findKommentarByTextbeitragID(textbeitragid);
+	}
+
+	@Override
+	public Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException {
+		return this.textbeitragMapper.findTextbeitragByNutzerID(nutzerid);
+	}
+
+	@Override
+	public Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException {
+		return this.textbeitragMapper.findTextbeitragByPinnwandID(pinnwandid);
+	}
 
 	@Override
 	public void deleteAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException {
@@ -304,7 +281,7 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	public Vector<Nutzer> findAllNutzer() throws IllegalArgumentException {
 		// TODO Auto-generated method stub
 		return this.nutzerMapper.findAllNutzer();
-}
+	}
 
 
 //	@Override
@@ -313,15 +290,14 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 //		return null;
 //	}
 
-//	@Override
-//	public void deleteTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException {
-//		this.textbeitragMapper.deleteTextbeitrag(textbeitrag);
-//	}
-//
-//	@Override
-//	public void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	@Override
+	public void deleteTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException {
+		this.textbeitragMapper.deleteTextbeitrag(textbeitrag);
+	}
+
+	@Override
+	public void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException {
+		this.kommentarMapper.deleteKommentar(kommentar);
+	}
 
 }

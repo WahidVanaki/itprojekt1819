@@ -27,7 +27,6 @@ public class TextbeitragMapper {
 
 		Connection con = DBConnection.connection();
 		java.sql.Timestamp sqlDate = new java.sql.Timestamp(textbeitrag.getErzeugungsdatum().getTime());
-		java.sql.Timestamp sqlDate1 = new java.sql.Timestamp(textbeitrag.getModifikationsdatum().getTime());
 
 		try {
 
@@ -37,16 +36,13 @@ public class TextbeitragMapper {
 			if (rs.next()) {
 
 				PreparedStatement stmt1 = con.prepareStatement(
-						"INSERT INTO textbeitrag (id, pinnwandid, nutzerid, kommentarid, inhalt, erzeugungsdatum, modifikationsdatum) VALUES (?, ?, ?, ?, ?, ?, ?) ",
+						"INSERT INTO textbeitrag (id, nutzerid, inhalt, erzeugungsdatum) VALUES (?, ?, ?, ?) ",
 
 						Statement.RETURN_GENERATED_KEYS);
 				stmt1.setInt(1, textbeitrag.getId());
-				stmt1.setInt(2, textbeitrag.getPinnwandID());
-				stmt1.setInt(3, textbeitrag.getNutzerID());
-				stmt1.setInt(4, textbeitrag.getKommentarID());
-				stmt1.setString(5, textbeitrag.getInhalt());
-				stmt1.setTimestamp(6, sqlDate);
-				stmt1.setTimestamp(7, sqlDate1);
+				stmt1.setInt(2, textbeitrag.getNutzerID());
+				stmt1.setString(3, textbeitrag.getInhalt());
+				stmt1.setTimestamp(4, sqlDate);
 
 				System.out.println(stmt);
 				stmt1.executeUpdate();
@@ -65,7 +61,7 @@ public class TextbeitragMapper {
 	}
 
 	public Textbeitrag updateTextbeitrag(Textbeitrag textbeitrag) {
-		String sql = "UPDATE textbeitrag SET `inhalt`= ? `modifikationsdatum`= ? WHERE id= ? ";
+		String sql = "UPDATE textbeitrag SET `inhalt`= ?, `modifikationsdatum`= ? WHERE id= ? ";
 		java.sql.Timestamp sqlDate1 = new java.sql.Timestamp(textbeitrag.getModifikationsdatum().getTime());
 
 		Connection con = DBConnection.connection();
@@ -164,7 +160,7 @@ public class TextbeitragMapper {
 
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("SELECT * FROM textbeitrag WHERE nutzerid= ? ORDER BY textbeitragid ASC ");
+					.prepareStatement("SELECT * FROM textbeitrag WHERE nutzerid= ? ORDER BY id DESC ");
 
 			stmt.setInt(1, nutzerid);
 
@@ -174,9 +170,7 @@ public class TextbeitragMapper {
 				Textbeitrag beitrag = new Textbeitrag();
 
 				beitrag.setId(rs.getInt("id"));
-				beitrag.setPinnwandID(rs.getInt("pinnwandid"));
 				beitrag.setNutzerID(rs.getInt("nutzerID"));
-				beitrag.setKommentarID(rs.getInt("kommentarid"));
 				beitrag.setInhalt(rs.getString("inhalt"));
 				beitrag.setErzeugungsdatum(rs.getTimestamp("erzeugungsdatum"));
 				beitrag.setModifikationsdatum(rs.getTimestamp("modifikationsdatum"));
@@ -207,7 +201,7 @@ public class TextbeitragMapper {
 
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("SELECT * FROM textbeitrag WHERE kommentarid= ? ORDER BY textbeitragid ASC ");
+					.prepareStatement("SELECT * FROM textbeitrag WHERE kommentarid= ? ");
 
 			stmt.setInt(1, kommentarid);
 
@@ -247,7 +241,7 @@ public class TextbeitragMapper {
 
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("SELECT * FROM textbeitrag WHERE pinnwandid= ? ORDER BY textbeitrag ASC ");
+					.prepareStatement("SELECT * FROM textbeitrag WHERE pinnwandid= ?");
 
 			stmt.setInt(1, pinnwandid);
 

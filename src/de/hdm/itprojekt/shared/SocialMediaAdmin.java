@@ -19,22 +19,18 @@ public interface SocialMediaAdmin extends RemoteService {
 	public Nutzer checkEmail(String email) throws IllegalArgumentException;
 
 	public Nutzer createNutzer(String email, String vorname, String nachname, String nickname) throws IllegalArgumentException;
-//	
-//	public Abonnement createAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException;
-//
-//	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException;
-//
-	public Textbeitrag createTextbeitrag(int pinnwandid, int nutzerid, int kommentarid, String inhalt) throws IllegalArgumentException;
+	
+	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException;
+
+	public Textbeitrag createTextbeitrag(int nutzerid, String inhalt) throws IllegalArgumentException;
 
 	Pinnwand createPinnwand(int nutzerid) throws IllegalArgumentException;
 
-//	void savePinnwand(Pinnwand pinnwand) throws IllegalArgumentException;
-//
-//	void saveTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException;
-//
-//	void saveKommentar(Kommentar kommentar) throws IllegalArgumentException;
-//
-//	void saveAbonnement(Abonnement abonnement) throws IllegalArgumentException;
+	void saveTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException;
+
+	void saveKommentar(Kommentar kommentar) throws IllegalArgumentException;
+
+	void saveAbonnement(Abonnement abonnement) throws IllegalArgumentException;
 
 	void deleteNutzer(Nutzer nutzer) throws IllegalArgumentException;
 
@@ -54,19 +50,18 @@ public interface SocialMediaAdmin extends RemoteService {
 
 //	Vector<Kommentar> findKommentarByNutzerID(int nutzerid) throws IllegalArgumentException;
 //
-//	Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) throws IllegalArgumentException;
+	Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) throws IllegalArgumentException;
 //
 //	Vector<Textbeitrag> findAllTextbeitrag() throws IllegalArgumentException;
 //
-//	Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException;
+	Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException;
+
+	
+	Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException;
 //
-//	Vector<Textbeitrag> findTextbeitragByKommentarID(int kommentarid) throws IllegalArgumentException;
+	void deleteTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException;
 //
-//	Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException;
-//
-//	void deleteTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException;
-//
-//	void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException;
+	void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException;
 
 	void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException;
 
