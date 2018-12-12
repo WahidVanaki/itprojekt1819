@@ -4,7 +4,7 @@ html {
 	background-image: url("/images/backgroundimg.jpg");
 	background-repeat: repeat;
 	background-size: cover;
-	font-family: 'Arial', cursive;
+	font-family: 'Encode Sans Condensed', cursive;
 }
 
 body {
@@ -13,21 +13,6 @@ body {
 
 .tbody, tfoot, thead, tr, th, td {
 	vertical-align: middle !important;
-}
-#contentReport {
-	overflow: scroll;
-    width: 89%;
-    height: 650px;
-	display: inline-block;
-	border: 2px solid black;
-	box-shadow: 3px 2px 2px grey;
-    position: absolute;
-    left: 5.4%;
-    background-color: #00fcff;
-}
-
-#contentReport table {
-	width: 100%;	
 }
 
 #header {
@@ -48,7 +33,7 @@ body {
 #headline {
 	font-size: 4em;
 	color: white;
-	font-family: 'Arial';
+	font-family: 'Encode Sans Condensed', Arial;
 	font-weight: 100;
 	padding: 15px;
 	text-shadow: 1px 1px cornflowerblue;
@@ -65,14 +50,17 @@ body {
 	background-color: rgba(255, 255, 255, 0.8);
 	box-shadow: 5px 5px 2.5px grey;
 }
+
 #menubar table tbody tr td:nth-child(2) {
     width: 100%;
 }
+
 #menubar .menuBarLabelContainer {
 	height: inherit;
 	display: inline-block;
 	margin-left: 5px;
 }
+
 #menubar .menuBarLabel {
 	padding-top: 6px;
 	padding-left: 10px;
@@ -161,7 +149,6 @@ body {
 
 #leftmenutree table {
 	width: 100%;
-	cellpadding: 5;
 }
 
 #leftmenu .headline {
@@ -199,7 +186,7 @@ body {
 #footer .footerPanel {
 	height: inherit;
 	float: right;
-	color: #ffffff;
+	color: #00fcff;
 	opacity: 0.75;
 }
 
@@ -215,13 +202,13 @@ body {
 	font-weight: bold;
 	color: #535353;
 	text-align: center;
-	font-family: 'Arial', bold;
+	font-family: 'Encode Sans Condensed', bold;
 	letter-spacing: 0.5px;
 }
 
 .landingPageLoginMessage {
 	margin-top: 40px;
-	font-family: 'Arial', cursive;
+	font-family: 'Encode Sans Condensed', cursive;
 	text-align: center;
 	font-size: 1.8em;
 	color: #777777;
@@ -231,18 +218,35 @@ body {
 	font-size: 1.3em;
 	margin: 10px 0px 5px 10px;
 	color: #3d3d3d;
-	font-family: 'Arial', cursive !important;
+	font-family: 'Encode Sans Condensed', cursive !important;
 	font-weight: 500;
 	font-size: 1.5em;
 }
 
 .h3 {
 	font-size: 1.3em;
-	margin: 10px 0px 5px 0px;
+	margin: center;
 	color: #3d3d3d;
-	font-family: 'Arial', cursive !important;
+	text-align: center;
+	font-family: 'Encode Sans Condensed', bold !important;
 	font-weight: 500;
 	font-size: 1.5em;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-TextArea {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-top-color: rgb(204, 204, 204);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top: 1px solid #666;
+    font-size: 100%;
+    font-family: Arial Unicode MS, Arial, sans-serif;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-botton: 2em;
 }
 
 .labelSize1 {
@@ -262,7 +266,7 @@ body {
 	margin-top: 20px;
 	margin-bottom: 10px;
 	text-align: center;
-	font-family: 'Arial', cursive;
+	font-family: 'Encode Sans Condensed', cursive;
 }
 
 /** WIDGET & PANEL FORMATIERUNGEN*/
@@ -346,10 +350,16 @@ body {
 	border: none;
 	
 }
+.unfollowButton{
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+	
+}
 
 .toolbarPanel{
 		margin-left: 5px;
-		
 	
 }
 
@@ -386,7 +396,7 @@ body {
 	float: right;
 	border: none !important;
 	box-shadow: 0px 0px 3px #96A1BD !important;
-	font-family: 'Arial',  !important;
+	font-family: 'Ubuntu', sans-serif !important;
 }
 
 .searchTextBox:hover {
@@ -414,7 +424,7 @@ body {
 	cursor: pointer;
 	color: white;
 	font-size: 21px;
-	font-family: 'Arial';
+	font-family: 'Ubuntu', sans-serif;
 	padding: 8px 0px 8px 0px;
 	text-align: center;
 	margin-top: 4.5%;
@@ -517,6 +527,8 @@ body {
 	background-image: none !important;
 	margin-right: 5px !important;
 	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
 }
 
 .gwt-Button:hover {
@@ -569,7 +581,7 @@ body {
 
 .gwt-MenuBar .gwt-MenuItem {
    cursor: pointer !important;
-   font-family: 'Arial', !important;
+   font-family: 'Ubuntu', sans-serif !important;
    font-size: 14px;
    font-weight: 500 !important;
 }
@@ -618,7 +630,7 @@ body {
 
 .gwt-MenuBar-vertical .gwt-MenuItem {
    padding: 5px 40px 5px 5px !important;
-   font-family: 'Arial', !important;
+   font-family: 'Ubuntu', sans-serif !important;
    font-weight: 300 !important;
    font-size: calc !important;
 }
@@ -645,7 +657,7 @@ body {
 
 .disabledMenuBar {
    padding: 5px 40px 5px 5px !important;
-   font-family: 'Arial', !important;
+   font-family: 'Ubuntu', sans-serif !important;
    font-weight: 300 !important;
    font-size: 14px;
    color: #d9d9d9!important;

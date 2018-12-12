@@ -61,7 +61,7 @@ public class AbonnementMapper {
 			/**
 			 * Zunächst schauen wir nach, welches der momentan höchste
 			 */
-			ResultSet rs = stmt.executeQuery("SELECT MAX(id) AS maxid " + "FROM abonnement");
+			ResultSet rs = stmt.executeQuery("SELECT MAX(id) AS maxid FROM abonnement");
 			if (rs.next()) {
 
 				/**
@@ -104,7 +104,7 @@ public class AbonnementMapper {
 			 * Durchführung der Update-Operation via Prepared Statement
 			 */
 			PreparedStatement stmt = con.prepareStatement(
-					"UPDATE `abonnement` SET `nutzerid`= ? `pinnwandid`= ? = ? WHERE id= ?");
+					"UPDATE `abonnement` SET `nutzerid`= ? `pinnwandid`= ? WHERE id= ?");
 
 			stmt.setInt(1, abonnement.getId());
 			stmt.setInt(2, abonnement.getNutzerID());
@@ -173,48 +173,47 @@ public class AbonnementMapper {
 	 * @param abonnementid
 	 * @return result - gibt als Result alle Abonnement zurück
 	 */
-//	public Vector<Abonnement> findAllAbonnement() {
-//
-//		/**
-//		 * Verbindung zur Datenbank aufbauen
-//		 */
-//		Connection con = DBConnection.connection();
-//
-//		/**
-//		 * Es wird ein Vector um Nutzer darin zu speichern
-//		 */
-//		Vector<Abonnement> result = new Vector<Abonnement>();
-//
-//		try {
-//			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `abonnement` ORDER BY `nutzerid` DESC");
-//
-//			ResultSet rs = stmt.executeQuery();
-//
-//			/**
-//			 * Für jeden Eintrag Nutzer ein Nutzer-Objekt erstellt.
-//			 */
-//			while (rs.next()) {
-//				Abonnement abonnement = new Abonnement();
-//
-//				abonnement.setId(rs.getInt("id"));
-//				abonnement.setNutzerID(rs.getInt("nutzerid"));
-//				abonnement.setPinnwandID(rs.getInt("pinnwandid"));
-//				
-//
-//				/**
-//				 * Hinzufügen des neuen Objekts zum Ergebnisvektor
-//				 */
-//				result.addElement(abonnement);
-//			}
-//		} catch (SQLException e2) {
-//			e2.printStackTrace();
-//		}
-//
-//		/**
-//		 * Ergebnisvektor zurückgeben
-//		 */
-//		return result;
-//	}
+	public Abonnement findAllAbonnement(int nutzerid, int pinnwandid) {
+
+		/**
+		 * Verbindung zur Datenbank aufbauen
+		 */
+		Connection con = DBConnection.connection();
+
+		/**
+		 * Es wird ein Vector um Nutzer darin zu speichern
+		 */
+		Abonnement a = new Abonnement();
+
+		try {
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `abonnement` ORDER BY `nutzerid` DESC");
+
+			stmt.setInt(1, nutzerid);
+			stmt.setInt(2, pinnwandid);
+			ResultSet rs = stmt.executeQuery();
+			
+			/**
+			 * Für jeden Eintrag Nutzer ein Nutzer-Objekt erstellt.
+			 */
+			while (rs.next()) {
+				Abonnement abonnement = new Abonnement();
+
+				abonnement.setId(rs.getInt("id"));
+				abonnement.setNutzerID(rs.getInt("nutzerid"));
+				abonnement.setPinnwandID(rs.getInt("pinnwandid"));
+				
+
+				a = abonnement;
+			}
+		} catch (SQLException e2) {
+			e2.printStackTrace();
+		}
+
+		/**
+		 * Ergebnisvektor zurückgeben
+		 */
+		return a;
+	}
 
 	public Vector <Abonnement> findAbonnementByNutzerID(int nutzerID) {
 
@@ -265,50 +264,4 @@ public class AbonnementMapper {
 
 		return result;
 	}
-
-//	public Vector <Abonnement> findAbonnementByPinnwandID(int pinnwandID) {
-//
-//		/**
-//		 * Verbindung zur DB Connection
-//		 */
-//		Connection con = DBConnection.connection();
-//
-//		Vector <Abonnement> result = new Vector<Abonnement>();
-//
-//		try {
-//
-//			PreparedStatement stmt = con.prepareStatement("SELECT * FROM abonnement WHERE `pinnwandid` = ?");
-//
-//			stmt.setInt(1, pinnwandID);
-//			ResultSet rs = stmt.executeQuery();
-//
-//			/**
-//			 * Für jeden Eintrag im Suchergebnis wird nun ein Nutzer-Objekt
-//			 * erstellt.
-//			 */
-//			while (rs.next()) {
-//				Abonnement abonnement = new Abonnement();
-//
-//				abonnement.setId(rs.getInt("id"));
-//				abonnement.setPinnwandID(rs.getInt("pinndwandid"));
-//
-//				result.addElement(abonnement);
-//			}
-//		} catch (SQLException e2) {
-//			e2.printStackTrace();
-//		}
-//
-//		/**
-//		 * Ergebnisvektor zurückgeben
-//		 */
-//		finally {
-//			if (con != null)
-//				try {
-//					con.close();
-//				} catch (SQLException e) {
-//					e.printStackTrace();
-//				}
-//		}
-//		return result;
-//	}
 }

@@ -62,7 +62,7 @@ public class NutzerMapper {
 			/**
 			 * Zunächst schauen wir nach, welches der momentan höchste
 			 */
-			ResultSet rs = stmt.executeQuery("SELECT MAX(id) AS maxid " + "FROM nutzer");
+			ResultSet rs = stmt.executeQuery("SELECT MAX(id) AS maxid FROM nutzer");
 
 			if (rs.next()) {
 				nutzer.setId(rs.getInt("maxid") + 1);
@@ -322,4 +322,43 @@ public class NutzerMapper {
 		return n;
 
 	}
+	
+	public Vector<Nutzer> findAllNutzerById() {
+
+ 		/**
+ 		 * Verbindung zur Datenbank wird aufgebaut
+ 		 */
+ 		Connection con = DBConnection.connection();
+
+ 		Vector<Nutzer> result = new Vector<Nutzer>();
+
+ 		try {
+ 			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `nutzer`");
+ //			stmt.setInt(1, nutzerID);
+ 			ResultSet rs = stmt.executeQuery();
+
+ 			/**
+ 			 * Für jeden Eintrag im Suchergebnis wird nun ein Nutzer-Objekt
+ 			 * erstellt.
+ 			 */
+ 			while (rs.next()) {
+ 				Nutzer nutzer = new Nutzer();
+
+ 				nutzer.setId(rs.getInt("id"));
+ 				nutzer.setVorname(rs.getString("vorname"));
+ 				nutzer.setNachname(rs.getString("nachname"));
+ 				nutzer.setNickname(rs.getString("nickname"));
+ 				nutzer.setEmail(rs.getString("email"));
+
+ 				result.addElement(nutzer);
+
+ 			}
+ 		} catch (SQLException e2) {
+ 			e2.printStackTrace();
+ 		}
+
+
+ 		return result;
+
+ 	}
 }

@@ -33,7 +33,7 @@ public class KommentarMapper {
 		try {
 			Statement stmt = con.createStatement();
 
-			ResultSet rs = stmt.executeQuery("SELECT MAXid(id) AS maxid " + " FROM kommentar");
+			ResultSet rs = stmt.executeQuery("SELECT MAXid(id) AS maxid FROM kommentar");
 			if (rs.next()) {
 
 				PreparedStatement stmt1 = con.prepareStatement(
@@ -123,7 +123,7 @@ public class KommentarMapper {
 		Vector<Kommentar> result = new Vector<Kommentar>();
 
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM kommentar WHERE id= ? ");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `kommentar` ORDER BY `erzeugungsdatum` DESC");
 
 			ResultSet rs = stmt.executeQuery();
 
@@ -193,7 +193,7 @@ public class KommentarMapper {
 		return result;
 	}
 
-	public Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) {
+	public Vector<Kommentar> findKommentarByTextbeitragId(int textbeitragId) {
 
 		Connection con = DBConnection.connection();
 
@@ -201,9 +201,11 @@ public class KommentarMapper {
 
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("SELECT * FROM kommentar WHERE textbeitragid= ? ORDER BY kommentarid ASC ");
+					.prepareStatement("SELECT * FROM `kommentar` WHERE `textbeitragid`= ?" + " ORDER BY id DESC");
 
+			stmt.setInt(1, textbeitragId);
 			ResultSet rs = stmt.executeQuery();
+
 
 			while (rs.next()) {
 				Kommentar kommentar = new Kommentar();

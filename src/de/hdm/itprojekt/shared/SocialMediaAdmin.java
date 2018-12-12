@@ -5,6 +5,7 @@ import java.util.Vector;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
+import de.hdm.itprojekt.client.KommentarNutzerWrapper;
 import de.hdm.itprojekt.shared.bo.Abonnement;
 import de.hdm.itprojekt.shared.bo.Kommentar;
 import de.hdm.itprojekt.shared.bo.Nutzer;
@@ -20,8 +21,6 @@ public interface SocialMediaAdmin extends RemoteService {
 
 	public Nutzer createNutzer(String email, String vorname, String nachname, String nickname) throws IllegalArgumentException;
 	
-	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException;
-
 	public Textbeitrag createTextbeitrag(int nutzerid, String inhalt) throws IllegalArgumentException;
 
 	Pinnwand createPinnwand(int nutzerid) throws IllegalArgumentException;
@@ -38,29 +37,18 @@ public interface SocialMediaAdmin extends RemoteService {
 	
 	Vector<Nutzer> findAllNutzer() throws IllegalArgumentException;
 
-//	Nutzer findNutzerByEmail(String email) throws IllegalArgumentException;
-
 	Nutzer findNutzerByID(int nutzerid) throws IllegalArgumentException;
 
 	Vector<Pinnwand> findAllPinnwand() throws IllegalArgumentException;
 
 	Pinnwand findPinnwandByNutzerID(int nutzerid) throws IllegalArgumentException;
 
-//	Vector<Kommentar> findAllKommentare() throws IllegalArgumentException;
-
-//	Vector<Kommentar> findKommentarByNutzerID(int nutzerid) throws IllegalArgumentException;
-//
-	Vector<Kommentar> findKommentarByTextbeitragID(int textbeitragid) throws IllegalArgumentException;
-//
-//	Vector<Textbeitrag> findAllTextbeitrag() throws IllegalArgumentException;
-//
 	Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException;
 
-	
 	Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException;
-//
+	
 	void deleteTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException;
-//
+	
 	void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException;
 
 	void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException;
@@ -71,6 +59,15 @@ public interface SocialMediaAdmin extends RemoteService {
 
 	void deleteAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException;
 
+	Vector<Nutzer> findAllNutzerById() throws IllegalArgumentException;
 
+	Abonnement createAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException;
 
+	Abonnement findAllAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException;
+
+	Vector<KommentarNutzerWrapper> findKommentarByTextbeitragId(int textbeitragid) throws IllegalArgumentException;
+
+	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException;
+
+	
 }

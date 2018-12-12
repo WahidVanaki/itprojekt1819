@@ -20,8 +20,10 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.view.client.CellPreviewEvent;
 import com.google.gwt.view.client.Range;
 import com.google.gwt.view.client.SingleSelectionModel;
+import com.google.gwt.view.client.CellPreviewEvent.Handler;
 
 import de.hdm.itprojekt.shared.SocialMediaAdminAsync;
 import de.hdm.itprojekt.shared.bo.Abonnement;
@@ -42,13 +44,11 @@ public class AbonniertePinnwand extends VerticalPanel {
 	private Textbeitrag textbeitrag = null;
 	private SingleSelectionModel<Textbeitrag> ssm = new SingleSelectionModel<Textbeitrag>();
 
-
 	// Create a CellTable
 	private HorizontalPanel allTextbeitragCellTableContainer = new HorizontalPanel();
 	private EditTextCell editTextCell = new EditTextCell();
 	private CellTableTextbeitrag.DateColumn dateColumn = null;
 	private CellTableTextbeitrag.BeitragColumn beitragColumn = null;
-	private Textbeitrag tb = null;
 	private TextCell textCell = new TextCell();
 	private CellTableTextbeitrag allTextbeitragCellTable = null;
 
@@ -58,10 +58,15 @@ public class AbonniertePinnwand extends VerticalPanel {
 	public AbonniertePinnwand(final int nutzerID) {
 
 		nutzer.setId(Integer.parseInt(Cookies.getCookie("id")));
-		
+
 		socialMediaVerwaltung.findAbonnementByNutzerID(nutzerID, new FindAboCallback());
+
 		socialMediaVerwaltung.findTextbeitragByNutzerID(nutzerID, new CellTableCallback());
-				
+		
+		nicknameLabel.setStylePrimaryName("h3");
+		beitragTb.setStylePrimaryName("gwt-TextArea");
+		beitragTb.setCharacterWidth(100);
+		beitragTb.setVisibleLines(5);
 
 		/**
 		 * Hat zur Folge, dass das Erstellen von Textbeiträgen nur auf der
@@ -81,7 +86,6 @@ public class AbonniertePinnwand extends VerticalPanel {
 
 							@Override
 							public void onFailure(Throwable caught) {
-								// TODO Auto-generated method stub
 								Window.alert("Fehler: " + caught.getMessage());
 
 							}
@@ -100,7 +104,6 @@ public class AbonniertePinnwand extends VerticalPanel {
 			public void onSuccess(Nutzer result) {
 				nutzer.setId(Integer.parseInt(Cookies.getCookie("id")));
 				if (nutzer.getId() == result.getId()) {
-					
 					nicknameLabel.setText("Du befindest dich auf deiner Pinnwand " + result.getVorname());
 				} else {
 
@@ -116,9 +119,9 @@ public class AbonniertePinnwand extends VerticalPanel {
 			}
 		});
 
-
 		aboLoeschen.setHTML("<img src = 'images/unfollow.png'/>");
 		aboLoeschen.setPixelSize(40, 40);
+		aboLoeschen.setStylePrimaryName("unfollowButton");
 		mainPanel.add(nicknameLabel);
 		if (nutzerID != nutzer.getId()) {
 			aboLoeschen.addClickHandler(new ClickHandler() {
@@ -127,7 +130,7 @@ public class AbonniertePinnwand extends VerticalPanel {
 				public void onClick(ClickEvent event) {
 					socialMediaVerwaltung.deleteAbonnement(nutzer.getId(), nutzerID, new AbonnementLoeschenCallback());
 				}
-				
+
 			});
 			mainPanel.add(aboLoeschen);
 
@@ -139,7 +142,6 @@ public class AbonniertePinnwand extends VerticalPanel {
 
 			@Override
 			public void onBrowserEvent(Context context, Element elem, Textbeitrag object, NativeEvent event) {
-				// TODO Auto-generated method stub
 
 				if (nutzerID == nutzer.getId()) {
 					if (event.getKeyCode() == KeyCodes.KEY_ENTER) {
@@ -188,8 +190,8 @@ public class AbonniertePinnwand extends VerticalPanel {
 				}
 			}
 		};
-		
 
+		allTextbeitragCellTable.addCellPreviewHandler(new PreviewClickHandler());
 		allTextbeitragCellTableContainer.clear();
 		allTextbeitragCellTableContainer.add(allTextbeitragCellTable);
 		allTextbeitragCellTable.addColumn(dateColumn);
@@ -203,7 +205,7 @@ public class AbonniertePinnwand extends VerticalPanel {
 		RootPanel.get("content").clear();
 		RootPanel.get("content").add(mainPanel);
 	}
-	
+
 	class CellTableCallback implements AsyncCallback<Vector<Textbeitrag>> {
 
 		@Override
@@ -226,24 +228,22 @@ public class AbonniertePinnwand extends VerticalPanel {
 		}
 
 	}
-	
+
 	class FindAboCallback implements AsyncCallback<Vector<Abonnement>> {
 
 		@Override
 		public void onFailure(Throwable caught) {
 			Window.alert("Beim Laden der Daten ist ein Fehler aufgetreten" + caught.getMessage());
-			
+
 		}
 
 		@Override
 		public void onSuccess(Vector<Abonnement> result) {
-			
-			for (Abonnement abonnement : result) {
-			}
+
 		}
-		
+
 	}
-	
+
 	class AbonnementLoeschenCallback implements AsyncCallback<Void> {
 
 		@Override
@@ -254,13 +254,45 @@ public class AbonniertePinnwand extends VerticalPanel {
 
 		@Override
 		public void onSuccess(Void result) {
-			
-			Window.alert("" + nutzer.getEmail());
+
 			Window.alert("User entfolgt");
 			RootPanel.get("content").clear();
 			RootPanel.get("leftmenutree").clear();
 			RootPanel.get("leftmenutree").add(new Toolbar());
 			RootPanel.get("leftmenutree").add(new AllAbonnementView());
+
+		}
+
+	}
+
+	public class PreviewClickHandler implements Handler<Textbeitrag> {
+
+		long initialClick = -1000;
+
+		@Override
+		public void onCellPreview(CellPreviewEvent<Textbeitrag> event) {
+
+			long clickedAt = System.currentTimeMillis();
+
+			if (event.getNativeEvent().getType().contains("click")) {
+
+				/*
+				 * Wenn nicht mehr als 300ms zwischen zwei Klicks liegen, so
+				 * wird ein Doppelklick ausgelöst und die Profilansicht des
+				 * angeklickten Kontaktes geöffnet. Andernfalls wird der Kontakt
+				 * lediglich selektiert.
+				 */
+
+				if (clickedAt - initialClick < 300) {
+
+					KommentarForm kf = new KommentarForm(event.getValue());
+				}
+
+				initialClick = System.currentTimeMillis();
+
+				final Textbeitrag textbeitrag = event.getValue();
+
+			}
 
 		}
 
