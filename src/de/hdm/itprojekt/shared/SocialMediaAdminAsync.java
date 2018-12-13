@@ -12,15 +12,14 @@ import de.hdm.itprojekt.shared.bo.Pinnwand;
 import de.hdm.itprojekt.shared.bo.Textbeitrag;
 
 public interface SocialMediaAdminAsync {
-	
+
 	void init(AsyncCallback<Void> callback);
-	
+
 	void createNutzer(String email, String vorname, String nachname, String nickname, AsyncCallback<Nutzer> callback);
 
 	void checkEmail(String email, AsyncCallback<Nutzer> callback);
 
-	void createTextbeitrag(int nutzerid, String inhalt,
-			AsyncCallback<Textbeitrag> callback);
+	void createTextbeitrag(int nutzerid, String inhalt, AsyncCallback<Textbeitrag> callback);
 
 	void createPinnwand(int nutzerid, AsyncCallback<Pinnwand> callback);
 
@@ -43,7 +42,7 @@ public interface SocialMediaAdminAsync {
 	void findPinnwandByNutzerID(int nutzerid, AsyncCallback<Pinnwand> callback);
 
 	void findTextbeitragByNutzerID(int nutzerid, AsyncCallback<Vector<Textbeitrag>> callback);
-	
+
 	void findTextbeitragByPinnwandID(int pinnwandid, AsyncCallback<Vector<Textbeitrag>> callback);
 
 	void deleteAbonnement(int nutzerid, int pinnwandid, AsyncCallback<Void> callback);

@@ -9,7 +9,6 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -44,10 +43,12 @@ public class DialogBoxNutzerUpdate extends DialogBox {
 		n.setEmail(Cookies.getCookie("email"));
 
 		socialMediaVerwaltung.findNutzerByID(n.getId(), new BearbeitenCallback());
-		
+
+		speichern.setStylePrimaryName("gwt-Button3");
+		abbrechen.setStylePrimaryName("gwt-Button3");
 		speichern.addClickHandler(new UpdateClickHandler());
 		abbrechen.addClickHandler(new AbbrechenClickHandler());
-		
+
 		ft.setWidget(0, 0, updateLabel);
 		ft.setWidget(1, 0, vT);
 		ft.setWidget(3, 0, vB);
@@ -70,7 +71,6 @@ public class DialogBoxNutzerUpdate extends DialogBox {
 
 		Nutzer n = new Nutzer();
 		n.setId(Integer.parseInt(Cookies.getCookie("id")));
-		
 
 		speichern.addClickHandler(new UpdateClickHandler());
 		abbrechen.addClickHandler(new AbbrechenClickHandler());
@@ -98,10 +98,8 @@ public class DialogBoxNutzerUpdate extends DialogBox {
 
 		@Override
 		public void onClick(ClickEvent event) {
-			// TODO Auto-generated method stub
 			StartSeiteForm meinprofil = new StartSeiteForm();
-//			RootPanel.get("content").clear();
-//			RootPanel.get("content").add(meinprofil);
+
 		}
 
 	}
@@ -135,13 +133,9 @@ public class DialogBoxNutzerUpdate extends DialogBox {
 
 		@Override
 		public void onSuccess(Void result) {
-			// TODO Auto-generated method stub
 			Window.alert("Nutzer erfolgreich geändert");
 			hide();
 			StartSeiteForm st = new StartSeiteForm();
-//
-//			RootPanel.get("content").clear();
-//			RootPanel.get("content").add(st);
 
 		}
 

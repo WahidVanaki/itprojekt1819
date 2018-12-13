@@ -200,8 +200,7 @@ public class TextbeitragMapper {
 		Vector<Textbeitrag> result = new Vector<Textbeitrag>();
 
 		try {
-			PreparedStatement stmt = con
-					.prepareStatement("SELECT * FROM textbeitrag WHERE kommentarid= ? ");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM textbeitrag WHERE kommentarid= ? ");
 
 			stmt.setInt(1, kommentarid);
 
@@ -240,8 +239,7 @@ public class TextbeitragMapper {
 		Vector<Textbeitrag> result = new Vector<Textbeitrag>();
 
 		try {
-			PreparedStatement stmt = con
-					.prepareStatement("SELECT * FROM textbeitrag WHERE pinnwandid= ?");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM textbeitrag WHERE pinnwandid= ?");
 
 			stmt.setInt(1, pinnwandid);
 

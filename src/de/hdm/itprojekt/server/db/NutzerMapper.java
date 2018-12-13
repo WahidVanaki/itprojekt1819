@@ -207,7 +207,6 @@ public class NutzerMapper {
 				nutzer.setNickname(rs.getString("nickname"));
 				nutzer.setEmail(rs.getString("email"));
 
-
 				/**
 				 * Hinzufügen des neuen Objekts zum Ergebnisvektor
 				 */
@@ -322,43 +321,42 @@ public class NutzerMapper {
 		return n;
 
 	}
-	
+
 	public Vector<Nutzer> findAllNutzerById() {
 
- 		/**
- 		 * Verbindung zur Datenbank wird aufgebaut
- 		 */
- 		Connection con = DBConnection.connection();
+		/**
+		 * Verbindung zur Datenbank wird aufgebaut
+		 */
+		Connection con = DBConnection.connection();
 
- 		Vector<Nutzer> result = new Vector<Nutzer>();
+		Vector<Nutzer> result = new Vector<Nutzer>();
 
- 		try {
- 			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `nutzer`");
- //			stmt.setInt(1, nutzerID);
- 			ResultSet rs = stmt.executeQuery();
+		try {
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `nutzer`");
+			// stmt.setInt(1, nutzerID);
+			ResultSet rs = stmt.executeQuery();
 
- 			/**
- 			 * Für jeden Eintrag im Suchergebnis wird nun ein Nutzer-Objekt
- 			 * erstellt.
- 			 */
- 			while (rs.next()) {
- 				Nutzer nutzer = new Nutzer();
+			/**
+			 * Für jeden Eintrag im Suchergebnis wird nun ein Nutzer-Objekt
+			 * erstellt.
+			 */
+			while (rs.next()) {
+				Nutzer nutzer = new Nutzer();
 
- 				nutzer.setId(rs.getInt("id"));
- 				nutzer.setVorname(rs.getString("vorname"));
- 				nutzer.setNachname(rs.getString("nachname"));
- 				nutzer.setNickname(rs.getString("nickname"));
- 				nutzer.setEmail(rs.getString("email"));
+				nutzer.setId(rs.getInt("id"));
+				nutzer.setVorname(rs.getString("vorname"));
+				nutzer.setNachname(rs.getString("nachname"));
+				nutzer.setNickname(rs.getString("nickname"));
+				nutzer.setEmail(rs.getString("email"));
 
- 				result.addElement(nutzer);
+				result.addElement(nutzer);
 
- 			}
- 		} catch (SQLException e2) {
- 			e2.printStackTrace();
- 		}
+			}
+		} catch (SQLException e2) {
+			e2.printStackTrace();
+		}
 
+		return result;
 
- 		return result;
-
- 	}
+	}
 }

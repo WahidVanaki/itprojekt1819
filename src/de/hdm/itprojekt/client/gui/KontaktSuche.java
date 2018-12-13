@@ -54,6 +54,11 @@ public class KontaktSuche extends VerticalPanel {
 
 	public KontaktSuche() {
 
+		lb1.setStylePrimaryName("h3");
+		suggestBox.setStylePrimaryName("gwt-SuggestBox");
+		abonnieren.setStylePrimaryName("gwt-Button3");
+		abbrechen.setStylePrimaryName("gwt-Button3");
+
 		nutzer.setId(Integer.parseInt(Cookies.getCookie("id")));
 
 		abbrechen.addClickHandler(new AbbrechenClickHandler());

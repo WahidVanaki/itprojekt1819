@@ -126,7 +126,7 @@ public class PinnwandMapper {
 				}
 		}
 	}
-	
+
 	public Vector<Pinnwand> findAllPinnwand() {
 
 		Connection con = DBConnection.connection();

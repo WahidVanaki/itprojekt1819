@@ -14,9 +14,10 @@ import java.io.Serializable;
  * {@link Serializable} gekennzeichnet. Durch diese Eigenschaft kann jedes
  * <code>BusinessObject</code> automatisch in eine textuelle Form überführt und
  * z.B. zwischen Client und Server transportiert werden. Bei GWT RPC ist diese
- * textuelle Notation in JSON (siehe http://www.json.org/) kodiert. 
- * Der Import Serializable kann eventuell zu Problemen nach dem Deployement führen. 
- * Die Lösung hierzu ist IsSerializable zu verwenden, welches ein Import aus dem GWT Package ist.  
+ * textuelle Notation in JSON (siehe http://www.json.org/) kodiert. Der Import
+ * Serializable kann eventuell zu Problemen nach dem Deployement führen. Die
+ * Lösung hierzu ist IsSerializable zu verwenden, welches ein Import aus dem GWT
+ * Package ist.
  * </p>
  * 
  * @author thies
@@ -24,31 +25,33 @@ import java.io.Serializable;
  */
 
 public abstract class BusinessObject implements Serializable {
-	
+
 	/**
-	 * Dient zum Serialisieren von Objekten für eine RPC fähigen Austausch zwischen Server und Client.
+	 * Dient zum Serialisieren von Objekten für eine RPC fähigen Austausch
+	 * zwischen Server und Client.
 	 */
 	private static final long serialVersionUID = 1L;
 
-	  /**
-	   * Die eindeutige Identifikationsnummer einer Instanz dieser Klasse.
-	   */
-	  private int id = 0;
+	/**
+	 * Die eindeutige Identifikationsnummer einer Instanz dieser Klasse.
+	 */
+	private int id = 0;
 
-	 /**
-	  * Auslesen der ID
-	  * @return id
-	  */
-	  public int getId() {
-	    return this.id;
-	  }
+	/**
+	 * Auslesen der ID
+	 * 
+	 * @return id
+	 */
+	public int getId() {
+		return this.id;
+	}
 
-	 /**
-	  * Setzen der ID
-	  * @param id
-	  */
-	  public void setId(int id) {
-	    this.id = id;
-	  }
+	/**
+	 * Setzen der ID
+	 * 
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 }
-

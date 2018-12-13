@@ -1,4 +1,4 @@
- package de.hdm.itprojekt.client;
+package de.hdm.itprojekt.client;
 
 import de.hdm.itprojekt.client.gui.AllAbonnementView;
 import de.hdm.itprojekt.client.gui.Footer;
@@ -75,6 +75,9 @@ public class Itprojekt1819 implements EntryPoint {
 		loginPanel.add(loginLabel);
 		loginPanel.add(loginButton);
 		RootPanel.get("content").add(loginPanel);
+		welcomeLabel.setStylePrimaryName("landingPageWelcomeMessage");
+		loginLabel.setStylePrimaryName("landingPageWelcomeMessage");
+		loginButton.setStylePrimaryName("loginButton");
 
 	}
 
@@ -85,7 +88,6 @@ public class Itprojekt1819 implements EntryPoint {
 	private void loadPinnwand() {
 
 		StartSeiteForm startseiteform = new StartSeiteForm();
-//		MenuBar mb = new MenuBar();
 		Footer foot = new Footer();
 		Toolbar toolbar = new Toolbar();
 		AllAbonnementView apv = new AllAbonnementView();
@@ -179,8 +181,7 @@ public class Itprojekt1819 implements EntryPoint {
 		/**
 		 * Instanziierung der GUI-Elemente
 		 */
-		private Label frage = new Label(
-				"Sie haben noch keinen Nutzer angelegt.");
+		private Label frage = new Label("Sie haben noch keinen Nutzer angelegt.");
 		private Label vornameLabel = new Label("Vorname:");
 		private Label nachnameLabel = new Label("Nachname:");
 		private Label nicknameLabel = new Label("Nickname:");
@@ -219,6 +220,9 @@ public class Itprojekt1819 implements EntryPoint {
 			buttonPanel.add(nein);
 			this.add(vpanel);
 			vpanel.add(buttonPanel);
+
+			ja.setStylePrimaryName("gwt-Button3");
+			nein.setStylePrimaryName("gwt-Button3");
 		}
 
 		class DoCreateClickHandler implements ClickHandler {
@@ -284,7 +288,7 @@ public class Itprojekt1819 implements EntryPoint {
 				}
 
 			}
-			
+
 		}
 	}
 }

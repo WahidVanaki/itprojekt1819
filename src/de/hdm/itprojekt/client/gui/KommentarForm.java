@@ -58,6 +58,15 @@ public class KommentarForm extends VerticalPanel {
 		nutzer.setId(Integer.parseInt(Cookies.getCookie("id")));
 		nutzer.setNickname(Cookies.getCookie("nickname"));
 
+		datumLb.setStylePrimaryName("h3");
+		nutzerLb.setStylePrimaryName("h3");
+		kommentarLb.setStylePrimaryName("h3");
+		kommentieren.setStylePrimaryName("gwt-Button3");
+		kommentarTa.setCharacterWidth(100);
+		kommentarTa.setVisibleLines(5);
+		beitrag.setCharacterWidth(100);
+		beitrag.setVisibleLines(5);
+
 		kommentieren.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -82,27 +91,6 @@ public class KommentarForm extends VerticalPanel {
 
 			}
 		});
-
-		// kommentarTa.addKeyDownHandler(new KeyDownHandler() {
-		//
-		// @Override
-		// public void onKeyDown(KeyDownEvent event) {
-		// if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-		// kommentarTa.getValue();
-		//
-		// Window.alert("" + textbeitrag.getId() + textbeitrag.getNutzerID() +
-		// kommentarTa.getValue() +
-		// nutzer.getNickname());
-		//
-		// socialMediaVerwaltung.createKommentar(textbeitrag.getId(),
-		// textbeitrag.getNutzerID(), kommentarTa.getValue(),
-		// nutzer.getNickname(), new CreateKommentarCallback());
-		//
-		//
-		//
-		// }
-		// }
-		// });
 
 		socialMediaVerwaltung.findNutzerByID(textbeitrag.getNutzerID(), new AsyncCallback<Nutzer>() {
 

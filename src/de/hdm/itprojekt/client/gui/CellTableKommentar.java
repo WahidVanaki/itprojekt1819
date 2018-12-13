@@ -6,7 +6,6 @@ import com.google.gwt.user.cellview.client.Column;
 
 import de.hdm.itprojekt.client.KommentarNutzerWrapper;
 
-
 public class CellTableKommentar extends CellTable<KommentarNutzerWrapper> {
 
 	public CellTableKommentar(KommentarNutzerWrapper kommentar) {

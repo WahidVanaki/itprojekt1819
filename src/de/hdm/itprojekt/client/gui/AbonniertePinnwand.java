@@ -62,11 +62,12 @@ public class AbonniertePinnwand extends VerticalPanel {
 		socialMediaVerwaltung.findAbonnementByNutzerID(nutzerID, new FindAboCallback());
 
 		socialMediaVerwaltung.findTextbeitragByNutzerID(nutzerID, new CellTableCallback());
-		
+
 		nicknameLabel.setStylePrimaryName("h3");
 		beitragTb.setStylePrimaryName("gwt-TextArea");
 		beitragTb.setCharacterWidth(100);
 		beitragTb.setVisibleLines(5);
+		postBt.setStylePrimaryName("gwt-Button3");
 
 		/**
 		 * Hat zur Folge, dass das Erstellen von Textbeiträgen nur auf der

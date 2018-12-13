@@ -16,11 +16,12 @@ import de.hdm.itprojekt.shared.bo.Textbeitrag;
 public interface SocialMediaAdmin extends RemoteService {
 
 	void init() throws IllegalArgumentException;
-	
+
 	public Nutzer checkEmail(String email) throws IllegalArgumentException;
 
-	public Nutzer createNutzer(String email, String vorname, String nachname, String nickname) throws IllegalArgumentException;
-	
+	public Nutzer createNutzer(String email, String vorname, String nachname, String nickname)
+			throws IllegalArgumentException;
+
 	public Textbeitrag createTextbeitrag(int nutzerid, String inhalt) throws IllegalArgumentException;
 
 	Pinnwand createPinnwand(int nutzerid) throws IllegalArgumentException;
@@ -34,7 +35,7 @@ public interface SocialMediaAdmin extends RemoteService {
 	void deleteNutzer(Nutzer nutzer) throws IllegalArgumentException;
 
 	Vector<Abonnement> findAbonnementByNutzerID(int nutzerid) throws IllegalArgumentException;
-	
+
 	Vector<Nutzer> findAllNutzer() throws IllegalArgumentException;
 
 	Nutzer findNutzerByID(int nutzerid) throws IllegalArgumentException;
@@ -46,9 +47,9 @@ public interface SocialMediaAdmin extends RemoteService {
 	Vector<Textbeitrag> findTextbeitragByNutzerID(int nutzerid) throws IllegalArgumentException;
 
 	Vector<Textbeitrag> findTextbeitragByPinnwandID(int pinnwandid) throws IllegalArgumentException;
-	
+
 	void deleteTextbeitrag(Textbeitrag textbeitrag) throws IllegalArgumentException;
-	
+
 	void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException;
 
 	void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException;
@@ -59,7 +60,7 @@ public interface SocialMediaAdmin extends RemoteService {
 
 	void deleteAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException;
 
-	Vector<Nutzer> findAllNutzerById() throws IllegalArgumentException;
+	Vector<Nutzer> findAllNutzerById();
 
 	Abonnement createAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException;
 
@@ -69,5 +70,4 @@ public interface SocialMediaAdmin extends RemoteService {
 
 	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException;
 
-	
 }

@@ -5,23 +5,24 @@ import java.util.Date;
 public class Textbeitrag extends BusinessObject {
 
 	/**
-	 * Dient zum Serialisieren von Objekten für eine RPC fähigen Austausch zwischen Server und Client.
+	 * Dient zum Serialisieren von Objekten für eine RPC fähigen Austausch
+	 * zwischen Server und Client.
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private String inhalt ="";
-	
-	private Date erzeugungsdatum =null;
-	
-	private Date modifikationsdatum =null;
-	
-	private int nutzerID =0;
-	
-	private int pinnwandID =0;
-	
-	private int likesID =0;
-	
-	private int kommentarID =0;
+	private String inhalt = "";
+
+	private Date erzeugungsdatum = null;
+
+	private Date modifikationsdatum = null;
+
+	private int nutzerID = 0;
+
+	private int pinnwandID = 0;
+
+	private int likesID = 0;
+
+	private int kommentarID = 0;
 
 	public String getInhalt() {
 		return inhalt;
@@ -78,6 +79,5 @@ public class Textbeitrag extends BusinessObject {
 	public void setKommentarID(int kommentarID) {
 		this.kommentarID = kommentarID;
 	}
-	
-	
+
 }

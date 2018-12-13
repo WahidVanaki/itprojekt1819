@@ -3,41 +3,42 @@ package de.hdm.itprojekt.client;
 import java.io.Serializable;
 
 /**
- * Login RPC Dienst - Ergebnis des Login-Dienstes soll ein Objekt der Klasse "LoginInfo" sein, in der alle
- * benötigten Elemente eines angemeldeten Nutzers verfügbar sind.
+ * Login RPC Dienst - Ergebnis des Login-Dienstes soll ein Objekt der Klasse
+ * "LoginInfo" sein, in der alle benötigten Elemente eines angemeldeten Nutzers
+ * verfügbar sind.
  * 
  * @version 1.0 01 November 2019
  * @author Wahid in Anlehnung an die Folien "GWT Benutzungsschnittstellen"
  *
  */
-public class LoginInfo implements Serializable{
-	
+public class LoginInfo implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * LoggedIn zur Prüfung, ob der Nutzer bereits eingeloggt ist.
 	 */
 	private boolean loggedIn = false;
-	
+
 	/**
 	 * Abspeichern der LoginUrl
 	 */
 	private String loginUrl = "";
-	
+
 	/**
 	 * Abspeichern der LogoutUrl
 	 */
 	private String logoutUrl = "";
-	
+
 	/**
 	 * Abspeichern der GoogleMail Adresse
 	 */
 	private String emailAddress = "";
-	
+
 	private String vorname = "";
-	
+
 	private String nachname = "";
-	
+
 	/**
 	 * Abspeichern des Nicknamen
 	 */
@@ -45,6 +46,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Prüfen ob user eingeloggt ist
+	 * 
 	 * @return loggedIn
 	 */
 	public boolean isLoggedIn() {
@@ -53,6 +55,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Setzen des logins
+	 * 
 	 * @param loggedIn
 	 */
 	public void setLoggedIn(boolean loggedIn) {
@@ -61,6 +64,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Auslesen der login url
+	 * 
 	 * @return loginUrl
 	 */
 	public String getLoginUrl() {
@@ -69,6 +73,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Setzen des loginUrl
+	 * 
 	 * @param loginUrl
 	 */
 	public void setLoginUrl(String loginUrl) {
@@ -77,6 +82,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Auslesen des logoutsUrl
+	 * 
 	 * @return logoutUrl
 	 */
 	public String getLogoutUrl() {
@@ -85,6 +91,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Setzen der LogoutUrl
+	 * 
 	 * @param logoutUrl
 	 */
 	public void setLogoutUrl(String logoutUrl) {
@@ -93,6 +100,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Auslesen der E-Mail Adresse
+	 * 
 	 * @return emailAdresse
 	 */
 	public String getEmailAddress() {
@@ -101,6 +109,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Setzen der E-Mail Adresse
+	 * 
 	 * @param emailAddress
 	 */
 	public void setEmailAddress(String emailAddress) {
@@ -109,6 +118,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Auslesen vom Nickname
+	 * 
 	 * @return nickname
 	 */
 	public String getNickname() {
@@ -117,6 +127,7 @@ public class LoginInfo implements Serializable{
 
 	/**
 	 * Setzen vom Nickname
+	 * 
 	 * @param nickname
 	 */
 	public void setNickname(String nickname) {

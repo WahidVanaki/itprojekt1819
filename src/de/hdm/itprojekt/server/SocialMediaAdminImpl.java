@@ -18,7 +18,6 @@ import de.hdm.itprojekt.shared.bo.Nutzer;
 import de.hdm.itprojekt.shared.bo.Pinnwand;
 import de.hdm.itprojekt.shared.bo.Textbeitrag;
 
-
 /**
  * Diese Klasse ist die Implementierungsklasse des Interface SocialMediaAdmin.
  * Hier befindet sich die Applikationslogik.
@@ -107,7 +106,6 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		return this.pinnwandMapper.createPinnwand(pinnwand);
 	}
 
-	
 	@Override
 	public Nutzer checkEmail(String email) throws IllegalArgumentException {
 		Nutzer nutzer = new Nutzer();
@@ -125,7 +123,6 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		return this.abonnementMapper.findAbonnementByNutzerID(nutzerID);
 
 	}
-	
 
 	@Override
 	public Vector<Pinnwand> findAllPinnwand() throws IllegalArgumentException {
@@ -145,7 +142,9 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 
 		for (int i = 0; i < aboVector.size(); i++) {
 			for (int o = 0; o < pwVector.size(); o++) {
-				if (aboVector.elementAt(i).getNutzerID() == pwVector.elementAt(o).getNutzerID()); {
+				if (aboVector.elementAt(i).getNutzerID() == pwVector.elementAt(o).getNutzerID())
+					;
+				{
 					nutzerVector.add(findNutzerByID(aboVector.elementAt(i).getPinnwandID()));
 					break;
 				}
@@ -156,12 +155,10 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		return nutzerVector;
 	}
 
-	
 	@Override
 	public Nutzer findNutzerByID(int nutzerid) {
 		return this.nutzerMapper.findNutzerById(nutzerid);
 	}
-
 
 	@Override
 	public Textbeitrag createTextbeitrag(int nutzerid, String inhalt) throws IllegalArgumentException {
@@ -187,26 +184,26 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 
 			return null;
 		} else {
-			
+
 			return this.abonnementMapper.createAbonnement(abonnement);
 		}
 	}
-	
+
 	@Override
 	public void deleteNutzer(Nutzer nutzer) throws IllegalArgumentException {
 		Pinnwand pn = new Pinnwand();
 		pn.setNutzerID(nutzer.getId());
-		
+
 		this.pinnwandMapper.deletePinnwandNutzerID(pn);
-		
+
 		this.nutzerMapper.deleteNutzer(nutzer);
 	}
 
 	@Override
 	public void deletePinnwand(Pinnwand pinnwand) throws IllegalArgumentException {
-	pinnwand.setId(pinnwand.getId());
-	
-	this.pinnwandMapper.deletePinnwand(pinnwand);
+		pinnwand.setId(pinnwand.getId());
+
+		this.pinnwandMapper.deletePinnwand(pinnwand);
 	}
 
 	@Override
@@ -216,13 +213,13 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 
 	@Override
 	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException {
-	Kommentar kommentar = new Kommentar();
-	kommentar.setTextbeitragID(textbeitragid);
-	kommentar.setNutzerID(nutzerid);
-	kommentar.setInhaltKommentar(inhalt);
-	kommentar.setErzeugungsdatum(new Date());
-	kommentar.setModifikationsdatum(new Date());
-	return this.kommentarMapper.createKommentar(kommentar);
+		Kommentar kommentar = new Kommentar();
+		kommentar.setTextbeitragID(textbeitragid);
+		kommentar.setNutzerID(nutzerid);
+		kommentar.setInhaltKommentar(inhalt);
+		kommentar.setErzeugungsdatum(new Date());
+		kommentar.setModifikationsdatum(new Date());
+		return this.kommentarMapper.createKommentar(kommentar);
 	}
 
 	@Override
@@ -239,7 +236,7 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 
 	@Override
 	public void saveAbonnement(Abonnement abonnement) throws IllegalArgumentException {
-		 this.abonnementMapper.updateAbonnement(abonnement);
+		this.abonnementMapper.updateAbonnement(abonnement);
 	}
 
 	@Override
@@ -248,7 +245,8 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	}
 
 	@Override
-	public Vector<KommentarNutzerWrapper> findKommentarByTextbeitragId(int textbeitragid) throws IllegalArgumentException {
+	public Vector<KommentarNutzerWrapper> findKommentarByTextbeitragId(int textbeitragid)
+			throws IllegalArgumentException {
 		Vector<Kommentar> kommentarVector = this.kommentarMapper.findKommentarByTextbeitragId(textbeitragid);
 		Vector<KommentarNutzerWrapper> wrapperVector = new Vector<KommentarNutzerWrapper>();
 
@@ -275,14 +273,13 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		Abonnement abo = new Abonnement();
 		abo.setNutzerID(nutzerid);
 		abo.setPinnwandID(pinnwandid);
-		
+
 		this.abonnementMapper.deleteAbonnement(abo);
-		
+
 	}
 
 	@Override
 	public Vector<Nutzer> findAllNutzer() throws IllegalArgumentException {
-		// TODO Auto-generated method stub
 		return this.nutzerMapper.findAllNutzer();
 	}
 
@@ -295,12 +292,11 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	public void deleteKommentar(Kommentar kommentar) throws IllegalArgumentException {
 		this.kommentarMapper.deleteKommentar(kommentar);
 	}
-	
+
 	@Override
-	public Vector<Nutzer> findAllNutzerById() throws IllegalArgumentException{
+	public Vector<Nutzer> findAllNutzerById() throws IllegalArgumentException {
 		return this.nutzerMapper.findAllNutzer();
 	}
-
 
 	@Override
 	public Abonnement findAllAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException {

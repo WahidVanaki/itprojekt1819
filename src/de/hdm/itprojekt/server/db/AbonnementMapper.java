@@ -41,7 +41,8 @@ public class AbonnementMapper {
 	}
 
 	/**
-	 * Die Methode "createAbonnement" ermöglicht das Einfügen von Objekten "Nutzer".
+	 * Die Methode "createAbonnement" ermöglicht das Einfügen von Objekten
+	 * "Nutzer".
 	 * 
 	 * @param abonnement
 	 * @return
@@ -103,14 +104,12 @@ public class AbonnementMapper {
 			/**
 			 * Durchführung der Update-Operation via Prepared Statement
 			 */
-			PreparedStatement stmt = con.prepareStatement(
-					"UPDATE `abonnement` SET `nutzerid`= ? `pinnwandid`= ? WHERE id= ?");
+			PreparedStatement stmt = con
+					.prepareStatement("UPDATE `abonnement` SET `nutzerid`= ? `pinnwandid`= ? WHERE id= ?");
 
 			stmt.setInt(1, abonnement.getId());
 			stmt.setInt(2, abonnement.getNutzerID());
 			stmt.setInt(3, abonnement.getPinnwandID());
-		
-		
 
 			stmt.executeUpdate();
 
@@ -191,7 +190,7 @@ public class AbonnementMapper {
 			stmt.setInt(1, nutzerid);
 			stmt.setInt(2, pinnwandid);
 			ResultSet rs = stmt.executeQuery();
-			
+
 			/**
 			 * Für jeden Eintrag Nutzer ein Nutzer-Objekt erstellt.
 			 */
@@ -201,7 +200,6 @@ public class AbonnementMapper {
 				abonnement.setId(rs.getInt("id"));
 				abonnement.setNutzerID(rs.getInt("nutzerid"));
 				abonnement.setPinnwandID(rs.getInt("pinnwandid"));
-				
 
 				a = abonnement;
 			}
@@ -215,7 +213,7 @@ public class AbonnementMapper {
 		return a;
 	}
 
-	public Vector <Abonnement> findAbonnementByNutzerID(int nutzerID) {
+	public Vector<Abonnement> findAbonnementByNutzerID(int nutzerID) {
 
 		/**
 		 * Verbindung zur DB Connection
@@ -241,9 +239,9 @@ public class AbonnementMapper {
 				abonnement.setId(rs.getInt("id"));
 				abonnement.setNutzerID(rs.getInt("nutzerid"));
 				abonnement.setPinnwandID(rs.getInt("pinnwandid"));
-				
-				result.addElement(abonnement);			
-				
+
+				result.addElement(abonnement);
+
 			}
 
 		} catch (SQLException e2) {

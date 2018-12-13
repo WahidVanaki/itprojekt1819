@@ -206,7 +206,6 @@ public class KommentarMapper {
 			stmt.setInt(1, textbeitragId);
 			ResultSet rs = stmt.executeQuery();
 
-
 			while (rs.next()) {
 				Kommentar kommentar = new Kommentar();
 
