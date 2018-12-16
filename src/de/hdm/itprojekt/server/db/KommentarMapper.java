@@ -19,7 +19,7 @@ public class KommentarMapper {
 
 	public static KommentarMapper kommentarMapper() {
 		if (kommentarMapper == null) {
-			KommentarMapper kommentar = new KommentarMapper();
+			kommentarMapper = new KommentarMapper();
 		}
 		return kommentarMapper;
 	}
@@ -28,17 +28,16 @@ public class KommentarMapper {
 
 		Connection con = DBConnection.connection();
 		java.sql.Timestamp sqlDate = new java.sql.Timestamp(kommentar.getErzeugungsdatum().getTime());
-		java.sql.Timestamp sqlDate1 = new java.sql.Timestamp(kommentar.getModifikationsdatum().getTime());
 
 		try {
 			Statement stmt = con.createStatement();
 
-			ResultSet rs = stmt.executeQuery("SELECT MAXid(id) AS maxid FROM kommentar");
+			ResultSet rs = stmt.executeQuery("SELECT MAX(id) AS maxid FROM kommentar");
 			if (rs.next()) {
 
 				PreparedStatement stmt1 = con.prepareStatement(
-						"INSERT INTO kommentar (id, textbeitragid, nutzerid, inhalt, erzeugungsdatum, modifikationsdatum"
-								+ "VALUES(?, ?, ?, ?, ?, ? )",
+						"INSERT INTO kommentar (id, textbeitragid, nutzerid, inhalt, erzeugungsdatum)"
+								+ "VALUES(?, ?, ?, ?, ?)",
 
 						Statement.RETURN_GENERATED_KEYS);
 				stmt1.setInt(1, kommentar.getId());
@@ -46,7 +45,6 @@ public class KommentarMapper {
 				stmt1.setInt(3, kommentar.getNutzerID());
 				stmt1.setString(4, kommentar.getInhaltKommentar());
 				stmt1.setTimestamp(5, sqlDate);
-				stmt1.setTimestamp(6, sqlDate1);
 
 				System.out.println(stmt);
 				stmt1.executeUpdate();
@@ -193,7 +191,7 @@ public class KommentarMapper {
 		return result;
 	}
 
-	public Vector<Kommentar> findKommentarByTextbeitragId(int textbeitragId) {
+	public Vector<Kommentar> findKommentarByTextbeitragId(int textbeitragid) {
 
 		Connection con = DBConnection.connection();
 
@@ -201,9 +199,9 @@ public class KommentarMapper {
 
 		try {
 			PreparedStatement stmt = con
-					.prepareStatement("SELECT * FROM `kommentar` WHERE `textbeitragid`= ?" + " ORDER BY id DESC");
+					.prepareStatement("SELECT * FROM `kommentar` WHERE `textbeitragid`= ? ORDER BY id DESC");
 
-			stmt.setInt(1, textbeitragId);
+			stmt.setInt(1, textbeitragid);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

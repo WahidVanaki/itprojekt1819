@@ -167,7 +167,6 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 		textbeitrag.setNutzerID(nutzerid);
 		textbeitrag.setInhalt(inhalt);
 		textbeitrag.setErzeugungsdatum(new Date());
-		textbeitrag.setModifikationsdatum(new Date());
 		return this.textbeitragMapper.createTextbeitrag(textbeitrag);
 	}
 
@@ -212,14 +211,14 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	}
 
 	@Override
-	public Kommentar createKommentar(int nutzerid, int textbeitragid, String inhalt) throws IllegalArgumentException {
+	public Kommentar createKommentar(int textbeitragid, int nutzerid, String inhalt) throws IllegalArgumentException {
 		Kommentar kommentar = new Kommentar();
 		kommentar.setTextbeitragID(textbeitragid);
 		kommentar.setNutzerID(nutzerid);
 		kommentar.setInhaltKommentar(inhalt);
 		kommentar.setErzeugungsdatum(new Date());
-		kommentar.setModifikationsdatum(new Date());
 		return this.kommentarMapper.createKommentar(kommentar);
+		
 	}
 
 	@Override
@@ -242,19 +241,6 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	@Override
 	public Pinnwand findPinnwandByNutzerID(int nutzerID) {
 		return this.pinnwandMapper.findPinnwandByNutzerId(nutzerID);
-	}
-
-	@Override
-	public Vector<KommentarNutzerWrapper> findKommentarByTextbeitragId(int textbeitragid)
-			throws IllegalArgumentException {
-		Vector<Kommentar> kommentarVector = this.kommentarMapper.findKommentarByTextbeitragId(textbeitragid);
-		Vector<KommentarNutzerWrapper> wrapperVector = new Vector<KommentarNutzerWrapper>();
-
-		for (Kommentar kommentar : kommentarVector) {
-			wrapperVector.add(new KommentarNutzerWrapper(kommentar, findNutzerByID(kommentar.getNutzerID())));
-		}
-
-		return wrapperVector;
 	}
 
 	@Override
@@ -301,5 +287,20 @@ public class SocialMediaAdminImpl extends RemoteServiceServlet implements Social
 	@Override
 	public Abonnement findAllAbonnement(int nutzerid, int pinnwandid) throws IllegalArgumentException {
 		return this.abonnementMapper.findAllAbonnement(nutzerid, pinnwandid);
+	}
+	
+	@Override
+	public Vector<KommentarNutzerWrapper> findKommentarByTextbeitragId(int textbeitragid)
+			throws IllegalArgumentException {
+		System.out.println("hier" + textbeitragid);
+		Vector<Kommentar> kommentarVector = this.kommentarMapper.findKommentarByTextbeitragId(textbeitragid);
+		Vector<KommentarNutzerWrapper> wrapperVector = new Vector<KommentarNutzerWrapper>();
+		for (Kommentar kommentar : kommentarVector) {
+			wrapperVector.add(new KommentarNutzerWrapper(kommentar, findNutzerByID(kommentar.getNutzerID())));
+		
+		}
+
+		return wrapperVector;
+		
 	}
 }

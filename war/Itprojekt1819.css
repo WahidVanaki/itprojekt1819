@@ -1,10 +1,13 @@
+GiuseppsMacBook.fritz.box (15:29):
+dd
+GiuseppsMacBook.fritz.box (15:53):
 /** Set ids using widget.getElement().setId("idOfElement") */
 /*SEITENAUFBAU*/
 html {
 	background-image: url("/images/Background2.jpg");
 	background-repeat: repeat;
 	background-size: cover;
-	font-family: 'Encode Sans Condensed', cursive;
+	font-family: 'Arial', cursive;
 }
 
 body {
@@ -33,43 +36,13 @@ body {
 #headline {
 	font-size: 4em;
 	color: white;
-	font-family: 'Encode Sans Condensed', Arial;
+	font-family: 'Arial', Arial;
 	font-weight: 100;
 	padding: 15px;
 	text-shadow: 1px 1px cornflowerblue;
 	letter-spacing: 0.08em;
 }
-/**
-#menubar {
-	height: 40px;
-	width: 89.5%;
-	margin-top: 5px;
-	margin-left: 5%;
-	margin-bottom: 10px;
-	border: 2px solid black;
-	background-color: rgba(255, 255, 255, 0.8);
-	box-shadow: 5px 5px 2.5px grey;
-}
 
-#menubar table tbody tr td:nth-child(2) {
-    width: 100%;
-}
-
-#menubar .menuBarLabelContainer {
-	height: inherit;
-	display: inline-block;
-	margin-left: 5px;
-}
-
-#menubar .menuBarLabel {
-	padding-top: 6px;
-	padding-left: 10px;
-	width: 12em;
-	font-size: 1.7em;
-	color: #606060;
-	display: inline-block;
-}
-*/
 #leftmenutree {
 	height: 650px;
 	width: 15%;
@@ -80,65 +53,80 @@ body {
 	background-color: rgba(255, 255, 255, 0.8);
 	box-shadow: 3px 2px 2px grey;
 }
-.gwt-PushButton-up,
-.gwt-PushButton-up-hovering,
-.gwt-PushButton-up-disabled,
-.gwt-PushButton-down,
-.gwt-PushButton-down-hovering,
-.gwt-PushButton-down-disabled {
-  margin: 0;
-  text-decoration: none;
-  background: url("images/hborder.png") repeat-x 0px -27px;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
+
+.AllAbonnementViewPanel {
+	margin-top: 10px;
 }
-.gwt-PushButton-up,
-.gwt-PushButton-up-hovering,
-.gwt-PushButton-up-disabled {
-  padding: 3px 5px 3px 5px;
+
+.AllAbonnementCellList {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	margin-left: 0.2em;
 }
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled, .gwt-PushButton-down,
+	.gwt-PushButton-down-hovering, .gwt-PushButton-down-disabled {
+	margin: 0;
+	text-decoration: none;
+	background: url("images/hborder.png") repeat-x 0px -27px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled {
+	padding: 3px 5px 3px 5px;
+}
+
 .gwt-PushButton-up {
-  border:1px solid #bbb;
-  border-bottom: 1px solid #a0a0a0;
-  cursor: pointer;
-  cursor: hand;
+	border: 1px solid #bbb;
+	border-bottom: 1px solid #a0a0a0;
+	cursor: pointer;
+	cursor: hand;
 }
+
 .gwt-PushButton-up-hovering {
-  border: 1px solid;
-  border-color: #939393;
-  cursor: pointer;
-  cursor: hand;
+	border: 1px solid;
+	border-color: #939393;
+	cursor: pointer;
+	cursor: hand;
 }
+
 .gwt-PushButton-up-disabled {
-  border: 1px solid #bbb;
-  cursor: default;
-  opacity: .5;
-  filter: alpha(opacity=45);
-  zoom: 1;
+	border: 1px solid #bbb;
+	cursor: default;
+	opacity: .5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
 }
-.gwt-PushButton-down,
-.gwt-PushButton-down-hovering,
-.gwt-PushButton-down-disabled {
-  padding: 4px 4px 2px 6px;
-  outline:none;
+
+.gwt-PushButton-down, .gwt-PushButton-down-hovering,
+	.gwt-PushButton-down-disabled {
+	padding: 4px 4px 2px 6px;
+	outline: none;
 }
+
 .gwt-PushButton-down {
-  border: 1px inset #666;
-  cursor: pointer;
-  cursor: hand;
+	border: 1px inset #666;
+	cursor: pointer;
+	cursor: hand;
 }
+
 .gwt-PushButton-down-hovering {
-  border: 1px solid #939393;
-  border-top: 1px solid #333333;
-  cursor: pointer;
-  cursor: hand;
+	border: 1px solid #939393;
+	border-top: 1px solid #333333;
+	cursor: pointer;
+	cursor: hand;
 }
+
 .gwt-PushButton-down-disabled {
-  border: 1px outset #ccc;
-  cursor: default;
-  opacity: 0.5;
-  filter: alpha(opacity=45);
-  zoom: 1;
+	border: 1px outset #ccc;
+	cursor: default;
+	opacity: 0.5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
 }
 
 .logoutBarContainer {
@@ -202,16 +190,16 @@ body {
 	font-weight: bold;
 	color: #535353;
 	text-align: center;
-	font-family: 'Encode Sans Condensed', bold;
+	font-family: 'Arial', bold;
 	letter-spacing: 0.5px;
-	margin-top:1em;
 	margin-left: 1em;
-	margin-bottom: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
 }
 
 .landingPageLoginMessage {
 	margin-top: 40px;
-	font-family: 'Encode Sans Condensed', cursive;
+	font-family: 'Arial', cursive;
 	text-align: center;
 	font-size: 1.8em;
 	color: #777777;
@@ -221,7 +209,7 @@ body {
 	font-size: 1.3em;
 	margin: 10px 0px 5px 10px;
 	color: #3d3d3d;
-	font-family: 'Encode Sans Condensed', cursive !important;
+	font-family: 'Arial', cursive !important;
 	font-weight: 500;
 	font-size: 1.5em;
 }
@@ -231,7 +219,7 @@ body {
 	margin: center;
 	color: #3d3d3d;
 	text-align: center;
-	font-family: 'Encode Sans Condensed', bold;
+	font-family: 'Arial', bold;
 	font-weight: 500;
 	font-size: 2em;
 	margin-top: 1em;
@@ -239,19 +227,19 @@ body {
 }
 
 .gwt-TextArea {
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-top-color: rgb(204, 204, 204);
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top: 1px solid #666;
-    font-size: 100%;
-    height: 20;
-    width: 100;
-    font-family: Arial Unicode MS, Arial, sans-serif;
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-botton: 2em;
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-top-color: rgb(204, 204, 204);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top: 1px solid #666;
+	height: 20;
+	width: 100;
+	font-family: Arial Unicode MS, Arial, sans-serif, !important;
+	font-size: 13pt !important;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-botton: 2em;
 }
 
 .labelSize1 {
@@ -271,7 +259,7 @@ body {
 	margin-top: 20px;
 	margin-bottom: 10px;
 	text-align: center;
-	font-family: 'Encode Sans Condensed', cursive;
+	font-family: 'Arial', cursive;
 }
 
 /** WIDGET & PANEL FORMATIERUNGEN*/
@@ -283,21 +271,58 @@ body {
 .loginPanel td {
 	text-align: center !important;
 }
-/**
-.menuBarContainerFlowPanel {
-	width: 90%;
-}
-*/
 
-.cellListWidgetContainerPanel {
-	width: 80%;
-	height: auto;
+.cellTableCell {
+	padding: 2px 15px;
+	overflow: hidden;
+	height: 25px;
+	font-size: 1.1em;
+	color: #3b3b3b;
+}
+
+.cellTableWidgetContainerPanel {
 	margin-left: 1em;
+	margin-right: 1em;
 	margin-top: 2em;
 }
 
-.cellListWidgetContainerPanel table {
-	width: 100%;
+.CellTable {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+}
+
+.AllCellTable {
+	border-spacing: 0 10px;
+}
+
+.CellStyle {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 710px;
+	height: auto;
+}
+
+.CellStyleKontaktSuche {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: auto;
+	height: auto;
+}
+
+.CellStyleKommentar {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 600px;
+	height: auto;
+}
+
+.CellStyleInfoCells {
+	width: 80px;
+	height: auto;
 }
 
 .headlinePanel {
@@ -308,10 +333,6 @@ body {
 
 .dialogVPanel {
 	margin: 5px;
-}
-
-.clientAuswahlPanel {
-	margin: 30px auto;
 }
 
 .treeContainerPanel {
@@ -345,36 +366,23 @@ body {
 	width: 60%;
 }
 
-
-
 /* BUTTON FORMATIERUNGEN */
-.toolbarButton{
+.toolbarButton {
 	text-align: center;
 	background: none;
 	cursor: pointer;
 	border: none;
-	
 }
-.unfollowButton{
+
+.unfollowButton {
 	text-align: center;
 	background: none;
 	cursor: pointer;
 	border: none;
-	
 }
 
-.toolbarPanel{
-		margin-left: 5px;
-	
-}
-
-.impressumButton {
-	background: none;
-	color: #00fcff;
-	border: none;
-	cursor: pointer;
-	text-decoration: underline;
-	padding-left: 4px;
+.toolbarPanel {
+	margin-left: 5px;
 }
 
 .addButton {
@@ -392,8 +400,7 @@ body {
 .searchTextBox {
 	background-image: url("/images/search.svg");
 	background-repeat: no-repeat;
-	background-position: right;
-	background-color white;
+	background-position: right; background-color white;
 	height: 25px;
 	width: 200px;
 	font-size: 1.1em;
@@ -418,6 +425,41 @@ body {
 	transform: scale(1.01);
 }
 
+.gwt-Button2 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-left: 3em;
+	margin-bottom: 2em;
+}
+
+.gwt-Button3 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: 2em;
+}
+
 .loginButton {
 	background: linear-gradient(to right, #3399ff 40%, #0099ff 100%);
 	width: 140px;
@@ -434,7 +476,7 @@ body {
 	text-align: center;
 	margin-top: 4.5%;
 	opacity: 0.7;
-	margin-left: 20em;
+	margin-left: 18em;
 }
 
 .loginButton:hover {
@@ -446,36 +488,17 @@ body {
 	margin: 15px 6px 6px;
 }
 
-.viewProfileIcon {
-	height: 20px;
-	background-image: url("/images/eye.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: transparent;
-	cursor: pointer;
-	height: 25px;
-	width: 25px;
-	border: 0px;
-}
-
-.viewProfileIcon:hover {
-	transform: scale(1.1);
-}
-
 .centerTextDialogBox {
 	text-align: center;
 }
 
 /* .GWT WIDGET FORMATIERUNGEN */
-
-
 .shareImageIndicator {
 	width: 20%;
 	position: relative;
 	margin-right: 100px;
 	opacity: 0.7;
 }
-
 
 .gwt-DialogBox .Caption {
 	background: white;
@@ -519,6 +542,469 @@ body {
 	margin: auto auto;
 }
 
+.gwt-Button {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	padding: 6px 0px 6px 0px !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-Button:hover {
+	transform: scale(1.02);
+	box-shadow: inset 1px 1px 1px 1px #f2f2f2 !important;
+	background-color: white !important;
+}
+
+.gwt-SuggestBox {
+	margin-left: 1em;
+	margin-top: 1em;
+	display: inline-block;
+	vertical-align: baseline; background-color white;
+	height: 20;
+	width: 700;
+	font-size: 1.1em;
+	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+}
+
+.gwt-SuggestBoxPopup {
+	background-color: white;
+	border-radius: 8px;
+/** Set ids using widget.getElement().setId("idOfElement") */
+/*SEITENAUFBAU*/
+html {
+	background-image: url("/images/Background2.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+	font-family: 'Arial', cursive;
+}
+
+body {
+	background: transparent !important;
+}
+
+.tbody, tfoot, thead, tr, th, td {
+	vertical-align: middle !important;
+}
+
+#header {
+	height: 80px;
+	width: 89.5%;
+	margin-top: 20px;
+	margin-left: 5%;
+	margin-bottom: 20px;
+	border: 2px solid black;
+	background: linear-gradient(to bottom, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+	background-size: contain;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#headline {
+	font-size: 4em;
+	color: white;
+	font-family: 'Arial', Arial;
+	font-weight: 100;
+	padding: 15px;
+	text-shadow: 1px 1px cornflowerblue;
+	letter-spacing: 0.08em;
+}
+
+#leftmenutree {
+	height: 650px;
+	width: 15%;
+	display: inline-block;
+	border: 2px solid black;
+	margin-left: 5%;
+	margin-right: 1%;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 3px 2px 2px grey;
+}
+
+.AllAbonnementViewPanel {
+	margin-top: 10px;
+}
+
+.AllAbonnementCellList {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	margin-left: 0.2em;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled, .gwt-PushButton-down,
+	.gwt-PushButton-down-hovering, .gwt-PushButton-down-disabled {
+	margin: 0;
+	text-decoration: none;
+	background: url("images/hborder.png") repeat-x 0px -27px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled {
+	padding: 3px 5px 3px 5px;
+}
+
+.gwt-PushButton-up {
+	border: 1px solid #bbb;
+	border-bottom: 1px solid #a0a0a0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-hovering {
+	border: 1px solid;
+	border-color: #939393;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-disabled {
+	border: 1px solid #bbb;
+	cursor: default;
+	opacity: .5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.gwt-PushButton-down, .gwt-PushButton-down-hovering,
+	.gwt-PushButton-down-disabled {
+	padding: 4px 4px 2px 6px;
+	outline: none;
+}
+
+.gwt-PushButton-down {
+	border: 1px inset #666;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-hovering {
+	border: 1px solid #939393;
+	border-top: 1px solid #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-disabled {
+	border: 1px outset #ccc;
+	cursor: default;
+	opacity: 0.5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.logoutBarContainer {
+	position: relative;
+	z-index: 99;
+	width: 100px;
+}
+
+#leftmenutree table {
+	width: 100%;
+}
+
+#leftmenu .headline {
+	font-size: 1.8em;
+}
+
+#content {
+	height: 650px;
+	width: 73.3%;
+	display: inline-block;
+	border: 2px solid black;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 3px 2px 2px grey;
+	overflow: auto;
+}
+
+#content .headline {
+	font-size: 2.5em;
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+	color: grey;
+	font-weight: bold;
+}
+
+#footer {
+	height: 40px;
+	width: 89.5%;
+	margin: 10px auto;
+	border: 2px solid black;
+	background: linear-gradient(to top, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+}
+
+#footer .footerPanel {
+	height: inherit;
+	float: right;
+	color: #00fcff;
+	opacity: 0.75;
+}
+
+#footer .footerPanel table tbody tr td {
+	width: auto;
+	height: inherit;
+	float: right;
+}
+
+/* TEXT FORMATIERUNGEN */
+.landingPageWelcomeMessage {
+	font-size: 3.0em;
+	font-weight: bold;
+	color: #535353;
+	text-align: center;
+	font-family: 'Arial', bold;
+	letter-spacing: 0.5px;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+}
+
+.landingPageLoginMessage {
+	margin-top: 40px;
+	font-family: 'Arial', cursive;
+	text-align: center;
+	font-size: 1.8em;
+	color: #777777;
+}
+
+.h2 {
+	font-size: 1.3em;
+	margin: 10px 0px 5px 10px;
+	color: #3d3d3d;
+	font-family: 'Arial', cursive !important;
+	font-weight: 500;
+	font-size: 1.5em;
+}
+
+.h3 {
+	font-size: 1.3em;
+	margin: center;
+	color: #3d3d3d;
+	text-align: center;
+	font-family: 'Arial', bold;
+	font-weight: 500;
+	font-size: 2em;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-TextArea {
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-top-color: rgb(204, 204, 204);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top: 1px solid #666;
+	height: 20;
+	width: 100;
+	font-family: Arial Unicode MS, Arial, sans-serif, !important;
+	font-size: 13pt !important;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-botton: 2em;
+}
+
+.labelSize1 {
+	font-size: 1.1em;
+	margin-right: 5px;
+}
+
+.landingpageText {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.navigationPanelHeadline {
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #494949;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-family: 'Arial', cursive;
+}
+
+/** WIDGET & PANEL FORMATIERUNGEN*/
+.loginPanel {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.loginPanel td {
+	text-align: center !important;
+}
+
+.cellTableCell {
+	padding: 2px 15px;
+	overflow: hidden;
+	height: 25px;
+	font-size: 1.1em;
+	color: #3b3b3b;
+}
+
+.cellTableWidgetContainerPanel {
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 2em;
+}
+
+.CellTable {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+}
+
+.AllCellTable {
+	border-spacing: 0 10px;
+}
+
+.CellStyle {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 710px;
+	height: auto;
+}
+
+.CellStyleKontaktSuche {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: auto;
+	height: auto;
+}
+
+.CellStyleKommentar {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 600px;
+	height: auto;
+}
+
+.CellStyleInfoCells {
+	width: 80px;
+	height: auto;
+}
+
+.headlinePanel {
+	width: 100%;
+	height: auto;
+	font-size: 2em;
+}
+
+.dialogVPanel {
+	margin: 5px;
+}
+
+.treeContainerPanel {
+	height: 580px;
+	overflow: scrollable;
+}
+
+.centerPanel {
+	margin: 2px auto;
+}
+
+.buttonPanelBox {
+	margin: auto auto;
+}
+
+.buttonPanelBox table tbody tr td:last-child {
+	width: inherit;
+	margin: auto auto;
+	display: table;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+/* BUTTON FORMATIERUNGEN */
+.toolbarButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.unfollowButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.toolbarPanel {
+	margin-left: 5px;
+}
+
+.addButton {
+	text-align: center;
+	margin-left: 10px;
+	border-radius: 80px;
+	width: 33px;
+	height: 30px;
+}
+
+.addButton:hover {
+	transform: scale(1.02);
+}
+
+.searchTextBox {
+	background-image: url("/images/search.svg");
+	background-repeat: no-repeat;
+	background-position: right; background-color white;
+	height: 25px;
+	width: 200px;
+	font-size: 1.1em;
+	margin-right: 25px;
+	float: right;
+	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+	font-family: 'Ubuntu', sans-serif !important;
+}
+
+.searchTextBox:hover {
+	background-size: 12.5%;
+	box-shadow: 0px 0px 8px #96A1BD !important;
+}
+
+.detailSearchTextbox {
+	margin-left: 15px;
+	height: 20px;
+}
+
+.detailSearchTextbox:hover {
+	transform: scale(1.01);
+}
+
 .gwt-Button2 {
 	font-size: 1em;
 	width: 100px;
@@ -534,7 +1020,6 @@ body {
 	box-shadow: 1px 1px #999;
 	margin-left: 3em;
 	margin-bottom: 2em;
-	
 }
 
 .gwt-Button3 {
@@ -553,7 +1038,106 @@ body {
 	margin-top: 1em;
 	margin-left: 1em;
 	margin-bottom: 2em;
-	
+}
+
+.loginButton {
+	background: linear-gradient(to right, #3399ff 40%, #0099ff 100%);
+	width: 140px;
+	height: 50px;
+	border-radius: 6px;
+	border: 2px solid #2079ff;
+	box-shadow: 0 3px #999;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-size: 21px;
+	font-family: 'Ubuntu', sans-serif;
+	padding: 8px 0px 8px 0px;
+	text-align: center;
+	margin-top: 4.5%;
+	opacity: 0.7;
+	margin-left: 18em;
+}
+
+.loginButton:hover {
+	opacity: 1;
+	transform: scale(1.02);
+}
+
+#closeButton {
+	margin: 15px 6px 6px;
+}
+
+.centerTextDialogBox {
+	text-align: center;
+}
+
+/* .GWT WIDGET FORMATIERUNGEN */
+.shareImageIndicator {
+	width: 20%;
+	position: relative;
+	margin-right: 100px;
+	opacity: 0.7;
+}
+
+.gwt-DialogBox .Caption {
+	background: white;
+	cursor: default;
+	border-bottom: 1px solid #bbbbbb;
+	border-top: 5px solid #d0e4f6;
+	text-align: center;
+}
+
+.gwt-DialogBox {
+	max-width: 500px;
+	height: auto;
+}
+
+.gwt-DialogBox .dialogContent {
+	width: auto;
+	margin: auto auto;
+	padding: 20px 20px 20px 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+	padding: 15px;
+	background: white;
+	margin-left: 40px;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr {
+	display: table;
+	margin: auto auto;
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table table {
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr:last-child {
+	display: table;
+	margin: auto auto;
+}
+
+.gwt-Button {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	padding: 6px 0px 6px 0px !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
 }
 
 .gwt-Button:hover {
@@ -562,130 +1146,1759 @@ body {
 	background-color: white !important;
 }
 
-
-
 .gwt-SuggestBox {
 	margin-left: 1em;
-	margin-top:1em;
+	margin-top: 1em;
 	display: inline-block;
-	vertical-align: baseline;
-	background-color white;
+	vertical-align: baseline; background-color white;
 	height: 20;
-	width: 250;
+	width: 700;
 	font-size: 1.1em;
 	border: none !important;
 	box-shadow: 0px 0px 3px #96A1BD !important;
 }
 
 .gwt-SuggestBoxPopup {
-    background-color: white;
-    border-radius: 8px;
-
-}
-/
-.menuBarImage {
-	background-image: url("/images/arrow_down.svg") !important;
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: 15px;
-	background-position-x: 96%;
+	background-color: white;
+	border-radius: 8px;
+/** Set ids using widget.getElement().setId("idOfElement") */
+/*SEITENAUFBAU*/
+html {
+	background-image: url("/images/Background2.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+	font-family: 'Arial', cursive;
 }
 
-.menuBarAlignRight {
-   width: 100%;
-   background: none;
-   border: none;
+body {
+	background: transparent !important;
 }
 
-.gwt-MenuBar table {
+.tbody, tfoot, thead, tr, th, td {
+	vertical-align: middle !important;
+}
+
+#header {
+	height: 80px;
+	width: 89.5%;
+	margin-top: 20px;
+	margin-left: 5%;
+	margin-bottom: 20px;
+	border: 2px solid black;
+	background: linear-gradient(to bottom, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+	background-size: contain;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#headline {
+	font-size: 4em;
+	color: white;
+	font-family: 'Arial', Arial;
+	font-weight: 100;
+	padding: 15px;
+	text-shadow: 1px 1px cornflowerblue;
+	letter-spacing: 0.08em;
+}
+
+#leftmenutree {
+	height: 650px;
+	width: 15%;
+	display: inline-block;
+	border: 2px solid black;
+	margin-left: 5%;
+	margin-right: 1%;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 3px 2px 2px grey;
+}
+
+.AllAbonnementViewPanel {
+	margin-top: 10px;
+}
+
+.AllAbonnementCellList {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	margin-left: 0.2em;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled, .gwt-PushButton-down,
+	.gwt-PushButton-down-hovering, .gwt-PushButton-down-disabled {
+	margin: 0;
+	text-decoration: none;
+	background: url("images/hborder.png") repeat-x 0px -27px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled {
+	padding: 3px 5px 3px 5px;
+}
+
+.gwt-PushButton-up {
+	border: 1px solid #bbb;
+	border-bottom: 1px solid #a0a0a0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-hovering {
+	border: 1px solid;
+	border-color: #939393;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-disabled {
+	border: 1px solid #bbb;
+	cursor: default;
+	opacity: .5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.gwt-PushButton-down, .gwt-PushButton-down-hovering,
+	.gwt-PushButton-down-disabled {
+	padding: 4px 4px 2px 6px;
+	outline: none;
+}
+
+.gwt-PushButton-down {
+	border: 1px inset #666;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-hovering {
+	border: 1px solid #939393;
+	border-top: 1px solid #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-disabled {
+	border: 1px outset #ccc;
+	cursor: default;
+	opacity: 0.5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.logoutBarContainer {
+	position: relative;
+	z-index: 99;
+	width: 100px;
+}
+
+#leftmenutree table {
+	width: 100%;
+}
+
+#leftmenu .headline {
+	font-size: 1.8em;
+}
+
+#content {
+	height: 650px;
+	width: 73.3%;
+	display: inline-block;
+	border: 2px solid black;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 3px 2px 2px grey;
+	overflow: auto;
+}
+
+#content .headline {
+	font-size: 2.5em;
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+	color: grey;
+	font-weight: bold;
+}
+
+#footer {
+	height: 40px;
+	width: 89.5%;
+	margin: 10px auto;
+	border: 2px solid black;
+	background: linear-gradient(to top, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+}
+
+#footer .footerPanel {
 	height: inherit;
+	float: right;
+	color: #00fcff;
+	opacity: 0.75;
 }
 
-.gwt-MenuBar {
-   cursor: pointer !important;
+#footer .footerPanel table tbody tr td {
+	width: auto;
+	height: inherit;
+	float: right;
 }
 
-.gwt-MenuBar .gwt-MenuItem {
-   cursor: pointer !important;
-   font-family: 'Ubuntu', sans-serif !important;
-   font-size: 14px;
-   font-weight: 500 !important;
+/* TEXT FORMATIERUNGEN */
+.landingPageWelcomeMessage {
+	font-size: 3.0em;
+	font-weight: bold;
+	color: #535353;
+	text-align: center;
+	font-family: 'Arial', bold;
+	letter-spacing: 0.5px;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
 }
 
-.gwt-MenuBar .gwt-MenuItem-selected {
-   background-color: #eeeeee!important;
-   background-image: none !important;
+.landingPageLoginMessage {
+	margin-top: 40px;
+	font-family: 'Arial', cursive;
+	text-align: center;
+	font-size: 1.8em;
+	color: #777777;
 }
 
-.gwt-MenuBar-horizontal {
-	background: none !important;
+.h2 {
+	font-size: 1.3em;
+	margin: 10px 0px 5px 10px;
+	color: #3d3d3d;
+	font-family: 'Arial', cursive !important;
+	font-weight: 500;
+	font-size: 1.5em;
+}
+
+.h3 {
+	font-size: 1.3em;
+	margin: center;
+	color: #3d3d3d;
+	text-align: center;
+	font-family: 'Arial', bold;
+	font-weight: 500;
+	font-size: 2em;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-TextArea {
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-top-color: rgb(204, 204, 204);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top: 1px solid #666;
+	height: 20;
+	width: 100;
+	font-family: Arial Unicode MS, Arial, sans-serif, !important;
+	font-size: 13pt !important;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-botton: 2em;
+}
+
+.labelSize1 {
+	font-size: 1.1em;
+	margin-right: 5px;
+}
+
+.landingpageText {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.navigationPanelHeadline {
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #494949;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-family: 'Arial', cursive;
+}
+
+/** WIDGET & PANEL FORMATIERUNGEN*/
+.loginPanel {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.loginPanel td {
+	text-align: center !important;
+}
+
+.cellTableCell {
+	padding: 2px 15px;
+	overflow: hidden;
+	height: 25px;
+	font-size: 1.1em;
+	color: #3b3b3b;
+}
+
+.cellTableWidgetContainerPanel {
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 2em;
+}
+
+.CellTable {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+}
+
+.AllCellTable {
+	border-spacing: 0 10px;
+}
+
+.CellStyle {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 710px;
+	height: auto;
+}
+
+.CellStyleKontaktSuche {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: auto;
+	height: auto;
+}
+
+.CellStyleKommentar {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 600px;
+	height: auto;
+}
+
+.CellStyleInfoCells {
+	width: 80px;
+	height: auto;
+}
+
+.headlinePanel {
+	width: 100%;
+	height: auto;
+	font-size: 2em;
+}
+
+.dialogVPanel {
+	margin: 5px;
+}
+
+.treeContainerPanel {
+	height: 580px;
+	overflow: scrollable;
+}
+
+.centerPanel {
+	margin: 2px auto;
+}
+
+.buttonPanelBox {
+	margin: auto auto;
+}
+
+.buttonPanelBox table tbody tr td:last-child {
+	width: inherit;
+	margin: auto auto;
+	display: table;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+/* BUTTON FORMATIERUNGEN */
+.toolbarButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.unfollowButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.toolbarPanel {
+	margin-left: 5px;
+}
+
+.addButton {
+	text-align: center;
+	margin-left: 10px;
+	border-radius: 80px;
+	width: 33px;
+	height: 30px;
+}
+
+.addButton:hover {
+	transform: scale(1.02);
+}
+
+.searchTextBox {
+	background-image: url("/images/search.svg");
+	background-repeat: no-repeat;
+	background-position: right; background-color white;
+	height: 25px;
+	width: 200px;
+	font-size: 1.1em;
+	margin-right: 25px;
+	float: right;
 	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+	font-family: 'Ubuntu', sans-serif !important;
 }
 
-.gwt-MenuBar-horizontal .gwt-MenuItem {
-   padding: 5px 17px !important;
-   vertical-align: bottom;
-   color: #494949;
-   line-height: 25px;
+.searchTextBox:hover {
+	background-size: 12.5%;
+	box-shadow: 0px 0px 8px #96A1BD !important;
 }
 
-.gwt-MenuBar-horizontal .gwt-MenuItemSeparator {
-   width: 1px;
-   padding: 0px;
-   margin: 0px;
-   border: 0px;
-   border-left: 1px solid #ccc;
-   background: white;
+.detailSearchTextbox {
+	margin-left: 15px;
+	height: 20px;
 }
 
-.gwt-MenuBar-horizontal .gwt-MenuItemSeparator .menuSeparatorInner {
-   width: 1px;
-   height: 1px;
-   background: white; 
+.detailSearchTextbox:hover {
+	transform: scale(1.01);
 }
 
-.gwt-MenuBar-vertical {
-   margin-top: 0px;
-   margin-left: 0px;
-   background: white;
+.gwt-Button2 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-left: 3em;
+	margin-bottom: 2em;
 }
 
-.gwt-MenuBar-vertical table {
-   border-collapse: collapse;
+.gwt-Button3 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: 2em;
 }
 
-.gwt-MenuBar-vertical .gwt-MenuItem {
-   padding: 5px 40px 5px 5px !important;
-   font-family: 'Ubuntu', sans-serif !important;
-   font-weight: 300 !important;
-   font-size: calc !important;
+.loginButton {
+	background: linear-gradient(to right, #3399ff 40%, #0099ff 100%);
+	width: 140px;
+	height: 50px;
+	border-radius: 6px;
+	border: 2px solid #2079ff;
+	box-shadow: 0 3px #999;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-size: 21px;
+	font-family: 'Ubuntu', sans-serif;
+	padding: 8px 0px 8px 0px;
+	text-align: center;
+	margin-top: 4.5%;
+	opacity: 0.7;
+	margin-left: 18em;
 }
 
-.gwt-MenuBar-vertical .gwt-MenuItemSeparator {
-   padding: 2px 0px;
+.loginButton:hover {
+	opacity: 1;
+	transform: scale(1.02);
 }
 
-.gwt-MenuBar-vertical .gwt-MenuItemSeparator .menuSeparatorInner {
-   height: 1px;
-   padding: 0px;
-   border: 0px;
-   border-top: 1px solid #ccc;
-   overflow: hidden;
+#closeButton {
+	margin: 15px 6px 6px;
 }
 
-.gwt-MenuBar-vertical .subMenuIcon {
-   padding-right: 4px;
+.centerTextDialogBox {
+	text-align: center;
 }
 
-.gwt-MenuBar-vertical .subMenuIcon-selected {
-   background: #E3E8F3;
+/* .GWT WIDGET FORMATIERUNGEN */
+.shareImageIndicator {
+	width: 20%;
+	position: relative;
+	margin-right: 100px;
+	opacity: 0.7;
 }
 
-.disabledMenuBar {
-   padding: 5px 40px 5px 5px !important;
-   font-family: 'Ubuntu', sans-serif !important;
-   font-weight: 300 !important;
-   font-size: 14px;
-   color: #d9d9d9!important;
-   cursor: default !important;
+.gwt-DialogBox .Caption {
+	background: white;
+	cursor: default;
+	border-bottom: 1px solid #bbbbbb;
+	border-top: 5px solid #d0e4f6;
+	text-align: center;
+}
+
+.gwt-DialogBox {
+	max-width: 500px;
+	height: auto;
+}
+
+.gwt-DialogBox .dialogContent {
+	width: auto;
+	margin: auto auto;
+	padding: 20px 20px 20px 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+	padding: 15px;
+	background: white;
+	margin-left: 40px;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr {
+	display: table;
+	margin: auto auto;
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table table {
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr:last-child {
+	display: table;
+	margin: auto auto;
+}
+
+.gwt-Button {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	padding: 6px 0px 6px 0px !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-Button:hover {
+	transform: scale(1.02);
+	box-shadow: inset 1px 1px 1px 1px #f2f2f2 !important;
+	background-color: white !important;
+}
+
+.gwt-SuggestBox {
+	margin-left: 1em;
+	margin-top: 1em;
+	display: inline-block;
+	vertical-align: baseline; background-color white;
+	height: 20;
+	width: 700;
+	font-size: 1.1em;
+	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+}
+
+.gwt-SuggestBoxPopup {
+	background-color: white;
+	border-radius: 8px;
+/** Set ids using widget.getElement().setId("idOfElement") */
+/*SEITENAUFBAU*/
+html {
+	background-image: url("/images/Background2.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+	font-family: 'Arial', cursive;
+}
+
+body {
+	background: transparent !important;
+}
+
+.tbody, tfoot, thead, tr, th, td {
+	vertical-align: middle !important;
+}
+
+#header {
+	height: 80px;
+	width: 89.5%;
+	margin-top: 20px;
+	margin-left: 5%;
+	margin-bottom: 20px;
+	border: 2px solid black;
+	background: linear-gradient(to bottom, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+	background-size: contain;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#headline {
+	font-size: 4em;
+	color: white;
+	font-family: 'Arial', Arial;
+	font-weight: 100;
+	padding: 15px;
+	text-shadow: 1px 1px cornflowerblue;
+	letter-spacing: 0.08em;
+}
+
+#leftmenutree {
+	height: 650px;
+	width: 15%;
+	display: inline-block;
+	border: 2px solid black;
+	margin-left: 5%;
+	margin-right: 1%;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 3px 2px 2px grey;
+}
+
+.AllAbonnementViewPanel {
+	margin-top: 10px;
+}
+
+.AllAbonnementCellList {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	margin-left: 0.2em;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled, .gwt-PushButton-down,
+	.gwt-PushButton-down-hovering, .gwt-PushButton-down-disabled {
+	margin: 0;
+	text-decoration: none;
+	background: url("images/hborder.png") repeat-x 0px -27px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled {
+	padding: 3px 5px 3px 5px;
+}
+
+.gwt-PushButton-up {
+	border: 1px solid #bbb;
+	border-bottom: 1px solid #a0a0a0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-hovering {
+	border: 1px solid;
+	border-color: #939393;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-disabled {
+	border: 1px solid #bbb;
+	cursor: default;
+	opacity: .5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.gwt-PushButton-down, .gwt-PushButton-down-hovering,
+	.gwt-PushButton-down-disabled {
+	padding: 4px 4px 2px 6px;
+	outline: none;
+}
+
+.gwt-PushButton-down {
+	border: 1px inset #666;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-hovering {
+	border: 1px solid #939393;
+	border-top: 1px solid #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-disabled {
+	border: 1px outset #ccc;
+	cursor: default;
+	opacity: 0.5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.logoutBarContainer {
+	position: relative;
+	z-index: 99;
+	width: 100px;
+}
+
+#leftmenutree table {
+	width: 100%;
+}
+
+#leftmenu .headline {
+	font-size: 1.8em;
+}
+
+#content {
+	height: 650px;
+	width: 73.3%;
+	display: inline-block;
+	border: 2px solid black;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 3px 2px 2px grey;
+	overflow: auto;
+}
+
+#content .headline {
+	font-size: 2.5em;
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+	color: grey;
+	font-weight: bold;
+}
+
+#footer {
+	height: 40px;
+	width: 89.5%;
+	margin: 10px auto;
+	border: 2px solid black;
+	background: linear-gradient(to top, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+}
+
+#footer .footerPanel {
+	height: inherit;
+	float: right;
+	color: #00fcff;
+	opacity: 0.75;
+}
+
+#footer .footerPanel table tbody tr td {
+	width: auto;
+	height: inherit;
+	float: right;
+}
+
+/* TEXT FORMATIERUNGEN */
+.landingPageWelcomeMessage {
+	font-size: 3.0em;
+	font-weight: bold;
+	color: #535353;
+	text-align: center;
+	font-family: 'Arial', bold;
+	letter-spacing: 0.5px;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+}
+
+.landingPageLoginMessage {
+	margin-top: 40px;
+	font-family: 'Arial', cursive;
+	text-align: center;
+	font-size: 1.8em;
+	color: #777777;
+}
+
+.h2 {
+	font-size: 1.3em;
+	margin: 10px 0px 5px 10px;
+	color: #3d3d3d;
+	font-family: 'Arial', cursive !important;
+	font-weight: 500;
+	font-size: 1.5em;
+}
+
+.h3 {
+	font-size: 1.3em;
+	margin: center;
+	color: #3d3d3d;
+	text-align: center;
+	font-family: 'Arial', bold;
+	font-weight: 500;
+	font-size: 2em;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-TextArea {
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-top-color: rgb(204, 204, 204);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top: 1px solid #666;
+	height: 20;
+	width: 100;
+	font-family: Arial Unicode MS, Arial, sans-serif, !important;
+	font-size: 13pt !important;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-botton: 2em;
+}
+
+.labelSize1 {
+	font-size: 1.1em;
+	margin-right: 5px;
+}
+
+.landingpageText {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.navigationPanelHeadline {
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #494949;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-family: 'Arial', cursive;
+}
+
+/** WIDGET & PANEL FORMATIERUNGEN*/
+.loginPanel {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.loginPanel td {
+	text-align: center !important;
+}
+
+.cellTableCell {
+	padding: 2px 15px;
+	overflow: hidden;
+	height: 25px;
+	font-size: 1.1em;
+	color: #3b3b3b;
+}
+
+.cellTableWidgetContainerPanel {
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 2em;
+}
+
+.CellTable {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+}
+
+.AllCellTable {
+	border-spacing: 0 10px;
+}
+
+.CellStyle {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 710px;
+	height: auto;
+}
+
+.CellStyleKontaktSuche {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: auto;
+	height: auto;
+}
+
+.CellStyleKommentar {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 600px;
+	height: auto;
+}
+
+.CellStyleInfoCells {
+	width: 80px;
+	height: auto;
+}
+
+.headlinePanel {
+	width: 100%;
+	height: auto;
+	font-size: 2em;
+}
+
+.dialogVPanel {
+	margin: 5px;
+}
+
+.treeContainerPanel {
+	height: 580px;
+	overflow: scrollable;
+}
+
+.centerPanel {
+	margin: 2px auto;
+}
+
+.buttonPanelBox {
+	margin: auto auto;
+}
+
+.buttonPanelBox table tbody tr td:last-child {
+	width: inherit;
+	margin: auto auto;
+	display: table;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+/* BUTTON FORMATIERUNGEN */
+.toolbarButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.unfollowButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.toolbarPanel {
+	margin-left: 5px;
+}
+
+.addButton {
+	text-align: center;
+	margin-left: 10px;
+	border-radius: 80px;
+	width: 33px;
+	height: 30px;
+}
+
+.addButton:hover {
+	transform: scale(1.02);
+}
+
+.searchTextBox {
+	background-image: url("/images/search.svg");
+	background-repeat: no-repeat;
+	background-position: right; background-color white;
+	height: 25px;
+	width: 200px;
+	font-size: 1.1em;
+	margin-right: 25px;
+	float: right;
+	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+	font-family: 'Ubuntu', sans-serif !important;
+}
+
+.searchTextBox:hover {
+	background-size: 12.5%;
+	box-shadow: 0px 0px 8px #96A1BD !important;
+}
+
+.detailSearchTextbox {
+	margin-left: 15px;
+	height: 20px;
+}
+
+.detailSearchTextbox:hover {
+	transform: scale(1.01);
+}
+
+.gwt-Button2 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-left: 3em;
+	margin-bottom: 2em;
+}
+
+.gwt-Button3 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: 2em;
+}
+
+.loginButton {
+	background: linear-gradient(to right, #3399ff 40%, #0099ff 100%);
+	width: 140px;
+	height: 50px;
+	border-radius: 6px;
+	border: 2px solid #2079ff;
+	box-shadow: 0 3px #999;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-size: 21px;
+	font-family: 'Ubuntu', sans-serif;
+	padding: 8px 0px 8px 0px;
+	text-align: center;
+	margin-top: 4.5%;
+	opacity: 0.7;
+	margin-left: 18em;
+}
+
+.loginButton:hover {
+	opacity: 1;
+	transform: scale(1.02);
+}
+
+#closeButton {
+	margin: 15px 6px 6px;
+}
+
+.centerTextDialogBox {
+	text-align: center;
+}
+
+/* .GWT WIDGET FORMATIERUNGEN */
+.shareImageIndicator {
+	width: 20%;
+	position: relative;
+	margin-right: 100px;
+	opacity: 0.7;
+}
+
+.gwt-DialogBox .Caption {
+	background: white;
+	cursor: default;
+	border-bottom: 1px solid #bbbbbb;
+	border-top: 5px solid #d0e4f6;
+	text-align: center;
+}
+
+.gwt-DialogBox {
+	max-width: 500px;
+	height: auto;
+}
+
+.gwt-DialogBox .dialogContent {
+	width: auto;
+	margin: auto auto;
+	padding: 20px 20px 20px 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+	padding: 15px;
+	background: white;
+	margin-left: 40px;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr {
+	display: table;
+	margin: auto auto;
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table table {
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr:last-child {
+	display: table;
+	margin: auto auto;
+}
+
+.gwt-Button {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	padding: 6px 0px 6px 0px !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-Button:hover {
+	transform: scale(1.02);
+	box-shadow: inset 1px 1px 1px 1px #f2f2f2 !important;
+	background-color: white !important;
+}
+
+.gwt-SuggestBox {
+	margin-left: 1em;
+	margin-top: 1em;
+	display: inline-block;
+	vertical-align: baseline; background-color white;
+	height: 20;
+	width: 700;
+	font-size: 1.1em;
+	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+}
+
+.gwt-SuggestBoxPopup {
+	background-color: white;
+	border-radius: 8px;
+/** Set ids using widget.getElement().setId("idOfElement") */
+/*SEITENAUFBAU*/
+html {
+	background-image: url("/images/Background2.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+	font-family: 'Arial', cursive;
+}
+
+body {
+	background: transparent !important;
+}
+
+.tbody, tfoot, thead, tr, th, td {
+	vertical-align: middle !important;
+}
+
+#header {
+	height: 80px;
+	width: 89.5%;
+	margin-top: 20px;
+	margin-left: 5%;
+	margin-bottom: 20px;
+	border: 2px solid black;
+	background: linear-gradient(to bottom, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+	background-size: contain;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#headline {
+	font-size: 4em;
+	color: white;
+	font-family: 'Arial', Arial;
+	font-weight: 100;
+	padding: 15px;
+	text-shadow: 1px 1px cornflowerblue;
+	letter-spacing: 0.08em;
+}
+
+#leftmenutree {
+	height: 650px;
+	width: 15%;
+	display: inline-block;
+	border: 2px solid black;
+	margin-left: 5%;
+	margin-right: 1%;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 3px 2px 2px grey;
+}
+
+.AllAbonnementViewPanel {
+	margin-top: 10px;
+}
+
+.AllAbonnementCellList {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	margin-left: 0.2em;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled, .gwt-PushButton-down,
+	.gwt-PushButton-down-hovering, .gwt-PushButton-down-disabled {
+	margin: 0;
+	text-decoration: none;
+	background: url("images/hborder.png") repeat-x 0px -27px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.gwt-PushButton-up, .gwt-PushButton-up-hovering,
+	.gwt-PushButton-up-disabled {
+	padding: 3px 5px 3px 5px;
+}
+
+.gwt-PushButton-up {
+	border: 1px solid #bbb;
+	border-bottom: 1px solid #a0a0a0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-hovering {
+	border: 1px solid;
+	border-color: #939393;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-up-disabled {
+	border: 1px solid #bbb;
+	cursor: default;
+	opacity: .5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.gwt-PushButton-down, .gwt-PushButton-down-hovering,
+	.gwt-PushButton-down-disabled {
+	padding: 4px 4px 2px 6px;
+	outline: none;
+}
+
+.gwt-PushButton-down {
+	border: 1px inset #666;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-hovering {
+	border: 1px solid #939393;
+	border-top: 1px solid #333333;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-PushButton-down-disabled {
+	border: 1px outset #ccc;
+	cursor: default;
+	opacity: 0.5;
+	filter: alpha(opacity = 45);
+	zoom: 1;
+}
+
+.logoutBarContainer {
+	position: relative;
+	z-index: 99;
+	width: 100px;
+}
+
+#leftmenutree table {
+	width: 100%;
+}
+
+#leftmenu .headline {
+	font-size: 1.8em;
+}
+
+#content {
+	height: 650px;
+	width: 73.3%;
+	display: inline-block;
+	border: 2px solid black;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 3px 2px 2px grey;
+	overflow: auto;
+}
+
+#content .headline {
+	font-size: 2.5em;
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+	color: grey;
+	font-weight: bold;
+}
+
+#footer {
+	height: 40px;
+	width: 89.5%;
+	margin: 10px auto;
+	border: 2px solid black;
+	background: linear-gradient(to top, #3399ff 0%, #99ccff 100%);
+	box-shadow: 5px 5px 2.5px grey;
+}
+
+#footer .footerPanel {
+	height: inherit;
+	float: right;
+	color: #00fcff;
+	opacity: 0.75;
+}
+
+#footer .footerPanel table tbody tr td {
+	width: auto;
+	height: inherit;
+	float: right;
+}
+
+/* TEXT FORMATIERUNGEN */
+.landingPageWelcomeMessage {
+	font-size: 3.0em;
+	font-weight: bold;
+	color: #535353;
+	text-align: center;
+	font-family: 'Arial', bold;
+	letter-spacing: 0.5px;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1em;
+}
+
+.landingPageLoginMessage {
+	margin-top: 40px;
+	font-family: 'Arial', cursive;
+	text-align: center;
+	font-size: 1.8em;
+	color: #777777;
+}
+
+.h2 {
+	font-size: 1.3em;
+	margin: 10px 0px 5px 10px;
+	color: #3d3d3d;
+	font-family: 'Arial', cursive !important;
+	font-weight: 500;
+	font-size: 1.5em;
+}
+
+.h3 {
+	font-size: 1.3em;
+	margin: center;
+	color: #3d3d3d;
+	text-align: center;
+	font-family: 'Arial', bold;
+	font-weight: 500;
+	font-size: 2em;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-TextArea {
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-top-color: rgb(204, 204, 204);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top: 1px solid #666;
+	height: 20;
+	width: 100;
+	font-family: Arial Unicode MS, Arial, sans-serif, !important;
+	font-size: 13pt !important;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-botton: 2em;
+}
+
+.labelSize1 {
+	font-size: 1.1em;
+	margin-right: 5px;
+}
+
+.landingpageText {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.navigationPanelHeadline {
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #494949;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-family: 'Arial', cursive;
+}
+
+/** WIDGET & PANEL FORMATIERUNGEN*/
+.loginPanel {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.loginPanel td {
+	text-align: center !important;
+}
+
+.cellTableCell {
+	padding: 2px 15px;
+	overflow: hidden;
+	height: 25px;
+	font-size: 1.1em;
+	color: #3b3b3b;
+}
+
+.cellTableWidgetContainerPanel {
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 2em;
+}
+
+.CellTable {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+}
+
+.AllCellTable {
+	border-spacing: 0 10px;
+}
+
+.CellStyle {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 710px;
+	height: auto;
+}
+
+.CellStyleKontaktSuche {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: auto;
+	height: auto;
+}
+
+.CellStyleKommentar {
+	font-family: 'Arial', bold !important;
+	font-weight: 500;
+	font-size: 13pt;
+	width: 600px;
+	height: auto;
+}
+
+.CellStyleInfoCells {
+	width: 80px;
+	height: auto;
+}
+
+.headlinePanel {
+	width: 100%;
+	height: auto;
+	font-size: 2em;
+}
+
+.dialogVPanel {
+	margin: 5px;
+}
+
+.treeContainerPanel {
+	height: 580px;
+	overflow: scrollable;
+}
+
+.centerPanel {
+	margin: 2px auto;
+}
+
+.buttonPanelBox {
+	margin: auto auto;
+}
+
+.buttonPanelBox table tbody tr td:last-child {
+	width: inherit;
+	margin: auto auto;
+	display: table;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+.disclosureSearchPanel {
+	margin-left: 1.3em;
+	margin-top: 1.5em;
+	width: 60%;
+}
+
+/* BUTTON FORMATIERUNGEN */
+.toolbarButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.unfollowButton {
+	text-align: center;
+	background: none;
+	cursor: pointer;
+	border: none;
+}
+
+.toolbarPanel {
+	margin-left: 5px;
+}
+
+.addButton {
+	text-align: center;
+	margin-left: 10px;
+	border-radius: 80px;
+	width: 33px;
+	height: 30px;
+}
+
+.addButton:hover {
+	transform: scale(1.02);
+}
+
+.searchTextBox {
+	background-image: url("/images/search.svg");
+	background-repeat: no-repeat;
+	background-position: right; background-color white;
+	height: 25px;
+	width: 200px;
+	font-size: 1.1em;
+	margin-right: 25px;
+	float: right;
+	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+	font-family: 'Ubuntu', sans-serif !important;
+}
+
+.searchTextBox:hover {
+	background-size: 12.5%;
+	box-shadow: 0px 0px 8px #96A1BD !important;
+}
+
+.detailSearchTextbox {
+	margin-left: 15px;
+	height: 20px;
+}
+
+.detailSearchTextbox:hover {
+	transform: scale(1.01);
+}
+
+.gwt-Button2 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-left: 3em;
+	margin-bottom: 2em;
+}
+
+.gwt-Button3 {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: 2em;
+}
+
+.loginButton {
+	background: linear-gradient(to right, #3399ff 40%, #0099ff 100%);
+	width: 140px;
+	height: 50px;
+	border-radius: 6px;
+	border: 2px solid #2079ff;
+	box-shadow: 0 3px #999;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-size: 21px;
+	font-family: 'Ubuntu', sans-serif;
+	padding: 8px 0px 8px 0px;
+	text-align: center;
+	margin-top: 4.5%;
+	opacity: 0.7;
+	margin-left: 18em;
+}
+
+.loginButton:hover {
+	opacity: 1;
+	transform: scale(1.02);
+}
+
+#closeButton {
+	margin: 15px 6px 6px;
+}
+
+.centerTextDialogBox {
+	text-align: center;
+}
+
+/* .GWT WIDGET FORMATIERUNGEN */
+.shareImageIndicator {
+	width: 20%;
+	position: relative;
+	margin-right: 100px;
+	opacity: 0.7;
+}
+
+.gwt-DialogBox .Caption {
+	background: white;
+	cursor: default;
+	border-bottom: 1px solid #bbbbbb;
+	border-top: 5px solid #d0e4f6;
+	text-align: center;
+}
+
+.gwt-DialogBox {
+	max-width: 500px;
+	height: auto;
+}
+
+.gwt-DialogBox .dialogContent {
+	width: auto;
+	margin: auto auto;
+	padding: 20px 20px 20px 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.gwt-DialogBox .dialogMiddleCenter {
+	padding: 15px;
+	background: white;
+	margin-left: 40px;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr {
+	display: table;
+	margin: auto auto;
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table table {
+	width: 100%;
+}
+
+.gwt-DialogBox .dialogMiddleCenterInner table tbody tr:last-child {
+	display: table;
+	margin: auto auto;
+}
+
+.gwt-Button {
+	font-size: 1em;
+	width: 100px;
+	border-radius: 6px;
+	border: 1px solid #d9d9d9 !important;
+	cursor: pointer;
+	color: #2c2c2c !important;
+	background-color: whitesmoke !important;
+	padding: 6px 0px 6px 0px !important;
+	text-shadow: 0px 1px 1px #ffffff !important;
+	text-align: center;
+	background-image: none !important;
+	margin-right: 5px !important;
+	box-shadow: 1px 1px #999;
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.gwt-Button:hover {
+	transform: scale(1.02);
+	box-shadow: inset 1px 1px 1px 1px #f2f2f2 !important;
+	background-color: white !important;
+}
+
+.gwt-SuggestBox {
+	margin-left: 1em;
+	margin-top: 1em;
+	display: inline-block;
+	vertical-align: baseline; background-color white;
+	height: 20;
+	width: 700;
+	font-size: 1.1em;
+	border: none !important;
+	box-shadow: 0px 0px 3px #96A1BD !important;
+}
+
+.gwt-SuggestBoxPopup {
+	background-color: white;
+	border-radius: 8px;
 }

@@ -51,6 +51,8 @@ public class AllAbonnementView extends LeftSideFrame {
 			}
 		});
 
+		cellList.setStylePrimaryName("AllAbonnementCellList");
+		vpanel.setStylePrimaryName("AllAbonnementViewPanel");
 		vpanel.add(cellList);
 		this.add(vpanel);
 

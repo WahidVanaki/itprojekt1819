@@ -10,6 +10,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.MultiWordSuggestOracle;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -34,6 +35,7 @@ public class KontaktSuche extends VerticalPanel {
 	 * Instanzierung der GUI-Elemente
 	 */
 	private VerticalPanel mainPanel = new VerticalPanel();
+	private HorizontalPanel hpanel = new HorizontalPanel();
 	private FlexTable ft = new FlexTable();
 	private Label lb1 = new Label("Wen suchen Sie?");
 	private Button abonnieren = new Button("Suchen");
@@ -53,11 +55,6 @@ public class KontaktSuche extends VerticalPanel {
 	private Vector<Nutzer> resultNutzer = new Vector<Nutzer>();
 
 	public KontaktSuche() {
-
-		lb1.setStylePrimaryName("h3");
-		suggestBox.setStylePrimaryName("gwt-SuggestBox");
-		abonnieren.setStylePrimaryName("gwt-Button3");
-		abbrechen.setStylePrimaryName("gwt-Button3");
 
 		nutzer.setId(Integer.parseInt(Cookies.getCookie("id")));
 
@@ -97,14 +94,26 @@ public class KontaktSuche extends VerticalPanel {
 		nutzerCt.addColumn(nachnameColumn);
 		nutzerCt.addColumn(nicknameColumn);
 		nutzerCt.addColumn(emailColumn);
+		
+		lb1.setStylePrimaryName("h3");
+		suggestBox.setStylePrimaryName("gwt-SuggestBox");
+		abonnieren.setStylePrimaryName("gwt-Button3");
+		abbrechen.setStylePrimaryName("gwt-Button3");
+		nutzerCt.setStylePrimaryName("AllCellTable");
+		
+		vornameColumn.setCellStyleNames("CellStyleKontaktSuche");
+		nachnameColumn.setCellStyleNames("CellStyleKontaktSuche");
+		nicknameColumn.setCellStyleNames("CellStyleKontaktSuche");
+		emailColumn.setCellStyleNames("CellStyleKontaktSuche");
 
+		hpanel.add(abonnieren);
+		hpanel.add(abbrechen);
+		
 		ft.setWidget(0, 0, lb1);
 		ft.setWidget(1, 0, suggestBox);
-		ft.setWidget(2, 0, abonnieren);
-		ft.setWidget(2, 1, abbrechen);
 
 		mainPanel.add(ft);
-
+		mainPanel.add(hpanel);
 		this.add(mainPanel);
 
 		RootPanel.get("content").clear();
@@ -186,10 +195,12 @@ public class KontaktSuche extends VerticalPanel {
 			resultNutzer.clear();
 
 			VerticalPanel cellTableContainer = new VerticalPanel();
+			cellTableContainer.setStylePrimaryName("cellTableWidgetContainerPanel");
 
 			cellTableContainer.clear();
 			cellTableContainer.add(nutzerCt);
 
+			RootPanel.get("content").clear();
 			RootPanel.get("content").add(mainPanel);
 			RootPanel.get("content").add(cellTableContainer);
 

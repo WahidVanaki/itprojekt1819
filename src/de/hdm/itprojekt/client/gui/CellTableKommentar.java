@@ -32,10 +32,12 @@ public class CellTableKommentar extends CellTable<KommentarNutzerWrapper> {
 
 		@Override
 		public String getValue(KommentarNutzerWrapper object) {
-			if (object.getKommentar().getModifikationsdatum() != null) {
-				return object.getKommentar().getModifikationsdatum().toString();
+			if (object.getKommentar().getModifikationsdatum() == null) {
+
+				return object.getKommentar().getErzeugungsdatum().toString();
+			
 			}
-			return object.getKommentar().getErzeugungsdatum().toString();
+			return object.getKommentar().getModifikationsdatum().toString();
 		}
 
 	}

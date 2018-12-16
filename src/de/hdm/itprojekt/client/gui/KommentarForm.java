@@ -33,13 +33,15 @@ public class KommentarForm extends VerticalPanel {
 	// Textbeitrag Widgets
 	private VerticalPanel mainPanel = new VerticalPanel();
 	private VerticalPanel beitragPanel = new VerticalPanel();
+	private HorizontalPanel hpanel = new HorizontalPanel();
 	private Label nutzerLb = new Label();
 	private TextArea beitrag = new TextArea();
 	private Label kommentarLb = new Label("Diesen Post kommentieren:");
 	private TextArea kommentarTa = new TextArea();
 	private Button kommentieren = new Button("Kommentieren");
-	private Label datumLb = new Label();
+	private Button pinnwandButton = new Button("Zur Pinnwand"); 
 	private FlexTable ft = new FlexTable();
+	
 
 	// Kommentar Widgets
 	private HorizontalPanel allKommentarContainer = new HorizontalPanel();
@@ -58,14 +60,27 @@ public class KommentarForm extends VerticalPanel {
 		nutzer.setId(Integer.parseInt(Cookies.getCookie("id")));
 		nutzer.setNickname(Cookies.getCookie("nickname"));
 
-		datumLb.setStylePrimaryName("h3");
 		nutzerLb.setStylePrimaryName("h3");
 		kommentarLb.setStylePrimaryName("h3");
 		kommentieren.setStylePrimaryName("gwt-Button3");
+		pinnwandButton.setStylePrimaryName("gwt-Button3");
 		kommentarTa.setCharacterWidth(100);
 		kommentarTa.setVisibleLines(5);
 		beitrag.setCharacterWidth(100);
 		beitrag.setVisibleLines(5);
+		beitrag.setStylePrimaryName("gwt-TextArea");
+		kommentarTa.setStylePrimaryName("gwt-TextArea");
+		allKommentarContainer.setStylePrimaryName("cellTableWidgetContainerPanel");
+
+		pinnwandButton.addClickHandler(new ClickHandler(){
+
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				AbonniertePinnwand p = new AbonniertePinnwand(textbeitrag.getNutzerID());
+			}
+			
+		});
 
 		kommentieren.addClickHandler(new ClickHandler() {
 
@@ -101,27 +116,30 @@ public class KommentarForm extends VerticalPanel {
 
 			@Override
 			public void onSuccess(Nutzer result) {
-				nutzerLb.setText("Post von: " + result.getNickname());
+				if (textbeitrag.getModifikationsdatum() != null) {
+					nutzerLb.setText("Post von " + result.getNickname() + "       erstellt am "
+							+ textbeitrag.getModifikationsdatum().toString());
+				} else {
+					nutzerLb.setText("Post von " + result.getNickname() + "      erstellt am "
+							+ textbeitrag.getErzeugungsdatum().toString());
+				}
+
 			}
 		});
 
 		beitrag.setEnabled(false);
 		beitrag.setText(textbeitrag.getInhalt());
 
-		if (textbeitrag.getModifikationsdatum() != null) {
-			datumLb.setText("vom: " + textbeitrag.getModifikationsdatum().toString());
-		} else {
-			datumLb.setText("vom: " + textbeitrag.getErzeugungsdatum().toString());
-		}
-
+		hpanel.add(kommentieren);
+		hpanel.add(pinnwandButton);
+		
 		ft.setWidget(0, 0, nutzerLb);
-		ft.setWidget(0, 1, datumLb);
 		ft.setWidget(1, 0, beitrag);
 		ft.setWidget(2, 0, kommentarLb);
 		ft.setWidget(3, 0, kommentarTa);
-		ft.setWidget(4, 0, kommentieren);
-
+		
 		beitragPanel.add(ft);
+		beitragPanel.add(hpanel);
 
 		socialMediaVerwaltung.findKommentarByTextbeitragId(textbeitrag.getId(), new CellTableKommentarCallback());
 
@@ -201,7 +219,11 @@ public class KommentarForm extends VerticalPanel {
 		super.onLoad();
 		RootPanel.get("content").clear();
 		RootPanel.get("content").add(mainPanel);
-
+		allKommentarContainer.setStylePrimaryName("cellTableWidgetContainerPanel");
+		allKommentarCellTable.setStylePrimaryName("AllCellTable");
+		kommentarColumn.setCellStyleNames("CellStyleKommentar");
+		nutzerColumn.setCellStyleNames("CellStyleInfoCells");
+		dateColumn.setCellStyleNames("CellStyleInfoCells");
 	}
 
 	class CellTableKommentarCallback implements AsyncCallback<Vector<KommentarNutzerWrapper>> {

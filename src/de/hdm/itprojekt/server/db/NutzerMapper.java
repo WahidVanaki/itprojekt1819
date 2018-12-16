@@ -215,12 +215,17 @@ public class NutzerMapper {
 		} catch (SQLException e2) {
 			e2.printStackTrace();
 		}
+			finally {
+				if (con != null)
+					try {
+						con.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+			}
 
-		/**
-		 * Ergebnisvektor zurückgeben
-		 */
-		return result;
-	}
+			return result;
+		}
 
 	public Nutzer findNutzerByEmail(String email) {
 
@@ -355,8 +360,15 @@ public class NutzerMapper {
 		} catch (SQLException e2) {
 			e2.printStackTrace();
 		}
+		finally {
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
 
 		return result;
-
 	}
 }

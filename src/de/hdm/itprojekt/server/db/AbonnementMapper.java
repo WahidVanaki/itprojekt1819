@@ -166,11 +166,11 @@ public class AbonnementMapper {
 	}
 
 	/**
-	 * Methode "findAllAbonnement" um alle Abonnement aus dem Vector<Abonnement>
+	 * Methode "findAllAbonnement" 
 	 * zurückzugeben
 	 * 
 	 * @param abonnementid
-	 * @return result - gibt als Result alle Abonnement zurück
+	 * 
 	 */
 	public Abonnement findAllAbonnement(int nutzerid, int pinnwandid) {
 
@@ -185,7 +185,7 @@ public class AbonnementMapper {
 		Abonnement a = new Abonnement();
 
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `abonnement` ORDER BY `nutzerid` DESC");
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM `abonnement` WHERE `nutzerid`=? AND `pinnwandid`=?");
 
 			stmt.setInt(1, nutzerid);
 			stmt.setInt(2, pinnwandid);

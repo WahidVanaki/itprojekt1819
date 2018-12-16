@@ -68,6 +68,8 @@ public class AbonniertePinnwand extends VerticalPanel {
 		beitragTb.setCharacterWidth(100);
 		beitragTb.setVisibleLines(5);
 		postBt.setStylePrimaryName("gwt-Button3");
+		allTextbeitragCellTableContainer.setStylePrimaryName("cellTableWidgetContainerPanel");
+		
 
 		/**
 		 * Hat zur Folge, dass das Erstellen von Textbeiträgen nur auf der
@@ -205,6 +207,10 @@ public class AbonniertePinnwand extends VerticalPanel {
 		super.onLoad();
 		RootPanel.get("content").clear();
 		RootPanel.get("content").add(mainPanel);
+		allTextbeitragCellTable.setStylePrimaryName("AllCellTable");
+		beitragColumn.setCellStyleNames("CellStyle");
+		dateColumn.setCellStyleNames("CellStyleInfoCells");
+
 	}
 
 	class CellTableCallback implements AsyncCallback<Vector<Textbeitrag>> {
